@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python 面向对象 - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python \u9762\u5411\u5bf9\u8c61";
+    var mkdocs_page_input_path = "python2.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../python1/">Python 基础</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python 面向对象</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">类</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">继承</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">多态</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">类对象，实例对象</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">异常</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">模块</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#python">python格式</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">程序参数</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">列表生成式</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setlisttuple">set、list、tuple</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gil">GIL (全局解释器锁)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">胶水粘合</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">深拷贝，浅拷贝</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_13">私有化</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#import">Import 导入模块</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">封装，继承，多态</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mro">多继承以及MRO顺序</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#with">With 上下文管理</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_15">闭包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_16">装饰器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_17">元类</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cshirp/">C#</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+        
+          <li>个人笔记 &raquo;</li>
+        
+      
+    
+    <li>Python 面向对象</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">面向对象</h1>
+<h2 id="_2">类</h2>
+<pre><code>1 定义类   
+    self.属性 
+    当前类的对象  
+2 属性
+    1. 使用方法，隐藏属性
+    2. 私有属性 __name，_类名__.属性名
+    3. 类属性
+    4. 实例属性  
+    5. 魔法属性
+        a. __doc__
+            #输出：类的描述信息
+
+        b. __module__ 和 __class__
+            __module__表示当前操作的对象在那个模块
+            __class__ 表示当前操作的对象的类是什么
+
+        c. __init__
+            初始化方法，通过类创建对象时，自动触发执行
+
+        b. __del__
+            当对象在内存中被释放时，自动触发执行。
+            注：此方法一般无须定义，因为 Python 是一门高级语言，
+                程序员在使用时无需关心内存的分配和释放，
+                因为此工作都是交给 Python 解释器来执行，
+                所以 __del__ 的调用是由解释器在进行垃圾回收时自动触发执行的。
+
+        d. __call__ 
+            对象后面加括号，触发执行。
+            注： __init__ 方法的执行是由创建对象触发的，即：对象 = 类名()
+            而对于 __call__ 方法的执行是由对象后加括号触发的，即：对象() 或者 类()
+
+        e. __dict__  
+            类或对象中的所有属性
+            类的实例属性属于对象；类中的类属性和方法等属于类，即：
+            获取类的属性，即：类属性、方法、
+                print(Province.__dict__)
+            输出：
+                {'__dict__': &lt;attribute '__dict__' of 'Province' objects&gt;, 
+                '__module__': '__main__', 
+                'country': 'China', '__doc__': None, 
+                '__weakref__': &lt;attribute '__weakref__' of 'Province' objects&gt;,
+                    'func': &lt;function Province.func at 0x101897950&gt;,
+                    '__init__': &lt;function Province.__init__ at 0x1018978c8&gt;}
+
+        f. __str__  
+            如果一个类中定义了`__str__`方法，那么在打印 对象 时，默认输出该方法的返回值。
+
+        g. __getitem__， __setitem__，__delitem__ 
+            用于索引操作，如字典。以上分别表示获取、设置、删除数据
+
+        h. __getslice__， _setslice__， __delslice__
+            该三个方法用于分片操作，如：列表
+
+3. 方法
+    a. 私有方法 __functionName( ), 函数内部 self.__functionName() 调用
+    b. __del__方法 当对象被释放的时候，触发该方法。
+        1) 如果在程序结束时，有些对象还存在，
+            则python解释器会自动调用他们的__del__方法完成清理工作
+        2) 引用计数 
+            import sys
+            sys.getrefcount()
+    c. 静态方法
+    d. __new__ 方法  
+        #调用父类的new方法创建对象
+        object.__new__(cls)
+    e. 创建一个对象，3件事情
+        1) 调用 __new__ 方法创建对象，然后找到一个变量来接收 __new__ 的返回值，
+            这个返回值表示创建出来的对象的引用。
+        2) __init__（刚刚创建出来的对象的应用）
+        3) 返回对象的引用
+</code></pre>
+<pre><code class="python">class ClassName:
+    pass
+#属性
+#方法
+def funcname(self, parameter_list):
+    pass
+
+#定义一个类
+class ClassName:
+    pass
+#属性
+#初始化对象 -类似构造函数
+def __init__(self, a, b):
+    #初始化属性
+    self.a = a
+    self.b = b
+
+#输出对象的描述信息,在需要打印对象时
+def __str__(self):
+    return &quot;%s -- %s&quot;%(self.a, self.b)
+
+#方法
+def funcname(self, parameter_list):
+    print(&quot;%s - %s&quot;, %(self.a, self.b))
+#创建一个对象
+objectC = ClassName(a, b)
+#调用对象的方法
+objectC.funcname()
+
+class Family:
+    def __init__(self, area, info, addr):
+        self.area = area
+        self.info = info
+        self.addr = addr
+        self.leftArea = area
+        self.containItem = []
+
+    def __str__(self):
+        msg = &quot;面积:%d M^2,可用面积:%d M^2,名称：%s,地址是%s,分别有&quot;
+            %(self.area, self.leftArea ,self.info, self.addr)
+        homeNameitem = &quot;:&quot;
+        for item in self.containItem:
+            homeNameitem += item.homeName + ','
+            homeNameitem += &quot;等&quot;
+            msg += homeNameitem
+        return msg
+
+    def add_item(self, item):
+        self.leftArea -= item.homeArea
+        self.containItem.append(item)
+
+    class Home:
+    def __init__(self, homeName, homeArea):
+        self.homeName = homeName
+        self.homeArea = homeArea
+
+    def __str__(self):
+        return &quot;名字：%s, 面积：%d M^2&quot;%(self.homeName, self.homeArea)
+
+family = Family(1000000, &quot;中南海&quot;, &quot;西长安街174号中南海新华门&quot;)
+ziGuangGe = Home(&quot;紫光阁&quot;, 1000)
+print(ziGuangGe)
+qinZhengDian = Home(&quot;勤政殿&quot;, 8000)
+print(qinZhengDian)
+family.add_item(ziGuangGe)
+family.add_item(qinZhengDian)
+print(family)
+
+</code></pre>
+
+<h2 id="_3">继承</h2>
+<pre><code>1. 单继承
+
+2. 私有方法，私有属性
+    1) 私有方法不会被继承
+    2) 私有属性不会被继承 _类名__属性名
+    3) 如果调用的时继承的父类中的共有方法，可以在这个共有方法红访问父类中的私有属性和私有方法
+    4) 如果子类中实现一个共有方法，那么这个方法是不能够调用继承的父类中的私有方法和私有属性的
+3. 重写  父类方法同名覆盖
+    1) 子类调用父类方法
+
+4. 多继承
+    1) 多继承遍历树
+</code></pre>
+<pre><code class="python">
+# 单继承
+class ClassF:
+    pass
+class ClassA(ClassF):
+    pass
+
+
+# 重写
+class ClassF:
+    def funcName(self):
+        pass
+#子类，继承
+class ClassA(ClassF):
+    pass
+#子类重写
+class ClassB(ClassF):
+#重写父类的方法
+    def funcName(self):
+        pass
+
+# 多继承
+#父类
+class ClassF:
+    def funcName(self):
+        pass
+#子类，继承
+class ClassA(ClassF):
+    pass
+#子类重写
+class ClassB(ClassF):
+    #重写父类的方法
+    def funcName(self):
+        pass
+#子类调用父类的方法
+#方法一
+ClassF.funcName(self)
+    #方法二
+    super().bark()
+
+
+class CatStore(object):
+    def __init__(self):
+        self.factory = Factory()
+
+    def order(self, car_type):
+        return self.factory.select_car_by_type(car_type)
+
+    class Factory(object)
+        def select_car_by_type(car_type):
+            if car_type == 's':
+                return Suonata()
+            elif car_type == 'm':
+                return Mingtu()
+
+
+# 多继承遍历树
+#父类   
+class ClassBase(object):
+    pass
+
+#子类，继承
+class ClassA(ClassBase):
+    pass
+
+#子类重写 
+class ClassB(ClassBase):
+    pass
+
+# 多继承
+class ClassAB(ClassA, ClassB):
+    pass
+
+print(ClassAB.__mro__)
+# =&gt; (&lt;class '__main__.ClassAB'&gt;,
+# &lt;class '__main__.ClassA'&gt;,
+# &lt;class '__main__.ClassB'&gt;,
+# &lt;class '__main__.ClassBase'&gt;,
+# &lt;class 'object'&gt;)
+# C3算法
+</code></pre>
+
+<h2 id="_4">多态</h2>
+<pre><code>单一函数表现多种状态
+</code></pre>
+<pre><code class="python">#-*- coding:utf-8 -*-
+#Test word
+class C1(object):
+    def pr(self):
+        print(&quot;C1&quot;)
+
+class C2(C1):
+    def pr(self):
+        print(&quot;C2&quot;)
+
+def intr(temp): 
+    temp.pr()
+    c1 = C1()
+    c2 = C2()
+    intr(c1)
+    intr(c2)
+</code></pre>
+
+<h2 id="_5">类对象，实例对象</h2>
+<pre><code>1. 类对象
+    1) 类属性：类属性所属于类对象，并且多个实例对象之间   类名.属性名
+    2) 类方法：可以通过类的名字调用类的方法，还可以通过这个类创建出来的对象，去调用这个类的方法。
+2. 实例对象
+    1) 实例属性：和具体的某个实例对象有关系，并且一个实例对象和另一个实例对象是不共享属性的
+    2) 实例方法：对象内部方法
+3. 静态方法
+    a. Staticmethod
+    b. Property
+        经典类中的属性只有一种访问方式，其对应被 @property 修饰的方法
+        新式类中的属性有三种访问方式，并分别对应了三个被 
+            @property 
+            @方法名.setter
+            @方法名.deleter
+        修饰的方法
+        由于新式类中具有三种访问方式，我们可以根据它们几个属性的访问特点，
+            分别将三个方法定义为对同一个属性：获取、修改、删除
+
+        property 方法中有个四个参数
+            第一个参数是方法名，调用 `对象.属性` 时自动触发执行方法 
+            第二个参数是方法名，调用 `对象.属性 ＝ XXX` 时自动触发执行方法
+            第三个参数是方法名，调用 `del 对象.属性` 时自动触发执行方法
+            第四个参数是字符串，调用 `对象.属性.__doc__`,此参数是该属性的描述信息
+
+        由于类属性方式创建`property`属性具有3种访问方式，
+            我们可以根据它们几个属性的访问特点，分别将三个方法定义为对同一个属性：获取、修改、删除
+
+4. 方法包括：实例方法、静态方法和类方法，三种方法在内存中都归属于类，区别在于调用方式不同。
+    1) 实例方法：由对象调用
+        至少一个 self 参数； 
+        执行实例方法时，自动将调用该方法的对象赋值给 self ;
+    2) 类方法：由类调用
+        至少一个 cls 参数；
+        执行类方法时，自动将调用该方法的类赋值给 cls ;
+    3) 静态方法：由类调用；无默认参数；
+
+5. 解耦
+    a. 简单工厂设计模式
+    b. 工厂方法模式
+    c. 单例
+</code></pre>
+<pre><code class="python"># 静态方法
+class Game(object):
+    #类属性
+    num = 0
+    #实例方法
+    def __init__(self):
+    #实例属性
+    self.name = &quot;AAA&quot;
+
+    #类方法
+    @classmethod
+    def add_num(cls):
+    cls.num = 1
+
+    #静态方法
+    @staticmethod
+    def pri():
+    print(&quot;-------------------&quot;)
+
+Game.pri()
+game = Game()
+Game.add_num()
+print(Game.num)
+print(game.num)
+game.pri()
+
+
+# 简单工厂模式
+class Car(object):
+    def move(self):
+        print(&quot; ==&gt; &quot;)
+
+    def music(self):
+        print(&quot; ==Music== &quot;)
+
+    def stop(self):
+        print(&quot; =X=&gt; &quot;)
+
+class Suonata(Car):
+    pass
+
+class Mingtu(Car):
+    pass
+
+car_store = CatStore()
+car = car_store.order('s')
+
+# Property
+class Foo(object):
+    @property
+    def prop(self):
+        pass
+fo = Foo()
+ret = fo.prop
+
+#单例,单初始化
+class DanLiTest(object):
+    __instance = None
+    __initFlag = False
+    def __new__(cls, a):
+        if cls.__instance == None:
+            cls = object.__new__(cls)
+        return cls.__instance
+
+    def __init__(self, a):
+        if Dag.__initFlag == False:
+            self.a = a
+        DanLiTest.__init__ = True; 
+
+a = DanLiTest(&quot;aaa&quot;)
+print(id(a))
+b = DanLiTest(&quot;bbb&quot;)
+print(id(b))
+
+</code></pre>
+
+<h2 id="_6">异常</h2>
+<pre><code>1. 异常捕获
+
+2. 异常传递
+    若异常在该函数中没有被捕获，则向上一级函数传递该异常，直到被捕获。
+
+3. 抛出自定义异常
+
+4. 异常处理中重新抛出该异常
+    # 在异常处理阶段，某种条件不满足，导致异常被无法处理
+    # 则可以重新抛出该异常。
+    Raise
+</code></pre>
+<pre><code class="python">
+#可能出现的异常代码
+try:
+    pass
+#针对某元组类型的异常捕获
+except (expression1,expression2)
+    pass
+#除元组内的异常类型，捕获其他类型的异常
+#并将异常类型存储于identifier
+except Exception as identifier:
+    pass
+#没有异常的情况执行
+else:
+    pass
+#不管有没有异常情况，都会执行
+finally:
+    pass
+
+#自定义异常
+class DefException(Exception):
+    pass
+#手动抛出该异常
+raise DefException()
+</code></pre>
+
+<h2 id="_7">模块</h2>
+<pre><code>1. 模块导入, 导入模块的方式
+    如果一个文件中有__all__变量，那么也就意味着这个变量中的元素，
+    会被from xxx import *时导入
+    而没有存在在列表["xxx"]中元素不会被导入
+        `__all__ = ["defxxx1", "defxxx2"]`
+
+2. 模块别名
+    #模块别名
+
+3. 模块测试
+</code></pre>
+<pre><code class="python"># 1
+import impxxx
+    impxxx.defxxx()
+
+from impxxx import defxxx1, defxxx2
+    defxxx1()
+
+from impxxx import *
+    defxxx()
+
+# 2
+import impxxx as ipmxxxx
+
+# 3
+if __name__ == &quot;__impxxx__&quot;:
+    defxxx()
+</code></pre>
+
+<h2 id="python">python格式</h2>
+<pre><code class="python">import impxxx
+    def main():
+        pass
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h2 id="_8">包</h2>
+<pre><code>1. 在包文件夹下，创建 __init__.py 文件
+    __all__ = ["impxxx"]
+
+2. 包内模块
+    #包内导入相应的模块
+    __all__ = ["impxxx"]
+    # 导入包后，再导入模块，这样就可以直接使用
+    # 包名.模块名.类名/方法名
+    # 的方式使用，不需要再额外导入包内模块
+    # python2
+        import impxxx
+    # python3
+        from .import impxxx
+
+3. 创建，打包，分享，安装
+    setup.py
+    from distutils.core import setup
+    # 名字 版本 描述信息 作者 tree 包名.模块名
+    setup(name="Yvan", version="1.0",
+        description="Yvan's module",
+        author="dongGe",
+        py_modules=['Msg.msgipmxxx1','Msg.msgipmxxx2'])
+
+    python3 setup.py build
+    =&gt;
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/Msg
+    copying Msg/__init__.py -&gt; build/lib/Msg
+    copying Msg/msgipmxxx1.py -&gt; build/lib/Msg
+    copying Msg/msgipmxxx2.py -&gt; build/lib/Msg
+
+    python3 setup.py sdist
+    =&gt;
+    running sdist
+    running check
+    warning: check: missing required meta-data: url
+    warning: check: missing meta-data: if 'author' supplied, 'author_email' must be supplied too
+    warning: sdist: manifest template 'MANIFEST.in' does not exist (using default file list)
+    warning: sdist: standard file not found: should have one of README, README.txt
+    writing manifest file 'MANIFEST'
+    creating Yvan-1.0
+    creating Yvan-1.0/Msg
+    making hard links in Yvan-1.0...
+    hard linking setup.py -&gt; Yvan-1.0
+    hard linking Msg/__init__.py -&gt; Yvan-1.0/Msg
+    hard linking Msg/msgipmxxx1.py -&gt; Yvan-1.0/Msg
+    hard linking Msg/msgipmxxx2.py -&gt; Yvan-1.0/Msg
+    creating dist
+    Creating tar archive
+    removing 'Yvan-1.0' (and everything under it)
+
+    ├── dist
+    │ └── Yvan-1.0.tar.gz
+
+    tar -zxvf Yvan-1.0.tar.gz
+    python3 setup.py install
+</code></pre>
+<h2 id="_9">程序参数</h2>
+<pre><code class="python">import sys
+    def main():
+    print(sys.argv)
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h2 id="_10">列表生成式</h2>
+<pre><code class="python">#(10, 78) =&gt; 10 - 77
+range(10, 78)
+#(10), 18, 2) =&gt; [10, 12, 14, 16]
+range(10, 18, 2)
+# range风险 
+# python2 生成数较大时，会占用大量内存，过大量内存系统或将不予分配
+# python3中延迟生成，当需要相关数据时，临时生成
+# =&gt; [1 - 17]
+a = [i for i in range(1, 18)]
+# =&gt; [0, 2, 4, 6, 8]
+b = [i for i in range(10) if i % 2 == 0]
+# =&gt; [0, 0, 1, 1, 2, 2]
+c = [i for i in range(3) for j in range(2)]
+# =&gt; [(0, 0), (0, 1), (1, 0), (1, 1), (2, 0), (2, 1)]
+d = [(i, j) for i in range(3) for j in range(2)]
+# =&gt; [(0, 0, 0), (0, 0, 1), ...]
+e = [(i, j, k) for i in range(3) for j in range(3) for k in range(3)]
+</code></pre>
+
+<h2 id="setlisttuple">set、list、tuple</h2>
+<pre><code>set集合 没有重复项
+</code></pre>
+<h2 id="gil">GIL (全局解释器锁)</h2>
+<pre><code>GIL（全局解释器锁）
+GIL面试题如下
+描述Python GIL的概念， 以及它对python多线程的影响？
+编写一个多线程抓取网页的程序，并阐明多线程抓取程序是否可比单线程性能有提升，并解释原因。
+
+Guido的声明：http://www.artima.com/forums/flat.jsp?forum=106&amp;thread=214235
+
+he language doesn't require the GIL
+    -- it's only the CPython virtual machine that has historically been unable to shed it.
+
+参考答案:
+    Python语言和GIL没有半毛钱关系。仅仅是由于历史原因在Cpython虚拟机(解释器)，难以移除GIL。
+    GIL：全局解释器锁。每个线程在执行的过程都需要先获取GIL，保证同一时刻只有一个线程可以执行代码。
+    线程释放GIL锁的情况： 在IO操作等可能会引起阻塞的system call之前,可以暂时释放GIL,
+    但在执行完毕后,必须重新获取GIL Python 3.x使用计时器（执行时间达到阈值后，
+    当前线程释放GIL）或Python 2.x，tickets计数达到100
+    Python使用多进程是可以利用多核的CPU资源的。
+    多线程爬取比单线程性能有提升，因为遇到IO阻塞会自动释放GIL锁
+</code></pre>
+<h2 id="_11">胶水粘合</h2>
+<ol>
+<li>C语言胶水粘合示例</li>
+</ol>
+<pre><code class="python">    import threading
+    import ctypes
+
+    def main():
+        lib = ctypes.cdll.LoadLibrary(&quot;./xxx.so&quot;)
+        t = threading.Thread(target = lib.xxx)
+        t.start()
+        while True:
+            pass
+
+    if __name__ == &quot;__main__&quot;:
+        main()
+</code></pre>
+
+<h2 id="_12">深拷贝，浅拷贝</h2>
+<ol>
+<li>深浅拷贝实例</li>
+</ol>
+<pre><code class="python">import copy
+    def main():
+    a = [11, 22]
+    b = a
+    b.append(33)
+
+# 浅拷贝
+#copy.copy()
+# 深拷贝函数
+c = copy.deepcopy(a)
+c.append(44)
+print(a)
+print(b)
+print(c)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+root@DESKTOP-P2IBM15:/mnt/c/Users/Night/Documents/python# python3 testPy.py
+[11, 22, 33]
+[11, 22, 33]
+[11, 22, 33, 44]
+</code></pre>
+
+<h2 id="_13">私有化</h2>
+<ol>
+<li>xx: 公有变量</li>
+<li>_x: 单前置下划线,私有化属性或方法，<code>from somemodule import *</code> 禁止导入,类对象和子类可以访问</li>
+<li>__xx：双前置下划线,避免与子类中的属性命名冲突，无法在外部直接访问(名字重整所以访问不到)</li>
+<li><strong>xx</strong>: 双前后下划线,用户名字空间的魔法对象或属性。例如:<strong>init</strong> , __ 不要自己发明这样的名字</li>
+<li>xx_:单后置下划线,用于避免与Python关键词的冲突</li>
+</ol>
+<h2 id="import">Import 导入模块</h2>
+<pre><code>1. Import 搜索路径
+    • 从上面列出的目录里依次查找要导入的模块文件
+    • '' 表示当前路径
+    • 列表中的路径的先后顺序代表了python解释器在搜索模块时的先后顺序
+        import sys
+        sys.path
+
+        ['(当前路径)', 
+        '/usr/lib/python36.zip', 
+        '/usr/lib/python3.6', 
+        '/usr/lib/python3.6/lib-dynload', 
+        '/usr/local/lib/python3.6/dist-packages', 
+        '/usr/lib/python3/dist-packages']
+2. 重新导入模块
+    a. 模块被导入后，import module不能重新导入模块，重新导入需用reload
+        from imp import reload
+        reload(xx)
+</code></pre>
+<h2 id="_14">封装，继承，多态</h2>
+<pre><code>a. __class__
+    i. 对象
+b. __dict__
+    i. 属性列表
+</code></pre>
+<h2 id="mro">多继承以及MRO顺序</h2>
+<pre><code>1. super().__init__相对于类名.__init__，在单继承上用法基本无差
+2. 但在多继承上有区别，super方法能保证每个父类的方法只会执行一次，
+    而使用类名的方法会导致方法被执行多次，具体看前面的输出结果
+3. 多继承时，使用super方法，对父类的传参数，
+    应该是由于python中super的算法导致的原因，必须把参数全部传递，否则会报错
+4. 单继承时，使用super方法，则不能全部传递，
+    只能传父类方法所需的参数，否则会报错
+5. 多继承时，相对于使用类名.__init__方法，要把每个父类全部写一遍, 而使用super方法，
+    只需写一句话便执行了全部父类的方法，这也是为何多继承需要全部传参的一个原因
+</code></pre>
+<h2 id="with">With 上下文管理</h2>
+<pre><code>1. 任何实现了 __enter__() 和 __exit__() 方法的对象都可称之为上下文管理器，
+    上下文管理器对象可以使用 with 关键字。显然，文件（file）对象也实现了上下文管理器。
+2. Python 还提供了一个 contextmanager 的装饰器，更进一步简化了上下文管理器的实现方式。
+    通过 yield 将函数分割成两部分，yield 之前的语句在 __enter__ 方法中执行，
+        yield 之后的语句在 __exit__ 方法中执行。紧跟在 yield 后面的值是函数的返回值。
+</code></pre>
+<pre><code class="python">from contextlib import contextmanager
+
+@contextmanager
+</code></pre>
+
+<h2 id="_15">闭包</h2>
+<pre><code>1. 思考： 函数，匿名函数，闭包，对象 当做参数时， 有什么区别
+    i. 匿名函数能够完成基本的简单功能，传递是这个函数的引用 只有功能
+    ii. 普通函数能够完成较为复杂的功能，传递是这个函数的引用 只有功能
+    iii. 闭包能够将较为复杂的功能，传递时这个闭包中的函数以及数据，因此传递时功能 + 数据
+    iv. 对象能够完成最为复杂的功能，传递时很多数据 + 很多功能，因此传递是功能 + 数据
+2. 修改关键字
+    i. Nonlocal
+</code></pre>
+<h2 id="_16">装饰器</h2>
+<pre><code>1. @装饰器名 
+    函数()
+
+2. 参数装饰器
+</code></pre>
+<pre><code class="python"># 通用装饰器
+def secoratorFunc(func):
+    def sec_func(*args, **wkargs):
+    print(&quot;-- --&quot;)
+    return func(*args, **wkargs)
+return sec_func
+
+@ secoratorFunc
+def test(a, *args, **kwarge):
+    print(&quot;-- --&quot;, a, args, kwarge)
+    return a
+
+print(test(1, 2, b = 3))
+
+&quot;&quot;&quot;
+-- --
+-- -- 1 (2,) {'b': 3}
+1
+&quot;&quot;&quot;
+</code></pre>
+
+<h2 id="_17">元类</h2>
+<pre><code>1. Globals
+
+2. Type()
+    type(类名, 由父类名称组成的元组（针对继承的情况，可以为空），包含属性的字典（名称和值))
+</code></pre>
+<pre><code class="python">&gt;&gt;&gt; globals
+&lt;built-in function globals&gt;
+&gt;&gt;&gt; globals()
+{'__name__': '__main__', 
+'__doc__': None, 
+'__package__': None, 
+'__loader__': &lt;class '_frozen_importlib.BuiltinImporter'&gt;, 
+'__spec__': None, '__annotations__': {},
+'__builtins__': &lt;module 'builtins' (built-in)&gt;}
+
+&gt;&gt;&gt; help(type)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../python_wsgi/" class="btn btn-neutral float-right" title="Python WSGI">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../python1/" class="btn btn-neutral" title="Python 基础"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../python1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../python_wsgi/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

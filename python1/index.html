@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python 基础 - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python \u57fa\u7840";
+    var mkdocs_page_input_path = "python1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python 基础</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#print">Print</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#python2-python3">Python2 , Python3 的区别</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">类型转换</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#if">If判断</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">关键字</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">运算符</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#while">while</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for">for</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#break-continue">break continue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">字符串</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">列表</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">字典</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">函数</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">元组</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">引用</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">文件</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python2/">Python 面向对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cshirp/">C#</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+        
+          <li>个人笔记 &raquo;</li>
+        
+      
+    
+    <li>Python 基础</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="python">Python 基础</h1>
+<h2 id="print">Print</h2>
+<pre><code>1. 格式符号转换
+    符号    说明  
+    %c      字符  
+    %s      通过str( ) 字符串转换来格式化  
+    %i      有符号十进制整数  
+    %d      有符号十进制整数  
+    %o      八进制整数  
+    %x      十六进制整数（字母小写）  
+    %X      十六进制整数（字母大写）  
+    %e      索引符号（小写'e'）  
+    %E      索引符号（大写"E"）  
+    %f      浮点实数  
+    %g      %f 和 %e 的简写  
+    %G      %f 和 %E的简写
+
+2. Print(" %s, %d, %s"%(name, age, addr))
+</code></pre>
+<h2 id="python2-python3">Python2 , Python3 的区别</h2>
+<ol>
+<li>中文处理
+    a. <code>#coding=utf-8</code>
+    b. <code>#_*_* coding:utf-8 _*_</code></li>
+<li><code>Input("")</code><br />
+    a. <code>Py3</code> 将 <code>i = input()</code> 作为输入字符串的信息存入变量 <code>I</code><br />
+    b. <code>Py2</code> 将 <code>i = input ("")</code> 将输入的内容当作代码执行，在python2中将使用 <code>raw_input()</code></li>
+</ol>
+<h2 id="_1">类型转换</h2>
+<pre><code>常用的数据类型转换
+
+        函数                          说明
+    int(x [,base ])             将x转换为一个整数
+    long(x [,base ])            将x转换为一个长整数
+    float(x )                   将x转换到一个浮点数
+    complex(real [,imag ])      创建一个复数
+    str(x )                     将对象 x 转换为字符串
+    repr(x )                    将对象 x 转换为表达式字符串
+    eval(str )                  用来计算在字符串中的有效Python表达式,并返回一个对象
+    tuple(s )                   将序列 s 转换为一个元组
+    list(s )                    将序列 s 转换为一个列表
+    chr(x )                     将一个整数转换为一个字符
+    unichr(x )                  将一个整数转换为Unicode字符
+    ord(x )                     将一个字符转换为它的整数值
+    hex(x )                     将一个整数转换为一个十六进制字符串
+    oct(x )                     将一个整数转换为一个八进制字符串
+</code></pre>
+<h2 id="if">If判断</h2>
+<pre><code>1. If x: else
+2. If x: elif x: .. else
+</code></pre>
+<h2 id="_2">关键字</h2>
+<pre><code>&gt;&gt;&gt; import keyword
+&gt;&gt;&gt; keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 
+'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+    'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+</code></pre>
+<h2 id="_3">运算符</h2>
+<pre><code>+ - * %  
+//              整除  
+**              幂  
+/               除  
+"xxx" * n       字符串累加 N 次  
+&lt;&gt;  !=          !=  
+or              ||  
+and             &amp;&amp;  
+not()           !  
++= -=           (自身)修改
+</code></pre>
+<h2 id="while">while</h2>
+<pre><code>while x:
+    pass
+</code></pre>
+<h2 id="for">for</h2>
+<pre><code>a. for i in range():
+b. for …(break) else:
+</code></pre>
+<h2 id="break-continue">break continue</h2>
+<pre><code>略
+</code></pre>
+<h2 id="_4">字符串</h2>
+<pre><code>a. +  
+b.  " .. %s .."%x  
+c. A = "names"   A[2] =&gt; m  
+d. 字符串分割  
+    A[1:3] = am     X[起始位: 终值位]
+    A[1:-1]= am     X[起始位: 倒数终值位]
+    A[1:] = ames    x[起始位: ]
+    A[1:-1:2]       X[起始位: 终止位：步长]
+e. 逆序  
+    name = "yurisa";  
+    print(name[::-1])  
+f. 字符串的常见操作  
+    Find                正查找，如果是返回开始的索引值，否则返回-1
+    Rfind               逆向查找
+    Index               正查找，未查到则抛出异常
+    Rindex              逆向查找
+    Count               统计出现的个数
+    Replace("XXX", "xxx"，x) 替换,替换次数
+    Split(" ")          切割
+    capitalize          把字符串的第一个字符大写
+    title               把字符串的每个单词首字母大写
+    startswith          检查字符串是否是以 x 开头, 是则返回 True，否则返回 False
+    endswith            检查字符串是否以 X 结束，如果是返回True,否则返回 False
+    Lower               转换 x 中所有大写字符为小写
+    upper               转换 x 中的小写字母为大写
+    Ljust               返回一个原字符串左对齐,并使用空格填充至长度 width 的新字符串
+    rjust               返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串
+    center              返回一个原字符串居中,并使用空格填充至长度 width 的新字符串
+    lstrip              删除 mystr 左边的空白字符
+    rstrip              删除 mystr 字符串末尾的空白字符
+    strip               删除mystr字符串两端的空白字符
+    partition           把mystr以str分割成三部分,str前，str和str后
+    rpartition          类似于 partition()函数,不过是从右边开始
+    splitlines          按照行分隔，返回一个包含各行作为元素的列表
+    Isalpha             如果 mystr 所有字符都是字母 则返回 True,否则返回 False
+    isdigit             如果 mystr 只包含数字则返回 True 否则返回 False
+    isalnum             如果 mystr 所有字符都是字母或数字则返回 True,否则返回 False
+    isspace             如果 mystr 中只包含空格，则返回 True，否则返回 False
+    join                mystr 中每个字符后面插入str,构造出一个新的字符串
+</code></pre>
+<h2 id="_5">列表</h2>
+<pre><code>1.  同时存储多种数据类型 `a = []`
+2. a.append("")         添加
+    a.insert(n,"")          插入
+    a=b + c / a.extend(b)   集合追加/合并
+    a.pop()                 把最后一个出栈
+    a.remove(" x ")         根据内容删除，只删除一次
+    a[x :x :x]              列表下标切片
+    Del a[x]                根据下标删除
+    a[x] = x                修改
+    If "xx" in a            查找存在
+    If "xx" not in a        查找不存在
+3. 序列类型
+    排序  a.sort();
+    逆排序     a.sort(reverse = True)
+    逆序  a.reverse()
+</code></pre>
+<h2 id="_6">字典</h2>
+<pre><code>1. Key:value
+    1) Info = {“xx”, "XX"}  初始化字典
+    Info["xx"] = "ZZ"   添加/修改
+    Del info["xx"]  删除
+    Info.get("xx")  获取
+    Len(info)   长度
+    Info.keys() 获取键（2列表，3对象）
+    Info.values()   获取值（2列表，3对象）
+    Info.items（）    
+2. 排序
+    Info.sort(key = lambda x:x['age'])
+</code></pre>
+<h2 id="_7">函数</h2>
+<pre><code>1. def name():
+    pass
+
+2. global 全局修饰
+    1) 在一个函数中，对全局变量进行修改的时，是否使用global，是否修改了全局变量的指向
+        a) 如果修改了指向，即让全局变量指向一个新的内存空间，则必须使用global
+        b) 如果仅仅修改了 指向的空间1中的数据，则此时不必使用global
+
+3. 缺省参数, 命名参数
+
+4. 不定长参数
+    1) *args    元组
+    **kwargs    字典 key = value
+
+5. 拆包
+    1) 在函数调用时，将赋值的元组/字典集合 加 * / ** 拆包后分别赋值给 *args **kwargs 
+    2) 拆元组 *
+    3) 拆字典 **
+    4) 交换
+        a = 5;
+        b = 6;
+        a, b = b, a;
+    5) Enumerate(列表)
+            输出 =&gt;（0，"xx"）
+
+6. 匿名函数 lambda
+    def test(a, b, func):
+        return func(a,b);
+    #lambda x, y: x + y
+    print(test(11, 22, eval(input("请输入一个lambda表达式\n"))));
+</code></pre>
+<h2 id="_8">元组</h2>
+<pre><code>1. 元组的元素不能修改(增，删，改 都不可以)
+2. Info = (11, 22, 33);
+</code></pre>
+<h2 id="_9">引用</h2>
+<pre><code>i. Id() 查看变量的地址
+ii. 集合与字典都是引用类型
+</code></pre>
+<h2 id="_10">文件</h2>
+<pre><code>1. 打开关闭文件
+2. 文件读写
+    访问模式        说明
+    r           以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。
+    w           打开一个文件只用于写入。如果该文件已存在则将其覆盖。
+                如果该文件不存在，创建新文件。
+    a           打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。
+                也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+    rb          以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。
+    wb          以二进制格式打开一个文件只用于写入。
+                如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+    ab          以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。
+                也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+    r+          打开一个文件用于读写。文件指针将会放在文件的开头。
+    w+          打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+    a+          打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。
+                文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。
+    rb+         以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。
+    wb+         以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。
+                如果该文件不存在，创建新文件。
+    ab+         以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。
+                如果该文件不存在，创建新文件用于读写。
+
+3. 定位读写
+    tell()  在读写文件的过程中，如果想知道当前的位置，可以使用来获取
+    seek()  定位到某个位置
+        seek(offset, from)有2个参数
+                • offset:偏移量
+                • from:方向
+                        ○ 0:表示文件开头
+                        ○ 1:表示当前位置
+                        ○ 2:表示文件末尾
+
+4. 文件的相关操作
+    Import os
+    rename(需要修改的文件名, 新的文件名) os模块中的rename()可以完成对文件的重命名操作
+    remove(待删除的文件名) os模块中的remove()可以完成对文件的删除操作
+
+5. 文件夹的相关操作
+    import os
+    os.mkdir("xxx")         创建文件夹
+    os.getcwd()             获取当前目录
+    os.chdir("../")         改变默认目录
+    os.listdir("./")        获取目录列表
+    os.rmdir("xxx")         删除文件夹
+</code></pre>
+<pre><code class="python">file = open(&quot;testFile&quot;, &quot;r+&quot;)
+if file != None:
+    print(file.read())
+file.close()
+
+#-*- coding:utf-8 -*-
+#Test word
+file = open(&quot;testFile&quot;, &quot;r+&quot;)
+    if file != None:
+    file.write(&quot;text&quot;)
+#这里写入文件后，指针会指向文件的末尾，导致无法直接读取
+#限于目前能力有限，使用关闭文件再打开的方式重置指针，读取写入的内容 
+file.close()
+file = open(&quot;testFile&quot;, &quot;r+&quot;)
+print(file.read())
+# Readlines 就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，
+# 并且返回的是一个列表，其中每一行的数据为一个元素
+# Readline  读一行
+
+
+oldFile = open(&quot;testFile&quot;, &quot;r&quot;)
+fcp = open(&quot;testFileCP&quot;, &quot;w&quot;)
+n = 1
+while True:
+    fileCon = oldFile.read(1024 * n)
+    if len(fileCon) == 0:
+        break
+    fcp.write(fileCon)
+    oldFile.close()
+fcp.close()
+
+# 文件定位
+#-*- coding:utf-8 -*-
+#Test word
+f = open(&quot;testFile&quot;, &quot;r&quot;)
+fcon = f.seek(2, 0)
+print(f.read())
+print(f.tell())
+f.close()
+
+# 文件操作相关
+#-*- coding:utf-8 -*-
+#Test word
+import os
+#os.rename(&quot;TestF&quot;,&quot;testFile&quot;)
+os.remove(&quot;testFile&quot;)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../python2/" class="btn btn-neutral float-right" title="Python 面向对象">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../calendar/" class="btn btn-neutral" title="日历"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../calendar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../python2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python WSGI - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python WSGI";
+    var mkdocs_page_input_path = "python_wsgi.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../python1/">Python 基础</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python2/">Python 面向对象</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python WSGI</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#environ">ENVIRON变量</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wsgi_1">WSGI 自定义项</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">输入和错误流</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cshirp/">C#</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+        
+          <li>个人笔记 &raquo;</li>
+        
+      
+    
+    <li>Python WSGI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="wsgi">WSGI</h1>
+<h2 id="environ">ENVIRON变量</h2>
+<pre><code>环境字典需要包含这些CGI环境变量，如公共网关接口规范所定义。
+必须存在以下变量，除非它们的值是空字符串，在这种情况下它们可以省略，除非下面另有说明。
+
+REQUEST_METHOD
+    HTTP请求方法，例如“GET”或“POST”。 
+    这不可能是一个空字符串，因此总是需要。
+SCRIPT_NAME
+    请求URL的“路径”的初始部分，它对应于应用程序对象，以便应用程序知道其虚拟“位置”。 
+    如果应用程序对应于服务器的“根”，则这可以是空字符串。
+PATH_INFO
+    请求URL的“路径”的其余部分，指定应用程序中请求目标的虚拟“位置”。
+    如果请求URL以应用程序根目标为止，并且没有尾部斜杠，则此字符串可能为空字符串。
+QUERY_STRING
+    请求URL中“？”后面的部分，如果有的话。 可能是空的或缺席。
+CONTENT_TYPE
+    HTTP请求中任何Content-Type字段的内容。 可能是空的或缺席。
+CONTENT_LENGTH
+    HTTP请求中任何Content-Length字段的内容。 可能是空的或缺席。
+SERVER_NAME, SERVER_PORT
+    与SCRIPT_NAME和PATH_INFO结合使用时，可以使用这些变量来完成URL。
+    但请注意，HTTP_HOST（如果存在）应优先于SERVER_NAME用于重建请求URL。
+    有关更多详细信息，请参阅下面的URL重建部分。
+    SERVER_NAME和SERVER_PORT永远不能是空字符串，因此始终是必需的。
+SERVER_PROTOCOL
+    客户端用于发送请求的协议版本。 
+    通常，这将类似于“HTTP / 1.0”或“HTTP / 1.1”，并且应用程序可以使用它来确定如何处理任何HTTP请求标头。 
+    （此变量可能应该称为REQUEST_PROTOCOL，因为它表示请求中使用的协议，并不一定是服务器响应中使用的协议。
+    但是，为了与CGI兼容，我们必须保留现有名称。）
+HTTP_ Variables
+    对应于客户端提供的HTTP请求标头的变量（即名称以“HTTP_”开头的变量）。 
+    这些变量的存在与否应与请求中是否存在适当的HTTP头相对应
+
+服务器或网关应尝试提供适用的其他CGI变量。 
+此外，如果正在使用SSL，则服务器或网关还应提供尽可能多的适用的Apache SSL环境变量，
+例如HTTPS = on和SSL_PROTOCOL。 
+但请注意，使用除上面列出的CGI变量之外的任何CGI变量的应用程序必然不可移植到不支持相关扩展的Web服务器。
+（例如，不发布文件的Web服务器将无法提供有意义的DOCUMENT_ROOT或PATH_TRANSLATED。）
+
+符合WSGI的服务器或网关应记录它提供的变量及其定义。
+应用程序应检查是否存在所需的任何变量，并在没有此类变量的情况下制定备用计划。
+
+注意：缺少变量（例如未发生身份验证时的REMOTE_USER）应该不在environ词典中。 
+另请注意，CGI定义的变量必须是字符串，如果它们存在的话。 如果CGI变量的值不是str，则违反此规范。
+</code></pre>
+<h2 id="wsgi_1">WSGI 自定义项</h2>
+<pre><code>wsgi.version
+    元组（1,0），代表WSGI版本1.0。
+wsgi.url_scheme
+    一个字符串，表示调用应用程序的URL的“方案”部分。 通常，这将具有值“http”或“https”，视情况而定。
+wsgi.input
+    可以从中读取HTTP请求正文的输入流（类文件对象）。 
+    （服务器或网关可以按照应用程序的请求执行按需读取，
+    或者它可以预先读取客户端的请求主体并将其缓冲在内存中或磁盘上，
+    或者使用任何其他技术来提供这样的输入流， 它的偏好。）
+wsgi.errors
+    可以从中读取HTTP请求正文的输入流（类文件对象）。 
+    （服务器或网关可以根据应用程序的请求执行按需读取，
+    或者可以写入错误输出的输出流（类文件对象），
+    以便在标准化和可能集中的情况下记录程序或其他错误
+    这应该是一个“文本模式”流;即，应用程序应使用“\ n”作为行结尾，
+    并假设它将被转换为由服务器/网关结束的正确行。
+    对于许多服务器，wsgi.errors将是服务器的主错误日志。
+    或者，这可能是sys.stderr，或某种日志文件。 
+    服务器的文档应包括如何配置此文件或在何处查找记录的输出的说明。
+    如果需要，服务器或网关可以向不同的应用程序提供不同的错误流。
+wsgi.multithread
+    如果应用程序对象可能由同一进程中的另一个线程同时调用，则此值应该为true，否则应该为false。
+wsgi.multiprocess
+    如果另一个进程可以同时调用等效的应用程序对象，则该值应该为true，否则应该为false。
+wsgi.run_once
+    如果服务器或网关期望（但不保证！）应用程序将仅在其包含进程的生命周期内调用一次，
+    则此值应评估为true。 通常，这仅适用于基于CGI（或类似的东西）的网关。
+最后，environ字典还可能包含服务器定义的变量。 这些变量应仅使用小写字母，数字，点和下划线命名，
+并且应使用对定义服务器或网关唯一的名称作为前缀。 
+例如，mod_python可能定义名称为mod_python.some_variable的变量。
+</code></pre>
+<h2 id="_1">输入和错误流</h2>
+<pre><code>服务器提供的输入和错误流必须支持以下方法：
+Method                  Stream              Notes
+read(size)              input               1
+readline()              input               1, 2
+readlines(hint)         input               1, 3
+__iter__()              input               
+flush()                 errors              4
+write(str)              errors   
+writelines(seq)         errors
+
+每个方法的语义都在Python Library Reference中记录，除了上表中列出的这些注释：
+1. 服务器不需要读取客户端指定的Content-Length，如果应用程序尝试读取该点，则允许服务器模拟文件结束条件。 
+    应用程序不应尝试读取比CONTENT_LENGTH变量指定的数据更多的数据。
+
+2. 不支持readline（）的可选“size”参数，因为它可能对服务器作者来说很复杂，并且在实践中并不经常使用。
+
+3. 请注意，readlines（）的提示参数对于调用者和实现者都是可选的。
+    应用程序可以免费提供，服务器或网关可以自由忽略它
+
+由于错误流可能无法倒带，因此服务器和网关可以立即自由转发写入操作，而无需缓冲。
+    在这种情况下，flush（）方法可以是no-op。 
+    但是，便携式应用程序不能假设输出是无缓冲的，或者flush（）是无操作。 
+    如果需要确保输出实际上已被写入，则必须调用flush（）。
+    （例如，最大限度地减少来自写入同一错误日志的多个进程的数据混合。）
+
+上表中列出的方法必须得到符合此规范的所有服务器的支持。 
+符合此规范的应用程序不得使用输入或错误对象的任何其他方法或属性。 
+特别是，应用程序不得尝试关闭这些流，即使它们具有close（）方法。
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mongodb/" class="btn btn-neutral float-right" title="MongoDB">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../python2/" class="btn btn-neutral" title="Python 面向对象"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../python2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mongodb/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
