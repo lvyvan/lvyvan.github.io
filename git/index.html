@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Git - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Git";
+    var mkdocs_page_input_path = "git.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python1/">Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Git</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Git</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#git_1">git基本使用</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">初始化</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">添加</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">展示版本</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">版本回退</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">版本前进</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">查看操作记录</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">查看当前工作区修改</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">提交入暂存区</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">撤销工作区的更改</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">撤销暂存区的更改</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">文件对比</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">删除文件</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">分支</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="" href="../git_pro.md">Git Pro</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cshirp/">C#</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Git &raquo;</li>
+        
+      
+        
+          <li>个人笔记 &raquo;</li>
+        
+      
+    
+    <li>Git</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="git">git</h1>
+<p>该版本仅为快速记忆查询命令，之后会将阅读《git pro》的读书笔记上传。<br />
+但时间不确定，格式需要重新整理，数据也要重做。</p>
+<h2 id="git_1">git基本使用</h2>
+<h3 id="_1">初始化</h3>
+<pre><code>    git init
+</code></pre>
+
+<h3 id="_2">添加</h3>
+<pre><code>    git add WebServer/
+    git commit -m 'apach_0.01'
+</code></pre>
+
+<h3 id="_3">展示版本</h3>
+<pre><code>    git log
+    commit fdc485a3ccd6081855e7fc12d772e051e59be165 (HEAD -&gt; master)
+    Author: root &lt;root@DESKTOP-P2IBM15.localdomain&gt;
+    Date:   Fri Feb 1 16:00:30 2019 +0800
+
+        apach_0.02
+
+    commit e514ea2d45025baa48f508a3c3dbca95b71d03db
+    Author: root &lt;root@DESKTOP-P2IBM15.localdomain&gt;
+    Date:   Fri Feb 1 15:49:55 2019 +0800
+
+        apach_0.01
+</code></pre>
+
+<h3 id="_4">版本回退</h3>
+<pre><code>    #退回上一个版本
+        git reset --hard HEAD^
+        Git reset --hard HEAD~1
+        HEAD is now at e514ea2 apach_0.01
+
+        -&gt;
+            commit e514ea2d45025baa48f508a3c3dbca95b71d03db (HEAD -&gt; master)
+            Author: root &lt;root@DESKTOP-P2IBM15.localdomain&gt;
+            Date:   Fri Feb 1 15:49:55 2019 +0800
+
+                apach_0.01
+</code></pre>
+
+<h3 id="_5">版本前进</h3>
+<pre><code>    #前进到某个版本
+        git reset --hard fdc485a3ccd6081（commit）
+        HEAD is now at fdc485a apach_0.02
+</code></pre>
+
+<h3 id="_6">查看操作记录</h3>
+<pre><code>    git reflog
+    fdc485a (HEAD -&gt; master) HEAD@{0}: reset: moving to fdc485a3ccd6081
+    e514ea2 HEAD@{1}: reset: moving to HEAD^
+    fdc485a (HEAD -&gt; master) HEAD@{2}: commit: apach_0.02 （版本commit）
+    e514ea2 HEAD@{3}: commit (initial): apach_0.01
+</code></pre>
+
+<h3 id="_7">查看当前工作区修改</h3>
+<pre><code>        git status
+    On branch master
+    Changes not staged for commit:
+        (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+        (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+            modified:   WebServer/ProcessServer.py
+
+    no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>
+
+<h3 id="_8">提交入暂存区</h3>
+<pre><code>    root@DESKTOP-P2IBM15:/mnt/c/Users/Night/Documents/python# git add WebServer/
+    root@DESKTOP-P2IBM15:/mnt/c/Users/Night/Documents/python# git status
+    On branch master
+    Changes to be committed:
+        (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+            modified:   WebServer/ProcessServer.py
+</code></pre>
+
+<h3 id="_9">撤销工作区的更改</h3>
+<pre><code>    #查询
+        git status
+        On branch master
+        Changes not staged for commit:
+            (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+            (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+                modified:   WebServer/ProcessServer.py
+
+        no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+    #撤销
+        git checkout --WebServer/ProcessServer.py
+</code></pre>
+
+<h3 id="_10">撤销暂存区的更改</h3>
+<pre><code>    git add WebServer/
+    #撤销暂存区
+    git reset HEAD WebServer/
+    Unstaged changes after reset:
+    M       WebServer/ProcessServer.py
+
+    #撤销工作区
+    git checkout -- WebServer/
+</code></pre>
+
+<h3 id="_11">文件对比</h3>
+<h4 id="head">与 HEAD 版本中的内容对比</h4>
+<pre><code>`-#` 记载配置项
+`+#` 加载配置项
+</code></pre>
+<pre><code>    git diff HEAD -- ProcessServer.py
+    diff --git a/WebServer/ProcessServer.py b/WebServer/ProcessServer.py
+    index c0217d4..ae28dfe 100644
+    --- a/WebServer/ProcessServer.py
+    +++ b/WebServer/ProcessServer.py
+    @@ -14,8 +14,6 @@ class WSCIServer(object):
+                self.application = applic
+                self.static_path = static_path
+                self.tcpServerSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    -        # 设置当服务器先close 即服务器端4次挥手之后资源能够立即释放
+    -        # 这样就保证了，下次运行程序时 可以立即绑定7890端口
+                self.tcpServerSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                self.tcpServerSocket.bind((&quot;&quot;, port))
+                self.tcpServerSocket.listen(128)
+    @@ -116,11 +114,11 @@ class WSCIServer(object):
+                    respServerSocket, client_addr = self.tcpServerSocket.accept()
+                    proc = multiprocessing.Process(target=self.serverClient, args=(respServerSocket, client_addr, ))
+                    proc.start()
+    -            respServerSocket.close() #关闭主线程中的respServerSocket
+    +            respServerSocket.close()
+
+                self.tcpServerSocket.close()
+
+        class InitConfig(object):
+            def __init__(self):
+                self.dynamic_path = None
+    @@ -158,4 +156,3 @@ def main():
+        if __name__ == &quot;__main__&quot;:
+            main()
+
+    -# python3 ProcessServer.py 7890 MiniFrame:application
+</code></pre>
+
+<h4 id="_12">对比两个版本间文件的不同</h4>
+<pre><code>    git diff HEAD^ HEAD -- ProcessServer.py
+    diff --git a/WebServer/ProcessServer.py b/WebServer/ProcessServer.py
+    index 95ba9b8..c0217d4 100644
+    --- a/WebServer/ProcessServer.py
+    +++ b/WebServer/ProcessServer.py
+    @@ -82,11 +82,9 @@ class WSCIServer(object):
+
+            # 动态文件处理
+            def wopFile(self, fileName, respServerSocket):
+    -        # responseHeader = responseHeader.encode(&quot;utf-8&quot;)
+                environ = dict()
+                environ['PATH_INFO'] = fileName
+                responseBody = self.application(environ, self.set_response) # (字典， 函数)
+    -        # &quot;HTTP/1.1 %s\r\n&quot; %self.status
+                responseHeader = self.responseHeader.encode(&quot;utf-8&quot;)
+                responseBody = responseBody.encode(&quot;utf-8&quot;)
+                response = responseHeader + responseBody
+    @@ -105,7 +103,7 @@ class WSCIServer(object):
+                            fileName = &quot;/index.wop&quot;
+                        print(fileName)
+                        if not fileName.endswith(&quot;.wop&quot;):
+    -                    &quot;&quot;&quot;静态文件&quot;&quot;&quot;
+    +                    # 静态                  ^M
+                            self.staticFile(fileName, respServerSocket)
+                        else:
+                            # .wop 动态
+</code></pre>
+
+<h3 id="_13">删除文件</h3>
+<pre><code>    rm -rf run.sh
+    git status
+    On branch master
+    Changes not staged for commit:
+        (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+        (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+            modified:   ProcessServer.py
+            deleted:    run.sh
+
+    no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+    #将删除的文件信息载入暂存区
+        git rm run.sh
+        rm 'WebServer/run.sh'
+
+    #撤销残存区删除
+        git reset HEAD run.sh
+        Unstaged changes after reset:
+        M       WebServer/ProcessServer.py
+        D       WebServer/run.sh
+
+    #撤销删除
+        git checkout -- run.sh
+
+    #单行log
+        git log --pretty=oneline
+        eda9b251b3e16493dd76fab77ac7b04d0c35c5aa (HEAD -&gt; master) apach_0.03
+        fdc485a3ccd6081855e7fc12d772e051e59be165 apach_0.02
+        e514ea2d45025baa48f508a3c3dbca95b71d03db apach_0.01
+</code></pre>
+
+<h3 id="_14">分支</h3>
+<pre><code>    #查看当前分支
+        git branch
+        * master
+
+    #创建并切换到一个新的分支中
+        git checkout -b dev
+        M       WebServer/ProcessServer.py
+        Switched to a new branch 'dev'
+
+        git branch
+        * dev
+            master
+
+    #切换分支
+        git checkout master
+        Switched to branch 'master'
+        git branch
+            dev
+        * master
+
+    #快速合并
+        git merge dev
+        Updating eda9b25..1780993
+        Fast-forward
+            WebServer/ProcessServer.py | 11 ++---------
+            1 file changed, 2 insertions(+), 9 deletions(-)
+
+    #删除分支
+        git branch -d dev
+        Deleted branch dev (was 1780993).
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cshirp/" class="btn btn-neutral float-right" title="C#">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mongodb/" class="btn btn-neutral" title="MongoDB"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mongodb/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../cshirp/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
