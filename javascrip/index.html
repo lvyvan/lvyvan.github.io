@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>JavaScrip - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "JavaScrip";
+    var mkdocs_page_input_path = "javascrip.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人学习笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python/">Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../mysql.dm">Mysql</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git/">Git</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">C#</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../cshirp/">C#</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">JavaScrip</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">JavaScrip</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#javascript_1">JavaScript 基础</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">插件</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#use-strict">use strict</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">变量, 运算</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="Java:'java.md'">None</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人阅读笔记</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../marxism_leninism/">марксизм-ленинизм</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../temp/">Temp</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>JavaScrip &raquo;</li>
+        
+      
+        
+          <li>个人学习笔记 &raquo;</li>
+        
+      
+    
+    <li>JavaScrip</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="javascript">JavaScript</h1>
+<h2 id="javascript_1">JavaScript 基础</h2>
+<h3 id="_1">插件</h3>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a></li>
+<li>Chrome</li>
+</ul>
+<h3 id="use-strict">use strict</h3>
+<p>如果冻结变量后,变量也不可以修改了,使用严格模式会报出错误.<code>"use strict"</code></p>
+<h3 id="_2">变量, 运算</h3>
+<p>略</p>
+<pre><code class="javascript">{
+    let span = document.querySelector(&quot;#msg&quot;)
+    document.querySelector('[name=&quot;age&quot;]').addEventListener(&quot;keyup&quot;, function() {
+        span.innerHTML = this.value &gt;= 30 ? &quot;age !&gt;=90&quot; : &quot;&quot;;
+    });
+}
+
+{
+    function query(el){
+        return document.querySelector(el);
+    }
+
+    query('#form').addEventListener('submit', function (event) {
+        let user = query(&quot;[name='user']&quot;).value.trim();
+        let copyright = query(&quot;[name='copyright']&quot;).checked;
+
+        if (!user || copyright === false) {
+            event.preventDefault();
+            alert(&quot;请接受协议并添加用户名!&quot;)
+        }
+    });
+}
+
+{
+    function div(option = {}) {
+        let div = document.createElement(&quot;div&quot;);
+        div.style.width = option.width ? option.width : &quot;100px&quot;;
+        div.style.height = option.height ? option.height : &quot;100px&quot;;
+        div.style.backgroundColor = option.bgcolor ? option.bgcolor : &quot;red&quot;;
+        document.body.appendChild(div);
+    }
+    div({width:&quot;300px&quot;, bgcolor:&quot;green&quot;});
+}
+
+{
+    function table(options = {tr:5, td: 4}) {
+        document.write(`&lt;table border=&quot;1&quot; width=&quot;100%&quot;`);
+        while (options.tr-- &gt; 0) {
+            document.write(`&lt;tr&gt;`)
+                td = options.td
+                while (td-- &gt; 0) {
+                    document.write(`&lt;td&gt;${td}&lt;/td&gt;`)
+                }
+            document.write(`&lt;/tr&gt;`)
+        }
+        document.write(`&lt;/table&gt;`)
+    }
+
+    table({tr: 10, td: 8})
+}
+
+{
+    let lis = document.querySelectorAll('li');
+    for (const li of lis) {
+        li.addEventListener(&quot;click&quot;, function () {
+            li.style.backgroundColor = &quot;red&quot;;
+        });
+    }
+
+    let hd = ['yvan', '18']
+    for (const iterator of hd) {
+            console.log(iterator)
+    }
+
+    for (const key in hd) {
+        console.log(key)
+        console.log(hd[key])
+    }
+
+    for (const v of 'yvan') {
+        console.log(v)
+    }
+}
+
+{
+     let n = 0;
+    let lst = [];
+    let dict = {};
+    console.log(typeof n);
+    console.log(typeof lst);
+
+    // 原型链
+    //lst.prototype
+    console.log(lst instanceof Array); 
+
+    function User(params) { }
+    let user = new User();
+    console.log(user instanceof Object);
+}
+
+{
+    let str = new String(&quot;Hello world&quot;);
+    console.log(str.toString());
+
+    let str1 = &quot;Hello \&quot;Yvan\&quot;&quot;;
+    console.log(str1)
+
+    console.log(`${str} ${str1}`)
+}
+
+{
+    // ul{
+    //     list-style: none;
+    // }
+    // li{
+    //     padding: 10px;
+    // }
+    //     li:nth-child(odd){
+    //     background-color: green;
+    //     color: white;
+    // }
+
+    function showUrl() {
+        return &quot;https://www.baidu.com&quot;;
+    }
+    console.log(`baidu: ${showUrl()}`)
+
+    let lessons = [
+        {title: &quot;查询响应布局&quot;},
+        {title: &quot;弹性模型&quot;},
+        {title: &quot;栅格系统&quot;},
+    ];
+    function template(){
+        return `
+            &lt;ul&gt;${lessons.map(item =&gt; `&lt;li&gt;${item.title}&lt;/li&gt;`).join('')}&lt;/ul&gt;
+        `;
+    }
+    document.body.innerHTML = template();
+&lt;/script&gt;
+}
+
+{
+    // ul{
+    //     list-style: none;
+    // }
+
+    // li {
+    //     border: solid 1px red;
+    //     margin-bottom: 10px;
+    //     padding: 10px;
+    // }
+
+    // li &gt; a {
+    //     color: green;
+    // }
+
+    let name = 'yvan';
+    let web = 'yvanhome.top';
+    console.log(tag`name:${name}, web${web}.`);
+
+    function tag(strings, ...vars) {
+        console.log(strings);
+        console.log(vars[0]);
+        console.log(vars[1]); 
+    }
+
+    let lessons = [
+        {title: &quot;yvanhome&quot;, author: &quot;yvan&quot;},
+        {title: &quot;web&quot;, author: &quot;yym&quot;},
+        {title: &quot;qingyvan&quot;, author: &quot;yvan&quot;},
+    ];
+
+    function template(){
+        return `&lt;ul&gt;
+            ${lessons.map(
+                item =&gt; links`&lt;li&gt;author:${item.author}, class:${item.title}&lt;/li&gt;`
+            ).join(&quot;&quot;)}
+        &lt;/ul&gt;`
+    }
+
+    function links(strings, ...vars){
+        return strings.map((str, key) =&gt; {
+            return (str + (vars[key]
+                ? vars[key].replace('yvan', `&lt;a href=&quot;http://yvanhome.com&quot;&gt;yvan&lt;/a&gt;`)
+                : &quot; &quot;));
+        }).join(&quot; &quot;);
+    }
+
+    document.body.innerHTML += template();
+}
+
+{
+    let name = &quot;  Hello World  |&quot;;
+    console.log(name.length);
+    console.log(name.toUpperCase());
+    console.log(name.toLowerCase());
+    console.log(name.trim());
+
+    let ps = document.querySelector(&quot;[name='password']&quot;);
+    ps.addEventListener(&quot;keyup&quot;, function () {
+        this.value = this.value.trim()
+        let errmsg = &quot;&quot; 
+        let span = document.getElementsByTagName(&quot;span&quot;);
+        if(this.value.length &lt; 6){
+            errmsg = &quot;!(password &lt; 6)&quot;
+        }
+        span[0].innerHTML = errmsg;
+    });
+}
+
+{
+    let hd = 'yvanhome';
+    //console.log(hd.charAt(0), hd[0]);
+
+    for (let i = 0; i &lt; hd.length; i++) {
+        let span = document.createElement(&quot;span&quot;)
+        span.style.fontSize = (i+1) * 15 + &quot;px&quot;;
+        span.innerHTML = hd[i];
+        document.body.append(span);
+    }
+}
+
+{
+    let hd = &quot;yvanhome.top&quot;;
+    // slice substr substring
+    console.log(hd)
+    console.log(hd.slice(2, 5));
+    console.log(hd.substr(2, 5));
+    console.log(hd.substring(2, 5));
+
+    // anh
+    // anhom
+    // anh
+
+    console.log(hd.slice(-3, -1));
+    console.log(hd.substr(-3, 2));
+    console.log(hd.substring(-3, -1));
+
+    // to
+    // to
+    // '_'
+}
+
+{
+    const hd = &quot;yvanhome.com&quot;;
+    console.log(hd.indexOf(&quot;o&quot;))    // 5
+    console.log(hd.indexOf(&quot;o&quot;, 8)) // 10
+    console.log(hd.indexOf(&quot;$&quot;))    // -1
+
+    console.log(hd.includes(&quot;o&quot;, 4))   // true
+
+    console.log(hd.lastIndexOf(&quot;o&quot;, 12)) // 10
+
+    console.log(hd.startsWith('y'))     // true
+
+    console.log(hd.toLocaleUpperCase().endsWith(&quot;M&quot;)) //true
+
+    const word = ['java', 'css'];
+    const string = &quot;javascript - css&quot;;
+    const status = word.some(word =&gt; {
+        return string.includes(word);
+    });
+    if(status){
+        console.log(&quot;yes&quot;)  //yes
+    }
+}
+
+{
+    const hd = &quot;yvanhome.com&quot;;
+    console.log(hd.replace(&quot;yvan&quot;, &quot;yym&quot;));
+
+    const word = [&quot;HTML&quot;, &quot;Django&quot;];
+    const string = &quot;HTML + Django + javascript&quot;;
+
+    const replaceString = word.reduce((pre, word) =&gt; {
+        return pre.replace(word, `&lt;a href=&quot;?w=${word}&quot;&gt;${word}&lt;/a&gt;`)
+    }, string);
+
+    console.log(replaceString);
+    document.body.innerHTML += replaceString;
+}
+
+{
+    //console.log(&quot;*&quot;.repeat(3));
+    function phone(mobile, len=3) {
+        return mobile.slice(0, len*-1) + '*'.repeat(len);
+    }
+    console.log(phone(&quot;123456789&quot;, 6));
+}
+
+{
+    // &lt;input type=&quot;text&quot; name=&quot;number&quot; value=&quot;99&quot;&gt;
+
+    const string = &quot;99&quot;;
+    console.log(typeof string);         // string
+    console.log(typeof Number(string)); // number
+
+    const number = 66;
+    console.log(typeof String(number)); // string
+
+    const str = &quot;99number&quot;;
+    console.log(parseInt(str));         // 99
+
+    const str2f = &quot;99.99string&quot;;
+    console.log(parseFloat(str2f));     // 99.99
+
+    const cms = 'yvan';
+    console.log(cms.split(&quot;&quot;));         // (4) [&quot;y&quot;, &quot;v&quot;, &quot;a&quot;, &quot;n&quot;]
+
+    const array = [&quot;yvan&quot;, &quot;home&quot;];
+    console.log(array.join(&quot; &quot;));       // yvan home
+
+    console.log(typeof(new String('yvanhome')));    // object
+
+    let array2 = [&quot;yvan&quot;, &quot;home&quot;];
+    console.log(array2.toString())      // yvan,home
+
+    let number2 = 99;
+    console.log(typeof number.toString());      //string
+
+    const boolean = new Boolean(true);
+    console.log(typeof boolean);        // object
+    console.log(boolean.valueOf());     // true
+    if (boolean.valueOf()) {
+        console.log(&quot;yvanhome2&quot;);       // ...
+    }
+
+    let bool1 = true;
+    console.log(typeof bool1);          // boolean
+    if (bool1){
+        console.log(&quot;yvanhome3&quot;)        // ...
+    }
+
+    let number3 = 99;
+    if(number3){
+        console.log(&quot;true2&quot;)            // true
+    }
+    console.log(Boolean(0))             // false
+
+    let array3 = [1, 2];
+    let array0 = [];
+    console.log(Number(array2));        // Nan
+    console.log(Number(array0));        // 0
+    console.log(Boolean(array3));       // true
+    console.log(Boolean(array0));       // true
+
+    console.log(Boolean({}))            // true
+    console.log(Number({}))             // Nan
+
+    let number4 = 0;
+    number4 = !!number4;
+    console.log(number4);                // false
+
+    let str2 = &quot;yvan&quot;;
+    console.log(!!str2);                // true
+    console.log(Boolean(str2));         // true
+
+    let array4 = [];
+    console.log(!![])                   // true
+    console.log(Boolean(array4))        // true
+
+    let object1 = {};
+    console.log(!!object1)              // true
+    console.log(Boolean(object1))       // true
+
+    let date = new Date();
+    console.log(!!date);                // true
+    console.log(Boolean(date));         // true
+
+    // while (true) {
+    //     const year = prompt(&quot;Enter year&quot;).trim();
+    //     if(!year) continue;
+    //     console.log(year == &quot;2020&quot; ? &quot;yes&quot; : &quot;no&quot;);
+    //     break;
+    // }
+
+    let number6 = new Number(99);
+    console.log(typeof number6);        // object
+
+    let number7 = 100;
+    console.log(typeof number7);        // number
+    console.log(number7.valueOf());     // 100
+    console.log(number7);               // 100
+
+    let number8 = 3.141592653;          
+    console.log(number8.toFixed(4));    // 3.1416
+
+    // NaN not a Number
+    console.log(Number.isNaN(&quot;fsfsdf&quot;/2)); // true
+    // ?
+    console.log(Number.isNaN(&quot;fsfsdf&quot;)); // flase
+
+    console.log(Object.is(&quot;yvan&quot;/2, NaN)); // true
+    console.log(Object.is(&quot;yvan&quot;, NaN)); // false
+
+    console.log(Number(false))          // 0
+    console.log(Number(89));            // 89
+
+    const number9 = document.querySelector(&quot;[name='number']&quot;).value;
+    console.log(number9, typeof(number9))   // 99, string
+
+    let array5 = [1,];
+    console.log(Number(array5));        // 1
+
+    console.log(Number({
+        valueOf: function () {
+            return 99
+        }
+    }));                                // 99
+    console.log(Number({}));            // NaN
+}
+
+{
+    console.log(Math.max(2, 4, 6, 8))
+
+    let grade = [12, 3, 4, 35]
+    // apply call
+    console.log(Math.max.apply(null, grade))
+
+    console.log(Math.ceil(5.1))     //6
+    console.log(Math.floor(5.9))    // 5
+
+    console.log((5.556).toFixed(2)) // 5.56
+
+    console.log(Math.round(5.56));  // 6
+    console.log(Math.round(5.4));   // 5
+
+    // 0 &lt;= x &lt; 1
+    console.log(Math.random());
+
+    // 0 - 4 Int
+    console.log(Math.floor(Math.random()*5 + 1))
+
+    // 0 &lt;= x &lt; Max Int
+    function getRandomInti(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    // 得到一个两数之间的随机数
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min; 
+    }
+
+    // 得到一个两数之间的随机整数
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+    }
+
+    // 得到一个两数之间的随机整数，包括两个数在内
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    }
+
+    const info = [&quot;张三&quot;, &quot;李四&quot;, &quot;王五&quot;, &quot;赵六&quot;, &quot;马七&quot;]
+    //console.log(info[getRandomInti(info.length)])
+
+    // start, end -&gt; index
+    function arrayRandomValue(array, start=0, end) {
+        end = end?end:array.length
+        let index = getRandomInt(start, end);
+        return array[index]
+    }
+    console.log(arrayRandomValue(info, 0, 3))
+
+    const date = new Date();
+    console.log(date, typeof date, date*1); // xx &quot;object&quot; 时间辍
+
+    const date1 = Date();
+    console.log(date1, typeof date1);    // xx &quot;string&quot;
+
+    const date2 = Date.now();
+    console.log(date2);                 // 返回时间辍
+
+    // 运行时间
+    console.time(&quot;temp&quot;);
+    console.timeEnd(&quot;temp&quot;);
+
+    let date3 = new Date('2020-9-22 3:11:17');
+    // 0 - 11 月
+    console.log(date3.getMonth());
+
+    let date4 = new Date(2020, 8, 21, 14, 15, 18)
+    console.log(date4)
+
+    const date4_arr = [2020, 8, 21, 14, 15, 18] 
+    let date4_d = new Date(...date4_arr)
+    console.log(date4_d)    // on Sep 21 2020 14:15:18 GMT+0800 (中国标准时间)
+
+    const date5 = date3
+    console.log(date5*1, Number(date5), date5.valueOf(), date5.getTime());  // 获得时间戳
+
+    const date5_s = date5.valueOf()
+    let date5_s_d = new Date(date5_s)
+    console.log(date5_s_d, typeof date5_s_d)    // Tue Sep 22 2020 03:11:17 GMT+0800 (中国标准时间) &quot;object&quot;
+
+}
+
+{
+    function dateFormat(date, format = &quot;YYYY-MM-DD HH:mm:ss&quot;) {
+        const config={
+            YYYY: date.getFullYear(),
+            MM: date.getMonth(),
+            DD: date.getDate(),
+            HH: date.getHours(),
+            mm: date.getMinutes(),
+            ss: date.getSeconds(),
+        };
+        for(const key in config){
+            format = format.replace(key, config[key]);
+        }
+        return format;
+    }
+
+    const date = new Date(&quot;2020-7-1 08:22:21&quot;)
+    console.log(date * 1, Number(date), date.valueOf(), date.getTime());
+
+    const timestamp = date.valueOf();
+    console.log(timestamp, Date(timestamp));
+
+    console.log(date.getFullYear(), date.getMonth()+1, date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds());
+
+    const formatDate = `${date.getFullYear()}年${date.getMonth()}月`
+    console.log(formatDate)
+
+    console.log(dateFormat(date)) 
+}
+
+
+{
+    //  数组
+    // new String, new Boolean, new Number
+    const array = new Array(&quot;aha&quot;, &quot;yvan&quot;)
+    console.log(array, array.join(&quot;|&quot;));
+
+    let array1 = [1, 2, 3, 4];
+    let ar2 = array1;
+    ar2[1] = &quot;yvan&quot;;
+    console.log(array1, ar2);
+    console.table(array1);
+
+    //.. [[], [] ...], [{}, {} ...]
+
+    // const 即不改变地址即可
+    const arr = [1, 2, 3];
+    arr[1] = &quot;yvan&quot;;
+    console.log(arr);
+
+    let arr2 = [1, 2, 3, 4];
+    console.log(arr2.length);
+
+    let arr3 = [&quot;yvan&quot;];
+    arr3[4] = &quot;aha&quot;;
+    console.table(arr3);
+    console.log(arr3, arr3[2]);
+
+    let cms = new Array(1, 23, 44, 6);
+    let cms2 = new Array(6);
+    console.log(cms.length, cms2.length);
+
+    let arr4 = Array.of(6);
+    console.table(arr4);
+
+    console.log(Array.isArray(arr4), Array.isArray(23));
+    console.log([1, 2, 4].toString());
+    console.log(String(arr2));
+    console.log(arr2.join(&quot;&quot;));
+
+    let str = &quot;yvan,lv&quot;
+    console.log(str.split(&quot;,&quot;), Array.from(str));
+
+    let obj = {
+        &quot;name&quot;: &quot;yvan&quot;,
+        &quot;age&quot;: 18,
+        length: 2,
+    }
+
+    let obj2 = {
+        1: &quot;yvan&quot;,
+        3: 18,
+        length: 2,
+    }
+
+    console.log(Array.from(obj));   //(2) [undefined, undefined]
+    console.log(Array.from(obj2));  //(2) [undefined, &quot;yvan&quot;]
+}
+
+{
+    // &lt;div&gt;yvan&lt;/div&gt;
+    // &lt;div&gt;lv&lt;/div&gt;
+
+    let divs = document.querySelectorAll('div');
+    console.log(divs);
+    console.log(Array.from(divs, function (item) {
+        console.log(item.innerHTML);
+        item.style.backgroundColor = &quot;red&quot;;
+        return item;
+    }));
+}
+
+{
+    let arrName = [&quot;yvan&quot;, &quot;lv&quot;];
+    let arrAge = [&quot;18&quot;, &quot;man&quot;];
+
+    for (const value of arrAge) {
+        arrName.push(value);
+    }
+
+    console.table(arrName);
+    arrName = [...arrName, ...arrAge]
+    console.log(arrName);
+
+    function sum(...args) {
+        return args.reduce((s, v) =&gt; {
+            return(s += v);
+        }, 0);
+    }
+
+    console.log(sum(1, 2, 34))
+}
+
+{
+    // &lt;div&gt;yvan&lt;/div&gt;
+    // &lt;div&gt;lv&lt;/div&gt;
+
+    function rangeArray(begin, end) {
+        const array = [];
+        for (let i = begin; i &lt; end; i++) array.push(i);             
+        return array;
+    }
+
+    const div = document.querySelectorAll(&quot;div&quot;)
+    Array.from(div).map(function (item) {
+        console.log(item);
+    });
+
+    Array.prototype.map.call(div, function (item) {
+        console.log(item)
+    });
+
+    [...div].map(function (item) {
+        item.addEventListener(&quot;click&quot;, function () {
+            this.classList.toggle(&quot;hide&quot;);
+        });
+    });
+
+    let array = [&quot;yvan&quot;, &quot;lv&quot;];
+    array.push(&quot;age&quot;, &quot;18&quot;);
+    console.log(array);
+
+    console.table(rangeArray(3, 8));
+
+    let vars = array.pop();
+    console.log(vars);
+    console.table(array);
+
+    let length_array = array.unshift(&quot;name&quot;);
+    console.log(length_array);
+    console.table(array);
+
+    array.shift();
+    console.log(array);
+
+    console.log(Array(5).fill(&quot;yvan&quot;));
+
+    console.log([1, 2, 3, 4, 5, 6].fill(&quot;yvan&quot;, 1, 3));
+
+    console.log(array.unshift(&quot;yvan&quot;, &quot;-&quot;));
+    array.push(&quot;w&quot;, &quot;ha&quot;);
+    console.log(array);
+
+    let arr = [1, 2, 3, 4, 5, 6];
+    let arr2 = arr.slice(1, 3);
+    console.log(arr2, arr);
+
+    let arr3 = arr.splice(1, 3, &quot;yvan&quot;, &quot;lv&quot;);
+    console.log(arr3, arr);
+
+    let arr4 = [1, 2, 3, 4];
+    arr4.splice(1, 0, &quot;9&quot;);
+    arr4.splice(arr4.length, 0, &quot;lv&quot;)
+    arr4.splice(0, 0, &quot;v&quot;)
+    console.log(arr4)
+}
+
+{
+    function move(array, from ,to) {
+        if (from &lt; 0 || to &gt;= array.length) {
+            console.error(&quot;params error&quot;);
+            return;
+        }
+
+        const newArray = [...array];
+        let item = newArray.splice(from, 1);
+        newArray.splice(to, 0, ...item);
+        return newArray;
+    }
+
+    let array = [1, 2, 3, 4];
+    console.table(move(array, 1, 3));
+
+    let arr = [1, 2, 3, 4];
+    let arr2 = arr;
+    // arr.length = 0
+    arr2 = []
+    console.log(arr, arr2);
+
+    let str = &quot;yvan lv&quot;;
+    console.table(str.split(&quot; &quot;));
+    let arrs = [1, 2, 3];
+    console.log(arrs.join(&quot;-&quot;));
+
+    let arrs1 = [&quot;yvan&quot;, &quot;lv&quot;];
+    let arrs2 = [&quot;age&quot;, 18];
+    let arrs4 = [&quot;gender&quot;, &quot;man&quot;];
+    let arrs3 = arrs1.concat(arrs2, arrs4);
+    console.log(arrs3, arrs1);
+
+    let ar1 = [1, 2, 3, 4, 5, 6];
+    console.log(ar1.copyWithin(3, 1, 3));
+}
+
+{
+    let arr = [1, 2, 3, 4, &quot;5&quot;, 2];
+    console.log(arr.indexOf(2, 3));        // 1
+    console.log(arr.lastIndexOf(5));       // -1
+    console.log(arr.includes(2));
+
+    let res = arr.find(function (item) {
+        return item == 2;
+    });
+
+    console.log(res);
+
+    let lessons = [{&quot;name&quot;: &quot;python&quot;}, {&quot;name&quot;: &quot;javascript&quot;}, {&quot;name&quot;: &quot;mysql&quot;}];
+    console.log(lessons.find(function (item) {
+        return item.name == &quot;python&quot;;
+    }));
+
+    console.log(lessons.findIndex(function (item) {
+        return item.name == &quot;mysql&quot;;
+    }));
+}
+
+{
+    function find(array, callback) {
+        for (const value of array) {
+            if(callback(value)) return value; 
+        }
+        return undefined;
+    }
+
+    // 原型链
+    Array.prototype.findValue = function (callback) {
+        for (const value of this) {
+            if(callback(value)) return value; 
+        }
+        return undefined;
+    };
+}
+
+{
+    let arr = [1, 4, 3, 10, 7];
+    arr = arr.sort(function (a, b) {
+        // a - b &lt;
+        // b - a &gt;
+        return a - b; 
+    });
+    console.table(arr)
+
+    let cart = [
+        {name:'iphone', price: 12000},
+        {name:'imac', price: 18000},
+        {name:'ipad', price: 3200},
+    ];
+
+    cart = cart.sort(function (a, b) {
+        return a.price - b.price;
+    });
+
+    console.table(cart);
+}
+</code></pre>
+
+<p>error</p>
+<pre><code class="javascript">{
+    function query(name){
+        return document.querySelector(`[name='${name}']`);
+    }
+
+    console.log(query(&quot;password&quot;))
+
+    let input_lst = document.querySelectorAll(&quot;[name='password'], [name='confirm_password']&quot;);
+
+    [...input_lst].map(item =&gt; {
+        item.addEventListener(&quot;keyup&quot;, function () {
+            let msg = &quot;&quot;;
+            if(query(&quot;password&quot;).value == query(&quot;confirm_password&quot; ||
+                query('password').value.length &lt; 5
+            ).value){
+                mag = &quot;password != confirm_password&quot;
+            }
+            query(&quot;msg&quot;).innerHTML = msg;
+        });
+    });
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../marxism_leninism/" class="btn btn-neutral float-right" title="марксизм-ленинизм">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cshirp/" class="btn btn-neutral" title="C#"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../cshirp/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../marxism_leninism/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

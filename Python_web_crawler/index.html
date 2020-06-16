@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python web crawler - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python web crawler";
+    var mkdocs_page_input_path = "Python_web_crawler.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人学习笔记</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python/">Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../mysql.dm">Mysql</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git/">Git</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">C#</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../cshirp/">C#</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScrip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javascrip/">JavaScrip</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="Java:'java.md'">None</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人阅读笔记</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../marxism_leninism/">марксизм-ленинизм</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../temp/">Temp</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Python web crawler</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="webcrawler-of-python">WebCrawler of Python</h2>
+<h3 id="requests">Requests</h3>
+<p>本内容以文档为主,相关资料为辅助.
+python3.8.2
+2.2.3</p>
+<h4 id="request">request 基本实例代码</h4>
+<pre><code class="python">In [1]: import requests                                                                                    
+
+In [2]: r = requests.get(&quot;https://www.bilibili.com/&quot;)                                                      
+
+In [3]: r                                                                                                  
+Out[3]: &lt;Response [200]&gt;
+
+In [4]: r.text
+Out[4]: ......
+
+In [5]: r.encoding                                                                                         
+Out[5]: 'utf-8'
+
+In [6]: r.content
+Out[6]: b'......'
+
+In [7]: r.content.decode()
+Out[7]: '......'
+
+In [8]: r.status_code                                                                                     
+Out[8]: 200
+
+In [9]: assert r.status_code==200  
+
+In [10]: r.headers                                                                                         
+Out[10]: {......}
+
+In [11]: r.request.url                                                                                     
+Out[11]: 'https://www.bilibili.com/?rt=V%2FymTlOu4ow%2Fy4xxNWPUZzYx2jWOCMcyjpEe9v1CTSQ%3D'
+
+In [12]: r.request.headers                                                                                 
+Out[12]: {'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'main_confirmation=zFb/SZdkDCcXM70hVI065Mw+buJ9laS6mRjYMAdrzGs='}
+
+In [13]: headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'} 
+
+In [14]: r = requests.get(&quot;https://www.baidu.com/&quot;, headers=headers)
+
+In [15]: r.text
+Out[15]: '......'
+
+# 一个简单的GET请求
+headers = {
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36&quot;,
+}
+p = &quot;&quot;
+params = {
+    &quot;ie&quot;: &quot;UTF-8&quot;,
+    &quot;wd&quot;: p,
+}
+url = &quot;https://www.baidu.com/s&quot;
+
+r = requests.get(&quot;https://www.huya.com/&quot;, headers=headers, params=params)
+</code></pre>
+
+<h4 id="_1">提出请求</h4>
+<p>导入模块 <code>import requests</code><br />
+GET 请求 <code>r = requests.get('https://api.github.com/events')</code><br />
+POST 请求 <code>r = requests.post('https://httpbin.org/post', data = {'key':'value'})</code><br />
+PUT 请求 <code>r = requests.put('https://httpbin.org/put', data = {'key':'value'})</code><br />
+DELETE 请求 <code>r = requests.delete('https://httpbin.org/delete')</code><br />
+HEAD 请求 <code>r = requests.head('https://httpbin.org/get')</code><br />
+OPTIONS 请求 <code>r = requests.options('https://httpbin.org/get')</code>  </p>
+<h4 id="params">网址上传递参数 params</h4>
+<ol>
+<li>单值参数  </li>
+</ol>
+<pre><code class="python">payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.get('https://httpbin.org/get', params=payload)
+print(r.url)
+</code></pre>
+
+<ol>
+<li>多值参数  </li>
+</ol>
+<pre><code class="python">payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
+r = requests.get('https://httpbin.org/get', params=payload)
+print(r.url)
+https://httpbin.org/get?key1=value1&amp;key2=value2&amp;key2=value3
+</code></pre>
+
+<h4 id="_2">响应内容</h4>
+<p>请求将自动解码来自服务器的内容。大多数Unicode字符集都是无缝解码的.<br />
+发出请求时,请求会根据HTTP标头对响应的编码进行有根据的猜测.访问时,将使用Requests猜测的文本编码<code>r.text</code>.  </p>
+<pre><code class="python">r = requests.get('https://api.github.com/events')
+r.text 
+'......'
+</code></pre>
+
+<p>使用<code>r.encoding</code>属性找出请求正在使用的编码，并对其进行更改:<br />
+In <code>r.encoding</code> Out<code>'utf-8'</code><br />
+In <code>r.encoding = 'ISO-8859-1'</code><br />
+使用自定义编码.创建编码并在<code>codecs</code>模块中注册了编码,则只需使用编解码器名称作为的值,<code>r.encoding</code>将处理解码.  </p>
+<h4 id="_3">二进制响应内容</h4>
+<p>对于非文本请求，可以以字节形式访问响应主体:  </p>
+<pre><code class="python">r.content
+b'[{&quot;repository&quot;:{&quot;open_issues&quot;:0,&quot;url&quot;:&quot;https://github.com/...
+</code></pre>
+
+<p>编码<code>gzip</code>和<code>deflate</code>自动进行解码<br />
+要根据请求返回的二进制数据创建图像，可以使用以下代码：  </p>
+<pre><code class="python">from PIL import Image
+from io import BytesIO
+
+i = Image.open(BytesIO(r.content))
+</code></pre>
+
+<h4 id="json">JSON响应内容</h4>
+<p>处理JSON数据，则还有一个内置的JSON解码器:</p>
+<pre><code class="python">import requests
+
+r = requests.get('https://api.github.com/events')
+r.json()
+[{'repository': {'open_issues': 0, 'url': 'https://github.com/...
+</code></pre>
+
+<p>如果JSON解码失败,<code>r.json()</code>则会引发异常.<code>ValueError: No JSON object could be decoded</code><br />
+成功返回<code>r.json()</code>并不能表明响应成功.某些服务器可能在失败的响应中返回JSON对象(例如HTTP 500的错误详细信息).<br />
+此类JSON将被解码并返回.若要检查请求是否成功,请使用<code>r.raise_for_status()</code>或检查所需<code>r.status_code</code>的内容.  </p>
+<h4 id="_4">原始响应内容</h4>
+<p>从服务器获取原始套接字响应,则可以访问<code>r.raw</code>.<br />
+若要执行此操作,请确保stream=True在初始请求中进行了设置.完成后,可以执行以下操作:  </p>
+<pre><code class="python">r = requests.get('https://api.github.com/events', stream=True)
+
+r.raw
+# Out: &lt;urllib3.response.HTTPResponse object at 0x101194810&gt;
+
+r.raw.read(10)
+# Out: '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'
+
+# 流式下载时,以下检索内容的首选和推荐方法,使用以下模式来保存流式传输到文件中的内容：
+# chunk_size 调整chunk的大小.
+with open(filename, 'wb') as fd:
+    for chunk in r.iter_content(chunk_size=128):
+        fd.write(chunk)
+</code></pre>
+
+<p>使用<code>Response.iter_content</code>将处理很多直接使用<code>Response.raw</code>要处理的内容.<br />
+<code>Response.iter_content</code>将自动解码<code>gzip</code>和<code>deflate</code>传输编码.<br />
+<code>Response.raw</code>是原始的字节流-不会转换响应内容.需要访问返回的字节,请使用<code>Response.raw</code>.  </p>
+<h4 id="headers">自定义 Headers</h4>
+<p>添加HTTP头的请求,只是在传递<code>dict</code>的<code>headers</code>参数.  </p>
+<pre><code class="python">url = 'https://api.github.com/some/endpoint'
+headers = {'user-agent': 'my-app/0.0.1'}
+
+r = requests.get(url, headers=headers)
+</code></pre>
+
+<p>注意:自定义标头的优先级低于更具体的信息源：<br />
+- Authorization headers set with <code>headers=</code> will be overridden if credentials are specified in <code>.netrc</code>, which in turn will be overridden by the <code>auth= parameter</code>.<br />
+- 如果主机重定向，则将删除授权标头.<br />
+- URL中提供的代理凭证将覆盖<code>Proxy-Authorization</code>标头.<br />
+- 当可以确定内容的长度时,<code>Content-Length</code>标头将被覆盖.<br />
+“request”不会根据指定的自定义标头更改其行为.标头只是传递到最终请求中.<br />
+所有标头值都必须是<code>string</code>，<code>bytestring</code>或<code>unicode</code>.如果允许,建议避免传递<code>unicode</code>标头值.  </p>
+<h4 id="post">更复杂的POST请求</h4>
+<p>发送一些表单编码的数据,像HTML表单一样.为此,只需将字典传递给data参数即可.<br />
+提出请求后,数据字典将自动进行表单编码:  </p>
+<pre><code class="python">payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.post(&quot;https://httpbin.org/post&quot;, data=payload)
+print(r.text)
+# {
+#   ...
+#   &quot;form&quot;: {
+#     &quot;key2&quot;: &quot;value2&quot;,
+#     &quot;key1&quot;: &quot;value1&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>该data参数还可以为每个键具有多个值。这可以通过创建data元组列表或将列表作为值的字典来完成。当表单具有使用同一键的多个元素时，这特别有用:  </p>
+<pre><code class="python">payload_tuples = [('key1', 'value1'), ('key1', 'value2')]
+r1 = requests.post('https://httpbin.org/post', data=payload_tuples)
+payload_dict = {'key1': ['value1', 'value2']}
+r2 = requests.post('https://httpbin.org/post', data=payload_dict)
+# print(r1.text)
+# {
+#   ...
+#   &quot;form&quot;: {
+#     &quot;key1&quot;: [
+#       &quot;value1&quot;,
+#       &quot;value2&quot;
+#     ]
+#   },
+#   ...
+# }
+# r1.text == r2.text
+# True
+</code></pre>
+
+<p>可能想发送未经格式编码的数据.若输入string而不是dict,则该数据将直接发布.<br />
+例如.<code>GitHub API v3</code>接受JSON编码的<code>POST/PATCH</code>数据:  </p>
+<pre><code>import json
+
+url = 'https://api.github.com/some/endpoint'
+payload = {'some': 'data'}
+r = requests.post(url, data=json.dumps(payload))
+</code></pre>
+
+<p>除了dict自己编码外，您还可以使用json参数(在2.4.2版中添加)直接传递它,它将被自动编码:  </p>
+<pre><code class="python">url = 'https://api.github.com/some/endpoint'
+payload = {'some': 'data'}
+
+r = requests.post(url, json=payload)
+</code></pre>
+
+<p>注意,the <code>json</code> parameter is ignored(被忽略) if either <code>data</code> or <code>files</code> is passed.<br />
+在请求中使用<code>json</code>参数会将标头中的<code>Content-Type</code>更改为<code>application/json</code>.  </p>
+<h4 id="post-a-multipart-encoded-file">POST a Multipart-Encoded File</h4>
+<p>通过<code>request</code>，upload Multipart-encoded files.  </p>
+<pre><code class="python">url = 'https://httpbin.org/post'
+files = {'file': open('report.xls', 'rb')}
+
+r = requests.post(url, files=files)
+r.text
+# {
+#   ...
+#   &quot;files&quot;: {
+#     &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>Set the <code>filename</code>,<code>content_type</code> and <code>headers</code> explicitly:  </p>
+<pre><code class="python">url = 'https://httpbin.org/post'
+files = {'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})}
+
+r = requests.post(url, files=files)
+r.text
+# {
+#   ...
+#   &quot;files&quot;: {
+#     &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>如果需要，可以发送字符串作为文件接收:  </p>
+<pre><code class="python">url = 'https://httpbin.org/post'
+files = {'file': ('report.csv', 'some,data,to,send\nanother,row,to,send\n')}
+
+r = requests.post(url, files=files)
+r.text
+# {
+#   ...
+#   &quot;files&quot;: {
+#     &quot;file&quot;: &quot;some,data,to,send\\nanother,row,to,send\\n&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>要发布一个非常大的文件作为<code>multipart/form-data</code>请求,则可能需要流式传输该请求.<br />
+默认情况下，requests不支持此功能，但是有一个单独的软件包可以<code>requests-toolbelt</code>.<br />
+阅读工具带的<a href="https://toolbelt.readthedocs.io/en/latest/">文档</a>，以获取有关如何使用它的更多详细信息.<br />
+要在一个请求中发送多个文件，请参阅<a href="https://requests.readthedocs.io/en/latest/user/advanced/#advanced">高级</a>部分.<br />
+警告:强烈建议以二进制模式打开文件.这是因为请求可能会尝试Content-Length为您提供标头.<br />
+如果这样做,此值将设置为文件中的字节数.如果以文本模式打开文件，则可能会发生错误.  </p>
+<h4 id="_5">响应状态码</h4>
+<p>检查响应状态代码:  </p>
+<pre><code class="python">r = requests.get('https://httpbin.org/get')
+r.status_code
+# 200
+</code></pre>
+
+<p>请求还带有内置的状态码查找对象,以方便参考:  </p>
+<pre><code class="python">r.status_code == requests.codes.ok
+# True
+</code></pre>
+
+<p>提出了错误的请求(4XX客户端错误或5XX服务器错误响应),使用以下命令提出该请求<code>Response.raise_for_status()</code>:</p>
+<pre><code class="python">bad_r = requests.get('https://httpbin.org/status/404')
+bad_r.status_code
+# 404
+
+bad_r.raise_for_status()
+Traceback (most recent call last):
+  File &quot;requests/models.py&quot;, line 832, in raise_for_status
+    raise http_error
+requests.exceptions.HTTPError: 404 Client Error
+</code></pre>
+
+<p>since our <code>status_code</code> for <code>r</code> was <code>200</code>, when we call <code>raise_for_status()</code> we get:</p>
+<pre><code class="python">r.raise_for_status()
+None
+</code></pre>
+
+<h4 id="response-headers">Response Headers</h4>
+<p>使用<code>Python dictionary</code>查看<code>Server's</code>的<code>Response Headers</code>:  </p>
+<pre><code class="python">r.headers
+{
+    'content-encoding': 'gzip',
+    'transfer-encoding': 'chunked',
+    'connection': 'close',
+    'server': 'nginx/1.0.4',
+    'x-runtime': '148ms',
+    'etag': '&quot;e1ca502697e5c9317743dc078f67693f&quot;',
+    'content-type': 'application/json'
+}
+</code></pre>
+
+<p>字典是特殊的:它仅用于<code>HTTP</code>标头.<br />
+根据<code>RFC 7230</code>,<code>HTTP</code>标头名称不区分大小写  </p>
+<p>使用所需的任何大写字母访问标头：</p>
+<pre><code class="python">r.headers['Content-Type']
+'application/json'
+
+r.headers.get('content-type')
+'application/json'
+</code></pre>
+
+<p>服务器可以多次发送具有不同值的相同标头,但是<code>requsets</code>将它们组合在一起,以便可以按照<code>RFC 7230</code>在单个映射中的字典中表示它们:
+- 接收者可以将多个具有相同字段名的头字段组合成一对<code>field-name:field-value</code>,而无需更改消息的语义,方法是按顺序将每个后续字段值附加到组合字段值,并用逗号分隔.</p>
+<h4 id="cookie">Cookie</h4>
+<p>快速访问相应中包含的Cookie:</p>
+<pre><code class="python">url = 'http://example.com/some/cookie/setting/url'
+r = requests.get(url)
+
+r.cookies['example_cookie_name']
+# 'example_cookie_value'
+</code></pre>
+
+<p>将<code>cookie</code>发送到服务器,可以使用以下<code>cookies</code>参数:</p>
+<pre><code class="python">url = 'https://httpbin.org/cookies'
+cookies = dict(cookies_are='working')
+
+r = requests.get(url, cookies=cookies)
+r.text
+'{&quot;cookies&quot;: {&quot;cookies_are&quot;: &quot;working&quot;}}'
+</code></pre>
+
+<p><code>Cookies</code>在<code>RequestsCookieJar</code>中返回,它的行为类似于<code>dict</code>,但也提供了一个更完整的接口,适合在多个域或路径上使用.
+<code>Cookie jar</code>也可以传递给请求:</p>
+<pre><code class="python">jar = requests.cookies.RequestsCookieJar()
+jar.set('tasty_cookie', 'yum', domain='httpbin.org', path='/cookies')
+jar.set('gross_cookie', 'blech', domain='httpbin.org', path='/elsewhere')
+url = 'https://httpbin.org/cookies'
+r = requests.get(url, cookies=jar)
+r.text
+'{&quot;cookies&quot;: {&quot;tasty_cookie&quot;: &quot;yum&quot;}}'
+</code></pre>
+
+<h4 id="redirection-and-history">Redirection and History</h4>
+<p>默认情况下，请求将对<code>HEAD</code>以外的所有动词执行位置重定向.<br />
+使用<code>historyResponse</code>对象的属性来跟踪重定向.<br />
+该<code>Response.history</code>列表包含<code>Response</code>为完成请求而创建的<code>object</code>.<br />
+该列表按从最早到最新的响应排序.<br />
+例如，GitHub将所有HTTP请求重定向到HTTPS:   </p>
+<pre><code class="python">r = requests.get('http://github.com/')
+r.url
+# Out 'https://github.com/'
+
+r.status_code
+# Out 200
+
+r.history
+# Out [&lt;Response [301]&gt;]
+</code></pre>
+
+<p>使用的是<code>GET</code>,<code>OPTIONS</code>,<code>POST</code>,<code>PUT</code>,<code>PATCH</code>或<code>DELETE</code>,则可以使用以下<code>allow_redirects</code>参数禁用重定向处理:  </p>
+<pre><code class="python">r = requests.get('http://github.com/', allow_redirects=False)
+
+r.status_code
+# Out 301
+
+r.history
+[]
+</code></pre>
+
+<p>如果使用的是<code>HEAD</code>,则可以启用重定向:  </p>
+<pre><code class="Python">r = requests.head('http://github.com/', allow_redirects=True)
+
+r.url
+# Out 'https://github.com/'
+
+r.history
+# Out [&lt;Response [301]&gt;]
+</code></pre>
+
+<h4 id="timeouts">Timeouts</h4>
+<p>使用参数告诉<code>requests</code>在指定的秒数后停止等待响应<code>timeout</code>.几乎所有生产代码都应在几乎所有请求中使用此参数.否则,可能会导致程序无限期挂起:  </p>
+<pre><code class="python">requests.get('https://github.com/', timeout=0.001)
+# Out [ 
+# Traceback (most recent call last):
+#   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt; 
+# requests.exceptions.Timeout: HTTPConnectionPool(host='github.com', port=80): Request timed out. (timeout=0.001)
+# ]
+</code></pre>
+
+<p>timeout不是整个响应下载的时间限制;相反,如果服务器timeout几秒钟未发出响应(更确切地说，如果几秒钟内未在基础套接字上接收到任何字节),则会引发异常<code>timeout</code>.如果未明确指定超时,则请求不会超时.  </p>
+<h4 id="errors-and-exceptions">Errors and Exceptions</h4>
+<p>如果出现网络问题(例如<code>DNS</code>故障，连接被拒绝等)，请求将引发<code>ConnectionError</code>异常.
+<code>Response.raise_for_status()</code> will raise an <code>HTTPError</code> if the <code>HTTP</code> request returned an unsuccessful status code.
+如果请求超时,<code>Timeout</code>则会引发异常。
+如果请求超过配置的最大重定向数,<code>TooManyRedirects</code>则会引发异常。
+请求显式引发的所有异常都继承自<code>requests.exceptions.RequestException</code>.</p>
+<h4 id="session-objects">Session Objects</h4>
+<p>通过<code>Session</code>对象,请求中保留某些参数.来自<code>Session</code>实例的所有请求中保留<code>cookie</code>,并将使用<code>urllib3</code>的连接池.<br />
+若向同一主机发出多个请求,则基础<code>TCP</code>连接将被重用,这可能使得性能显着提高(请参阅<code>HTTP</code>持久连接).<br />
+Session对象具有主要Requests API的所有方法.  </p>
+<h5 id="cookie_1">请求中保留一些cookie：</h5>
+<pre><code class="python">s = requests.Session()
+
+s.get('https://httpbin.org/cookies/set/sessioncookie/123456789')
+r = s.get('https://httpbin.org/cookies')
+
+print(r.text)
+# '{&quot;cookies&quot;: {&quot;sessioncookie&quot;: &quot;123456789&quot;}}'
+
+# 会话也可以用于向请求方法提供默认数据。这是通过向Session对象的属性提供数据来完成的：
+s = requests.Session()
+s.auth = ('user', 'pass')
+s.headers.update({'x-test': 'true'})
+
+# both 'x-test' and 'x-test2' are sent
+s.get('https://httpbin.org/headers', headers={'x-test2': 'true'})
+
+传递给请求方法的所有词典都将与设置的会话级值合并.方法级别的参数将覆盖会话参数.
+
+但是请注意,即使使用会话,方法级参数也不会在请求中保留.本示例将仅发送带有第一个请求的cookie,而不发送第二个请求:
+
+s = requests.Session()
+
+r = s.get('https://httpbin.org/cookies', cookies={'from-my': 'browser'})
+print(r.text)
+# '{&quot;cookies&quot;: {&quot;from-my&quot;: &quot;browser&quot;}}'
+
+r = s.get('https://httpbin.org/cookies')
+print(r.text)
+# '{&quot;cookies&quot;: {}}'
+如果要手动向会话添加Cookie，请使用 Cookie实用程序功能进行操作 Session.cookies。
+
+会话也可以用作上下文管理器：
+
+with requests.Session() as s:
+    s.get('https://httpbin.org/cookies/set/sessioncookie/123456789')
+这将确保在with退出该块后立即关闭会话，即使发生未处理的异常也是如此。
+</code></pre>
+
+<p>从Dict参数中删除一个值
+有时您会希望从dict参数中省略会话级密钥。为此，您只需None在方法级参数中将该键的值设置为即可。它会自动被省略。</p>
+<p>您可以直接使用会话中包含的所有值。请参阅会话API文档以了解更多信息.</p>
+<h4 id="request-and-response-objects">Request and Response Objects</h4>
+<p>请求和响应对象<br />
+每当打给<code>requests.get()</code>您的朋友时,您就在做两件事.<br />
+首先,构造一个<code>Request</code>对象,该对象将被发送到服务器以请求或查询某些资源.<br />
+其次,<code>Response</code>一旦请求从服务器返回响应,就会生成一个对象.该<code>Response</code>对象包含服务器返回的所有信息,还包含<code>Request</code>最初创建的对象.<br />
+这是一个简单的请求,可以从<code>Wikipedia</code>的服务器上获取一些非常重要的信息:  </p>
+<pre><code class="python">r = requests.get('https://en.wikipedia.org/wiki/Monty_Python')
+
+# 如果要访问服务器发回的标头，请执行以下操作:
+# 即响应头
+r.headers
+{'content-length': '56170', 'x-content-type-options': 'nosniff', 'x-cache':
+'HIT from cp1006.eqiad.wmnet, MISS from cp1010.eqiad.wmnet', 'content-encoding':
+'gzip', 'age': '3080', 'content-language': 'en', 'vary': 'Accept-Encoding,Cookie',
+'server': 'Apache', 'last-modified': 'Wed, 13 Jun 2012 01:33:50 GMT',
+'connection': 'close', 'cache-control': 'private, s-maxage=0, max-age=0,
+must-revalidate', 'date': 'Thu, 14 Jun 2012 12:59:39 GMT', 'content-type':
+'text/html; charset=UTF-8', 'x-cache-lookup': 'HIT from cp1006.eqiad.wmnet:3128,
+MISS from cp1010.eqiad.wmnet:80'}
+
+# 若要获取发送给服务器的标头,则只需访问请求,然后访问请求的标头:  
+# 请求头
+r.request.headers
+{'Accept-Encoding': 'identity, deflate, compress, gzip',
+'Accept': '*/*', 'User-Agent': 'python-requests/1.2.0'}
+</code></pre>
+
+<p>准备请求<br />
+每当<code>Response</code>从<code>API</code>调用或<code>Session</code>调用收到对象时,该<code>request</code>属性实际上PreparedRequest就是所使用的属性 。在某些情况下，您可能希望在发送请求之前对正文或标题（或其他任何东西）做一些额外的工作。这样做的简单方法如下：</p>
+<pre><code class="python">from requests import Request, Session
+
+s = Session()
+
+req = Request('POST', url, data=data, headers=headers)
+prepped = req.prepare()
+
+# do something with prepped.body
+prepped.body = 'No, I want exactly this as the body.'
+
+# do something with prepped.headers
+del prepped.headers['Content-Type']
+
+resp = s.send(prepped,
+    stream=stream,
+    verify=verify,
+    proxies=proxies,
+    cert=cert,
+    timeout=timeout
+)
+
+print(resp.status_code)
+</code></pre>
+
+<p>由于您没有对Request对象执行任何特殊操作，因此请立即对其进行准备并修改该PreparedRequest对象。然后，将其与发送给requests.<em>或 的其他参数一起发送Session.</em>。</p>
+<p>但是，以上代码将失去拥有Requests Session对象的某些优点 。特别是， Session诸如cookie之类的-level状态不会应用于您的请求。为了得到一个 PreparedRequest与应用这种状态下，更换调用Request.prepare()一起调用 Session.prepare_request()，就像这样：</p>
+<pre><code class="python">from requests import Request, Session
+
+s = Session()
+req = Request('GET',  url, data=data, headers=headers)
+
+prepped = s.prepare_request(req)
+
+# do something with prepped.body
+prepped.body = 'Seriously, send exactly these bytes.'
+
+# do something with prepped.headers
+prepped.headers['Keep-Dead'] = 'parrot'
+
+resp = s.send(prepped,
+    stream=stream,
+    verify=verify,
+    proxies=proxies,
+    cert=cert,
+    timeout=timeout
+)
+
+print(resp.status_code)
+</code></pre>
+
+<p>使用准备好的请求流时，请记住，它不考虑环境。如果您使用环境变量来更改请求的行为，则可能会导致问题。例如：REQUESTS_CA_BUNDLE将不会考虑在中指定的自签名SSL证书。结果抛出了。您可以通过将环境设置显式合并到会话中来解决此问题：SSL: CERTIFICATE_VERIFY_FAILED</p>
+<pre><code class="python">from requests import Request, Session
+
+s = Session()
+req = Request('GET', url)
+
+prepped = s.prepare_request(req)
+
+# Merge environment settings into session
+settings = s.merge_environment_settings(prepped.url, {}, None, None, None)
+resp = s.send(prepped, **settings)
+
+print(resp.status_code)
+</code></pre>
+
+<p>SSL证书验证
+请求验证HTTPS请求的SSL证书，就像Web浏览器一样。默认情况下，启用SSL验证，如果无法验证证书，则请求将抛出SSLError：</p>
+<pre><code class="python">&gt;&gt;&gt; requests.get('https://requestb.in')
+requests.exceptions.SSLError: hostname 'requestb.in' doesn't match either of '*.herokuapp.com', 'herokuapp.com'
+</code></pre>
+
+<p>我在此域上没有SSL设置，因此抛出异常。优秀的。GitHub确实做到了：</p>
+<pre><code class="python">&gt;&gt;&gt; requests.get('https://github.com')
+&lt;Response [200]&gt;
+</code></pre>
+
+<p>您可以verify使用受信任的CA证书将路径传递到CA_BUNDLE文件或目录：
+<code>requests.get('https://github.com', verify='/path/to/certfile')</code>
+或持久性：
+<code>s = requests.Session()</code>
+<code>s.verify = '/path/to/certfile'</code>
+注意
+如果verify将设置为目录的路径，则必须已使用OpenSSL随附的c_rehash实用程序处理了该目录.
+也可以通过REQUESTS_CA_BUNDLE环境变量指定此受信任CA的列表.
+如果设置verify为False，则请求也可以忽略验证SSL证书:</p>
+<p>In <code>requests.get('https://kennethreitz.org', verify=False)</code>
+Out <code>&lt;Response [200]&gt;</code></p>
+<p>默认情况下，verify设置为True。该选项verify仅适用于主机证书。
+客户端证书
+您还可以指定本地证书用作客户端证书，单个文件（包含私钥和证书）或用作两个文件路径的元组：</p>
+<p>In <code>requests.get('https://kennethreitz.org', cert=('/path/client.cert', '/path/client.key'))</code>
+Out <code>&lt;Response [200]&gt;</code>
+或持久性：
+<code>s = requests.Session()</code>
+<code>s.cert = '/path/client.cert'</code>
+如果您指定了错误的路径或无效的证书，则会收到SSLError：</p>
+<p>In <code>requests.get('https://kennethreitz.org', cert='/wrong_path/client.pem')</code>
+Out <code>SSLError: [Errno 336265225] _ssl.c:347: error:140B0009:SSL routines:SSL_CTX_use_PrivateKey_file:PEM lib</code>
+警告
+您本地证书的私钥必须未加密。当前，请求不支持使用加密密钥。</p>
+<p>CA证书
+请求使用软件包certifi中的证书。这允许用户在不更改请求版本的情况下更新其可信证书。</p>
+<p>2.16版本之前，请捆绑了一组根CA，它值得信赖，从采购Mozilla的信任存储。对于每个请求版本，证书仅更新一次。如果certifi未安装，则在使用明显较旧的Requests版本时，这将导致证书包极其过时。</p>
+<p>为了安全起见，我们建议您经常升级证书！</p>
+<p>正文内容工作流程
+默认情况下，发出请求时，将立即下载响应的正文。您可以覆盖此行为，并推迟下载响应正文，直到Response.content 使用stream参数访问属性为止：</p>
+<p>tarball_url = 'https://github.com/psf/requests/tarball/master'
+r = requests.get(tarball_url, stream=True)
+此时，仅下载了响应头，并且连接保持打开状态，因此使我们可以使内容检索成为条件：</p>
+<p>if int(r.headers['content-length']) &lt; TOO_LONG:
+  content = r.content
+  ...
+您可以使用Response.iter_content() 和Response.iter_lines()方法进一步控制工作流程。另外，您可以从底层的urllib3 urllib3.HTTPResponse中 读取未解码的主体Response.raw。</p>
+<p>如果您在发出请求时设置stream为True，则除非您消耗了所有数据或调用，否则请求无法将连接释放回池中 Response.close。这可能导致连接效率低下。如果在使用时发现自己部分读取了请求正文（或根本不读取它们）stream=True，则应在with语句中发出请求以确保始终关闭该请求：</p>
+<p>with requests.get('https://httpbin.org/get', stream=True) as r:
+    # Do things with the response here.
+保持活动
+好消息-感谢urllib3，保持活动状态在会话中是100％自动的！您在会话中发出的任何请求都将自动重用适当的连接！</p>
+<p>请注意，只有在读取了所有主体数据后，连接才会释放回池以供重用。确保设置stream为False或读取对象的 content属性Response。</p>
+<p>流上传
+请求支持流式上传，这使您可以发送大型流或文件而无需将其读入内存。要流式传输和上传，只需为您的身体提供一个类似于文件的对象：</p>
+<p>with open('massive-body', 'rb') as f:
+    requests.post('http://some.url/streamed', data=f)
+警告
+强烈建议您以二进制模式打开文件。这是因为请求可能会尝试Content-Length为您提供标头，并且如果这样做，此值将设置为文件中的字节数。如果以文本模式打开文件，则可能会发生错误。</p>
+<p>块编码请求
+请求还支持传出和传入请求的块传输编码。要发送块编码的请求，只需为您的身体提供一个生成器（或任何没有长度的迭代器）：</p>
+<p>def gen():
+    yield 'hi'
+    yield 'there'</p>
+<p>requests.post('http://some.url/chunked', data=gen())
+对于分块的编码响应，最好使用进行数据迭代 Response.iter_content()。在理想情况下，您将对stream=True请求进行设置，在这种情况下，您可以通过iter_content使用chunk_size 参数调用逐块进行迭代None。如果要设置块的最大大小，则可以将chunk_size参数设置为任何整数。</p>
+<p>POST多个多部分编码的文件
+您可以在一个请求中发送多个文件。例如，假设您要将图像文件上传到具有多个文件字段“ images”的HTML表单中：</p>
+<p><input type="file" name="images" multiple="true" required="true"/>
+为此，只需将文件设置为的元组列表：(form_field_name, file_info)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>url = 'https://httpbin.org/post'
+multiple_files = [
+...     ('images', ('foo.png', open('foo.png', 'rb'), 'image/png')),
+...     ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+r = requests.post(url, files=multiple_files)
+r.text
+{
+  ...
+  'files': {'images': 'data:image/png;base64,iVBORw ....'}
+  'Content-Type': 'multipart/form-data; boundary=3131623adb2043caaeb5538cc7aa0b3a',
+  ...
+}
+警告
+强烈建议您以二进制模式打开文件。这是因为请求可能会尝试Content-Length为您提供标头，并且如果这样做，此值将设置为文件中的字节数。如果以文本模式打开文件，则可能会发生错误。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>事件挂钩
+请求具有一个挂钩系统，可用于处理请求过程的各个部分或发出信号事件处理。</p>
+<p>可用的挂钩：</p>
+<p>response：
+从请求生成的响应。
+您可以通过将字典传递给request参数来为每个请求分配一个hook函数 ：{hook_name: callback_function}hooks</p>
+<p>hooks={'response': print_url}
+那callback_function将接收数据块作为其第一个参数。</p>
+<p>def print_url(r, <em>args, </em>*kwargs):
+    print(r.url)
+如果在执行回调时发生错误，则会给出警告。</p>
+<p>如果回调函数返回一个值，则假定它将替换传入的数据。如果该函数不返回任何值，则不会影响其他任何值。</p>
+<p>def record_hook(r, <em>args, </em>*kwargs):
+    r.hook_called = True
+    return r
+让我们在运行时打印一些请求方法参数：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>requests.get('https://httpbin.org/', hooks={'response': print_url})
+https://httpbin.org/
+<Response [200]>
+您可以将多个钩子添加到单个请求。让我们一次调用两个钩子：</p>
+<p>r = requests.get('https://httpbin.org/', hooks={'response': [print_url, record_hook]})
+r.hook_called
+True
+您还可以将钩子添加到Session实例。然后，您对会话的每个请求都会调用您添加的任何钩子。例如：</p>
+<p>s = requests.Session()
+s.hooks['response'].append(print_url)
+s.get('https://httpbin.org/')
+ https://httpbin.org/
+ <Response [200]>
+A Session可以有多个钩子，将按它们添加的顺序进行调用。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>自定义身份验证
+请求允许您使用指定自己的身份验证机制。</p>
+<p>作为auth参数传递给请求方法的任何可调用对象将有机会在调度请求之前对其进行修改。</p>
+<p>身份验证实现是的子类AuthBase，并且易于定义。请提供两种常见的认证方案实现的requests.auth：HTTPBasicAuth和 HTTPDigestAuth。</p>
+<p>假设我们有一个仅在X-Pizza标头设置为密码值时才响应的Web服务 。不太可能，但是随它去吧。</p>
+<p>from requests.auth import AuthBase</p>
+<p>class PizzaAuth(AuthBase):
+    """Attaches HTTP Pizza Authentication to the given Request object."""
+    def <strong>init</strong>(self, username):
+        # setup any auth-related data here
+        self.username = username</p>
+<pre><code>def __call__(self, r):
+    # modify and return the request
+    r.headers['X-Pizza'] = self.username
+    return r
+</code></pre>
+<p>然后，我们可以使用我们的Pizza Auth发出请求：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>requests.get('http://pizzabin.org/admin', auth=PizzaAuth('kenneth'))
+<Response [200]>
+流请求
+这样一来，Response.iter_lines()您就可以轻松地迭代诸如Twitter Streaming API之类的流API。只需设置stream为，True并使用以下命令迭代响应 iter_lines：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>import json
+import requests</p>
+<p>r = requests.get('https://httpbin.org/stream/20', stream=True)</p>
+<p>for line in r.iter_lines():</p>
+<pre><code># filter out keep-alive new lines
+if line:
+    decoded_line = line.decode('utf-8')
+    print(json.loads(decoded_line))
+</code></pre>
+<p>当使用带有或的 encode_unicode = True时 ，如果服务器不提供备用编码，则需要提供备用编码：Response.iter_lines()Response.iter_content()</p>
+<p>r = requests.get('https://httpbin.org/stream/20', stream=True)</p>
+<p>if r.encoding is None:
+    r.encoding = 'utf-8'</p>
+<p>for line in r.iter_lines(decode_unicode=True):
+    if line:
+        print(json.loads(line))
+警告
+iter_lines不是可重入的安全。多次调用此方法会导致某些接收到的数据丢失。如果需要从多个位置调用它，请改用结果迭代器对象：</p>
+<p>lines = r.iter_lines()</p>
+<h1 id="save-the-first-line-for-later-or-just-skip-it">Save the first line for later or just skip it</h1>
+<p>first_line = next(lines)</p>
+<p>for line in lines:
+    print(line)
+代理
+如果需要使用代理，则可以使用proxies任何请求方法的参数来配置单个请求 ：</p>
+<p>import requests</p>
+<p>proxies = {
+  'http': 'http://10.10.1.10:3128',
+  'https': 'http://10.10.1.10:1080',
+}</p>
+<p>requests.get('http://example.org', proxies=proxies)
+您还可以通过设置环境变量HTTP_PROXY和配置代理 HTTPS_PROXY。</p>
+<p>$ export HTTP_PROXY="http://10.10.1.10:3128"
+$ export HTTPS_PROXY="http://10.10.1.10:1080"</p>
+<p>$ python</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import requests
+requests.get('http://example.org')
+要将HTTP Basic Auth与您的代理一起使用，请使用http：// user：password @ host /语法：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>proxies = {'http': 'http://user:pass@10.10.1.10:3128/'}
+要为特定的方案和主机提供代理，请使用 scheme：// hostname形式作为密钥。这将匹配对给定方案和确切主机名的任何请求。</p>
+<p>proxies = {'http://10.20.1.128': 'http://10.10.1.10:5323'}
+请注意，代理URL必须包含该方案。</p>
+<p>袜子
+2.10.0版中的新功能。</p>
+<p>除了基本的HTTP代理外，请求还支持使用SOCKS协议的代理。这是一项可选功能，要求在使用之前安装其他第三方库。</p>
+<p>您可以从以下位置获取此功能的依赖项pip：</p>
+<p>$ pip install requests[socks]
+一旦安装了这些依赖项，使用SOCKS代理就和使用HTTP代理一样简单：</p>
+<p>proxies = {
+    'http': 'socks5://user:pass@host:port',
+    'https': 'socks5://user:pass@host:port'
+}
+使用该方案socks5会使DNS解析发生在客户端上，而不是在代理服务器上。这与curl一致，curl使用该方案来决定是在客户端还是在代理上进行DNS解析。如果要解析代理服务器上的域，请socks5h用作方案。</p>
+<p>合规性
+请求旨在与所有相关规范和RFC保持一致，在这种情况下，遵从性不会给用户带来麻烦。对规范的这种关注会导致某些行为，对于那些不熟悉相关规范的人来说，这似乎是不寻常的。</p>
+<p>编码
+收到响应时，请求会猜测访问Response.text属性时用于解码响应的编码。请求将首先检查HTTP标头中的编码，如果不存在，将使用chardet尝试猜测编码。</p>
+<p>唯一的一次请求不会做到这一点，如果没有明确的字符集是存在于HTTP头，并在Content-Type 头中包含text。在这种情况下，RFC 2616指定默认字符集必须为ISO-8859-1。在这种情况下，请求遵循规范。如果需要其他编码，则可以手动设置Response.encoding 属性，或使用raw Response.content。</p>
+<p>HTTP动词
+请求提供对几乎所有HTTP动词的访问：GET，OPTIONS，HEAD，POST，PUT，PATCH和DELETE。下面提供了使用GitHub API在Requests中使用这些动词的详细示例。</p>
+<p>我们将从最常用的动词GET开始。HTTP GET是幂等方法，可从给定URL返回资源。因此，它是您尝试从Web位置检索数据时应使用的动词。一个示例用法是尝试从GitHub获取有关特定提交的信息。假设我们要提交a050faf请求。我们将得到这样的结果：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import requests
+r = requests.get('https://api.github.com/repos/psf/requests/git/commits/a050faf084662f3a352dd1a941f2c7c9f886d4ad')
+我们应该确认GitHub正确响应。如果有，我们想确定它是什么类型的内容。这样做：</p>
+<p>if r.status_code == requests.codes.ok:
+...     print(r.headers['content-type'])
+...
+application/json; charset=utf-8
+因此，GitHub返回JSON。太好了，我们可以使用r.json方法将其解析为Python对象。</p>
+<p>commit_data = r.json()</p>
+<p>print(commit_data.keys())
+['committer', 'author', 'url', 'tree', 'sha', 'parents', 'message']</p>
+<p>print(commit_data['committer'])
+{'date': '2012-05-10T11:10:50-07:00', 'email': 'me@kennethreitz.com', 'name': 'Kenneth Reitz'}</p>
+<p>print(commit_data['message'])
+makin' history
+到目前为止，如此简单。好吧，让我们研究一下GitHub API。现在，我们可以看一下文档，但是如果改用Requests，我们可能会更有趣。我们可以利用Requests OPTIONS动词来查看刚刚使用的url支持哪些HTTP方法。</p>
+<p>verbs = requests.options(r.url)
+verbs.status_code
+500
+嗯什么 那无济于事！事实证明，像许多API提供程序一样，GitHub实际上并未实现OPTIONS方法。这是一个烦人的疏忽，但是没关系，我们可以使用无聊的文档。但是，如果GitHub正确实现了OPTIONS，则它们应在标头中返回允许的方法，例如</p>
+<p>verbs = requests.options('http://a-good-website.com/api/cats')
+print(verbs.headers['allow'])
+GET,HEAD,POST,OPTIONS
+转到文档，我们看到允许提交的唯一其他方法是POST，它创建了一个新的提交。在使用请求存储库时，我们可能应该避免对其进行后期处理。相反，让我们玩GitHub的Issues功能。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>添加此文档是为了响应 问题＃482。鉴于此问题已经存在，我们将以它为例。让我们从获取它开始。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>r = requests.get('https://api.github.com/repos/psf/requests/issues/482')
+r.status_code
+200</p>
+<p>issue = json.loads(r.text)</p>
+<p>print(issue['title'])
+Feature any http verb in docs</p>
+<p>print(issue['comments'])
+3
+很酷，我们有三个评论。让我们看看其中的最后一个。</p>
+<p>r = requests.get(r.url + '/comments')
+r.status_code
+200</p>
+<p>comments = r.json()</p>
+<p>print(comments[0].keys())
+['body', 'url', 'created_at', 'updated_at', 'user', 'id']</p>
+<p>print(comments[2]['body'])
+Probably in the "advanced" section
+好吧，这似乎是一个愚蠢的地方。让我们发表评论，告诉海报者他很傻。谁是海报？</p>
+<p>print(comments[2]['user']['login'])
+kennethreitz
+好的，让我们告诉肯尼思这个人，我们认为该示例应该放在快速入门指南中。根据GitHub API文档，执行此操作的方法是POST到线程。我们开始做吧。</p>
+<p>body = json.dumps({u"body": u"Sounds great! I'll get right on it!"})
+url = u"https://api.github.com/repos/psf/requests/issues/482/comments"</p>
+<p>r = requests.post(url=url, data=body)
+r.status_code
+404
+嗯，这很奇怪。我们可能需要进行身份验证。那会很痛苦的，对吧？错误。通过请求，可以轻松使用多种形式的身份验证，包括非常常见的基本身份验证。</p>
+<p>from requests.auth import HTTPBasicAuth
+auth = HTTPBasicAuth('fake@example.com', 'not_a_real_password')</p>
+<p>r = requests.post(url=url, data=body, auth=auth)
+r.status_code
+201</p>
+<p>content = r.json()
+print(content['body'])
+Sounds great! I'll get right on it.
+辉煌。哦，等等，不！我想补充一点，这将需要一段时间，因为我必须去喂猫。如果只有我可以编辑此评论！幸运的是，GitHub允许我们使用另一个HTTP动词PATCH来编辑此注释。来做吧。</p>
+<p>print(content[u"id"])
+5804413</p>
+<p>body = json.dumps({u"body": u"Sounds great! I'll get right on it once I feed my cat."})
+url = u"https://api.github.com/repos/psf/requests/issues/comments/5804413"</p>
+<p>r = requests.patch(url=url, data=body, auth=auth)
+r.status_code
+200
+优秀的。现在，只是为了折磨肯尼思这个家伙，我决定让他流汗，而不是告诉他我正在为此工作。这意味着我要删除此评论。GitHub允许我们使用令人难以置信的恰当的DELETE方法删除评论。让我们摆脱它。</p>
+<p>r = requests.delete(url=url, auth=auth)
+r.status_code
+204
+r.headers['status']
+'204 No Content'
+优秀的。全没了。我想知道的最后一件事是我使用了多少速率限制。让我们找出答案。GitHub在标头中发送该信息，因此，我将下载一个HEAD请求以获取标头，而不是下载整个页面。</p>
+<p>r = requests.head(url=url, auth=auth)
+print(r.headers)
+...
+'x-ratelimit-remaining': '4995'
+'x-ratelimit-limit': '5000'
+...
+优秀的。是时候编写一种以各种令人兴奋的方式滥用GitHub API的Python程序，更多时候需要4995次。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>自定义谓词
+您可能会不时地使用服务器，无论出于何种原因，该服务器都允许使用甚至要求使用上面未介绍的HTTP动词。一个示例是某些WEBDAV服务器使用的MKCOL方法。不要烦恼，这些仍然可以与请求一起使用。这些利用内置.request 方法。例如：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>r = requests.request('MKCOL', url, data=data)
+r.status_code
+200 # Assuming your call was correct
+利用这一点，您可以利用服务器允许的任何方法动词。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>链接头
+许多HTTP API具有链接标头。它们使API更加自我描述和发现。</p>
+<p>GitHub将它们用于 其API中的分页，例如：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>url = 'https://api.github.com/users/kennethreitz/repos?page=1&amp;per_page=10'
+r = requests.head(url=url)
+r.headers['link']
+'<a href="https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10">https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10</a>; rel="next", <a href="https://api.github.com/users/kennethreitz/repos?page=6&amp;per_page=10">https://api.github.com/users/kennethreitz/repos?page=6&amp;per_page=10</a>; rel="last"'
+请求将自动解析这些链接头并使其易于使用：</p>
+<p>r.links["next"]
+{'url': 'https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10', 'rel': 'next'}</p>
+<p>r.links["last"]
+{'url': 'https://api.github.com/users/kennethreitz/repos?page=7&amp;per_page=10', 'rel': 'last'}
+传输适配器
+从v1.0.0版本开始，请求已移至模块化内部设计。这样做的部分原因是实现了传输适配器，该适配器最初 在此处进行了描述。传输适配器提供一种机制来定义HTTP服务的交互方法。特别是，它们允许您应用每个服务的配置。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>要求随附一个运输适配器，即HTTPAdapter。该适配器使用功能强大的urllib3库提供与HTTP和HTTPS的默认请求交互。每当Session初始化请求时，Session对于HTTP来说，其中之一便被附加到对象上，对于HTTPS来说，其中之一便被附加到对象上。</p>
+<p>请求使用户可以创建和使用自己的提供特定功能的传输适配器。创建传输适配器后，就可以将传输适配器安装到Session对象上，并指示它应该应用于哪些Web服务。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s = requests.Session()
+s.mount('https://github.com/', MyAdapter())
+mount调用将传输适配器的特定实例注册到前缀。挂载后，使用该会话发出且其URL以给定前缀开头的任何HTTP请求都将使用给定的传输适配器。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>实现传输适配器的许多细节不在本文档的讨论范围之内，但是请看下一个简单SSL用例的下一个示例。除此之外，您还可以查看的子类 BaseAdapter。</p>
+<p>示例：特定的SSL版本
+Requests团队已做出特定选择，以使用基础库（urllib3）中默认的SSL版本。通常，这很好，但是有时您可能会发现自己需要连接到使用与默认版本不兼容的版本的服务端点。</p>
+<p>为此，您可以通过使用大多数现有的HTTPAdapter实现，并添加参数ssl_version并将其传递到urllib3来使用传输适配器。我们将制作一个传输适配器，以指示库使用SSLv3：</p>
+<p>import ssl
+from urllib3.poolmanager import PoolManager</p>
+<p>from requests.adapters import HTTPAdapter</p>
+<p>class Ssl3HttpAdapter(HTTPAdapter):
+    """"Transport adapter" that allows us to use SSLv3."""</p>
+<pre><code>def init_poolmanager(self, connections, maxsize, block=False):
+    self.poolmanager = PoolManager(
+        num_pools=connections, maxsize=maxsize,
+        block=block, ssl_version=ssl.PROTOCOL_SSLv3)
+</code></pre>
+<p>阻止还是不阻止？
+使用默认的传输适配器后，请求不会提供任何类型的非阻塞IO。该Response.content 属性将阻塞，直到下载完整个响应。如果您需要更多的粒度，则库的流功能（请参见 流请求）允许您一次检索较小数量的响应。但是，这些调用仍将阻止。</p>
+<p>如果您担心阻塞IO的使用，那么有很多项目将Requests与Python的异步框架之一结合在一起。一些很好的例子是request-threads，grequests，requests-futures和requests-async。</p>
+<p>标题排序
+在特殊情况下，您可能需要按顺序提供标题。如果您将传递OrderedDict给headers关键字参数，则会为标头提供顺序。但是，将优先使用Requests使用的默认标头的顺序，这意味着，如果您覆盖headers关键字参数中的默认标头，则与该关键字参数中的其他标头相比，它们可能会出现乱序。</p>
+<p>如果这有问题，则用户应考虑Session通过设置Session为custom 来设置对象的默认标头OrderedDict。该顺序将始终是首选。</p>
+<p>超时
+如果服务器没有及时响应，则对外部服务器的大多数请求都应附加超时。默认情况下，除非明确设置超时值，否则请求不会超时。没有超时，您的代码可能会挂起几分钟或更长时间。</p>
+<p>该连接超时秒请求数将等待您的客户端建立到远程计算机（对应于一个连接 连接（） ）在插座上的呼叫。将连接超时设置为略大于3的倍数是一个好习惯，这是默认的TCP数据包重传窗口。</p>
+<p>客户端连接到服务器并发送HTTP请求后， 读取超时就是客户端将等待服务器发送响应的秒数。（具体来说，这是客户端在服务器发送的字节之间等待的秒数。在99.9％的情况下，这是服务器发送第一个字节之前的时间）。</p>
+<p>如果为超时指定单个值，则如下所示：</p>
+<p>r = requests.get('https://github.com', timeout=5)
+超时值将同时应用于connect和read 。如果要单独设置值，请指定一个元组：</p>
+<p>r = requests.get('https://github.com', timeout=(3.05, 27))
+如果远程服务器非常慢，则可以通过将None传递为超时值，然后获取一杯咖啡，来告诉Requests永远等待响应。</p>
+<p>r = requests.get('https://github.com', timeout=None)
+https://kennethreitz.org/tattoos</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

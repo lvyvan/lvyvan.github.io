@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python";
+    var mkdocs_page_input_path = "python.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">技术分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人学习笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#python_1">Python 基础</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#print">Print</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python2-python3">Python2 , Python3 的区别</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">类型转换</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#if">If判断</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">关键字</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">运算符</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#while">while</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#for">for</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#break-continue">break continue</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">字符串</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">列表</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">字典</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">函数</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">元组</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">引用</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">文件</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">面向对象</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">类</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">继承</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">多态</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_15">类对象，实例对象</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_16">异常</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_17">模块</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python_2">python格式</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_18">包</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_19">程序参数</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_20">列表生成式</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_21">作用域</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setlisttuple">set、list、tuple</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gil">GIL (全局解释器锁)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_22">胶水粘合</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_23">深拷贝，浅拷贝</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_24">私有化</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#import">Import 导入模块</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_25">封装，继承，多态</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mro">多继承以及MRO顺序</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#with">With 上下文管理</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_26">闭包</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_27">装饰器</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_28">元类</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#socket">Socket</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#socket_1">创建socket</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tcp">Tcp</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tcp_3">TCP文件下载</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#udp">Udp</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_32">多任务</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_33">多线程</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_34">多进程</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#queue">进程间通信（Queue）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_35">多协程</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#python_3">Python 垃圾回收</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_38">引用计数器</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_40">标记清除</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_41">分代回收</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_42">缓存机制</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../mysql.dm">Mysql</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git/">Git</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">C#</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../cshirp/">C#</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScrip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javascrip/">JavaScrip</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="Java:'java.md'">None</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人阅读笔记</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../marxism_leninism/">марксизм-ленинизм</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../temp/">Temp</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+        
+          <li>个人学习笔记 &raquo;</li>
+        
+      
+    
+    <li>Python</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="python">Python</h1>
+<ul>
+<li>注 若多行代码在一行表示时,则默认使用<code>;</code>进行分割,仅仅为了便于笔记区分,不代表python代码[这一点来自C].</li>
+</ul>
+<h2 id="python_1">Python 基础</h2>
+<h3 id="print">Print</h3>
+<ol>
+<li>格式符号转换</li>
+</ol>
+<pre><code>    符号    说明  
+    %c      字符  
+    %s      通过str( ) 字符串转换来格式化  
+    %i      有符号十进制整数  
+    %d      有符号十进制整数  
+    %o      八进制整数  
+    %x      十六进制整数（字母小写）  
+    %X      十六进制整数（字母大写）  
+    %e      索引符号（小写'e'）  
+    %E      索引符号（大写&quot;E&quot;）  
+    %f      浮点实数  
+    %g      %f 和 %e 的简写  
+    %G      %f 和 %E的简写  
+</code></pre>
+
+<ol>
+<li><code>Print(" %s, %d, %s"%(name, age, addr))</code></li>
+</ol>
+<h3 id="python2-python3">Python2 , Python3 的区别</h3>
+<ol>
+<li>中文处理
+    a. <code>#coding=utf-8</code>
+    b. <code>#_*_* coding:utf-8 _*_</code></li>
+<li><code>Input("")</code><br />
+    a. <code>Py3</code> 将 <code>i = input()</code> 作为输入字符串的信息存入变量 <code>I</code><br />
+    b. <code>Py2</code> 将 <code>i = input ("")</code> 将输入的内容当作代码执行，在python2中将使用 <code>raw_input()</code></li>
+</ol>
+<h3 id="_1">类型转换</h3>
+<p>常用的数据类型转换  </p>
+<pre><code>    函数                          说明
+    int(x [,base ])             将x转换为一个整数
+    long(x [,base ])            将x转换为一个长整数
+    float(x )                   将x转换到一个浮点数
+    complex(real [,imag ])      创建一个复数
+    str(x )                     将对象 x 转换为字符串
+    repr(x )                    将对象 x 转换为表达式字符串
+    eval(str )                  用来计算在字符串中的有效Python表达式,并返回一个对象
+    tuple(s )                   将序列 s 转换为一个元组
+    list(s )                    将序列 s 转换为一个列表
+    chr(x )                     将一个整数转换为一个字符
+    unichr(x )                  将一个整数转换为Unicode字符
+    ord(x )                     将一个字符转换为它的整数值
+    hex(x )                     将一个整数转换为一个十六进制字符串
+    oct(x )                     将一个整数转换为一个八进制字符串
+</code></pre>
+
+<h3 id="if">If判断</h3>
+<ol>
+<li><code>If x: else</code></li>
+<li><code>If x: elif x: ... else</code></li>
+</ol>
+<h3 id="_2">关键字</h3>
+<pre><code>&gt;&gt;&gt; import keyword
+&gt;&gt;&gt; keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 
+'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+    'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+</code></pre>
+
+<h3 id="_3">运算符</h3>
+<pre><code>    + - * %  
+    //              整除  
+    **              幂  
+    /               除  
+    &quot;xxx&quot; * n       字符串累加 N 次  
+    &lt;&gt;  !=          !=  
+    or              ||  
+    and             &amp;&amp;  
+    not()           !  
+    += -=           (自身)修改  
+</code></pre>
+
+<h3 id="while">while</h3>
+<pre><code>    while x:
+        pass
+</code></pre>
+
+<h3 id="for">for</h3>
+<p>a. <code>for i in range():</code>
+b. <code>for ... (break) else:</code></p>
+<h3 id="break-continue">break continue</h3>
+<pre><code>略
+</code></pre>
+<h3 id="_4">字符串</h3>
+<ol>
+<li><code>+</code></li>
+<li><code>" .. %s .."%x</code></li>
+<li><code>A = "names"   A[2] =&gt; m</code></li>
+<li>字符串分割</li>
+</ol>
+<pre><code>    A[1:3] = am     X[起始位: 终值位]
+    A[1:-1]= am     X[起始位: 倒数终值位]
+    A[1:] = ames    x[起始位: ]
+    A[1:-1:2]       X[起始位: 终止位：步长]
+</code></pre>
+
+<ol>
+<li>逆序</li>
+</ol>
+<pre><code>    name = &quot;yurisa&quot;;  
+    print(name[::-1])
+</code></pre>
+
+<ol>
+<li>字符串的常见操作</li>
+</ol>
+<pre><code>    Find                正查找，如果是返回开始的索引值，否则返回-1
+    Rfind               逆向查找
+    Index               正查找，未查到则抛出异常
+    Rindex              逆向查找
+    Count               统计出现的个数
+    Replace(&quot;XXX&quot;, &quot;xxx&quot;，x) 替换,替换次数
+    Split(&quot; &quot;)          切割
+    capitalize          把字符串的第一个字符大写
+    title               把字符串的每个单词首字母大写
+    startswith          检查字符串是否是以 x 开头, 是则返回 True，否则返回 False
+    endswith            检查字符串是否以 X 结束，如果是返回True,否则返回 False
+    Lower               转换 x 中所有大写字符为小写
+    upper               转换 x 中的小写字母为大写
+    Ljust               返回一个原字符串左对齐,并使用空格填充至长度 width 的新字符串
+    rjust               返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串
+    center              返回一个原字符串居中,并使用空格填充至长度 width 的新字符串
+    lstrip              删除 mystr 左边的空白字符
+    rstrip              删除 mystr 字符串末尾的空白字符
+    strip               删除mystr字符串两端的空白字符
+    partition           把mystr以str分割成三部分,str前，str和str后
+    rpartition          类似于 partition()函数,不过是从右边开始
+    splitlines          按照行分隔，返回一个包含各行作为元素的列表
+    Isalpha             如果 mystr 所有字符都是字母 则返回 True,否则返回 False
+    isdigit             如果 mystr 只包含数字则返回 True 否则返回 False
+    isalnum             如果 mystr 所有字符都是字母或数字则返回 True,否则返回 False
+    isspace             如果 mystr 中只包含空格，则返回 True，否则返回 False
+    join                mystr 中每个字符后面插入str,构造出一个新的字符串
+</code></pre>
+
+<h3 id="_5">列表</h3>
+<ol>
+<li>同时存储多种数据类型 <code>a = []</code></li>
+<li>列表的相关方法</li>
+</ol>
+<pre><code>    a.append(&quot;&quot;)            添加
+    a.insert(n,&quot;&quot;)          插入
+    a=b + c / a.extend(b)   集合追加/合并
+    a.pop()                 把最后一个出栈
+    a.remove(&quot; x &quot;)         根据内容删除，只删除一次
+    a[x :x :x]              列表下标切片
+    Del a[x]                根据下标删除
+    a[x] = x                修改
+    If &quot;xx&quot; in a            查找存在
+    If &quot;xx&quot; not in a        查找不存在
+</code></pre>
+
+<ol>
+<li>序列类型</li>
+</ol>
+<pre><code>    排序  a.sort();
+    逆排序     a.sort(reverse = True)
+    逆序  a.reverse()
+</code></pre>
+
+<h3 id="_6">字典</h3>
+<p>1 <code>Key:value</code></p>
+<pre><code>Info = {“xx”, &quot;XX&quot;} 初始化字典
+Info[&quot;xx&quot;] = &quot;ZZ&quot;   添加/修改
+Del info[&quot;xx&quot;]  删除
+Info.get(&quot;xx&quot;)  获取
+Len(info)   长度
+Info.keys() 获取键（2列表，3对象）
+Info.values()   获取值（2列表，3对象）
+Info.items()
+</code></pre>
+
+<ol>
+<li>排序
+    <code>Info.sort(key = lambda x:x['age'])</code></li>
+</ol>
+<h3 id="_7">函数</h3>
+<ol>
+<li>
+<p>global 全局修饰
+    &gt; 1. 在一个函数中，对全局变量进行修改的时，是否使用global，是否修改了全局变量的指向<br />
+    &gt; 2. 如果修改了指向，即让全局变量指向一个新的内存空间，则必须使用global<br />
+    &gt; 3. 如果仅仅修改了 指向的空间1中的数据，则此时不必使用global  </p>
+</li>
+<li>
+<p>缺省参数, 命名参数</p>
+</li>
+<li>
+<p>不定长参数</p>
+</li>
+</ol>
+<pre><code>    *args   元组
+    **kwargs    字典 key = value
+</code></pre>
+
+<ol>
+<li>拆包</li>
+<li>在函数调用时，将赋值的元组/字典集合 加 * / <strong> 拆包后分别赋值给 *args </strong>kwargs </li>
+<li>拆元组 *</li>
+<li>拆字典 **</li>
+<li>交换</li>
+</ol>
+<pre><code>    a = 5;
+    b = 6;
+    a, b = b, a;
+</code></pre>
+
+<ul>
+<li>
+<p>Enumerate(列表)
+    输出 =&gt;（0，"xx"）</p>
+</li>
+<li>
+<p>匿名函数 lambda
+    def test(a, b, func):
+        return func(a,b);
+    #lambda x, y: x + y
+    print(test(11, 22, eval(input("请输入一个lambda表达式\n"))));</p>
+</li>
+</ul>
+<h3 id="_8">元组</h3>
+<ol>
+<li>元组的元素不能修改(增，删，改 都不可以)</li>
+<li>Info = (11, 22, 33); </li>
+</ol>
+<h3 id="_9">引用</h3>
+<ol>
+<li>Id() 查看变量的地址</li>
+<li>集合与字典都是引用类型</li>
+</ol>
+<h3 id="_10">文件</h3>
+<ol>
+<li>打开关闭文件</li>
+<li>文件读写</li>
+</ol>
+<pre><code>    访问模式        说明
+    r           以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。
+    w           打开一个文件只用于写入。如果该文件已存在则将其覆盖。
+                如果该文件不存在，创建新文件。
+    a           打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。
+                也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+    rb          以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。
+    wb          以二进制格式打开一个文件只用于写入。
+                如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+    ab          以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。
+                也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+    r+          打开一个文件用于读写。文件指针将会放在文件的开头。
+    w+          打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+    a+          打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。
+                文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。
+    rb+         以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。
+    wb+         以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。
+                如果该文件不存在，创建新文件。
+    ab+         以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。
+                如果该文件不存在，创建新文件用于读写。
+</code></pre>
+
+<ol>
+<li>定位读写</li>
+<li>tell()    在读写文件的过程中，如果想知道当前的位置，可以使用来获取</li>
+<li>seek()    定位到某个位置</li>
+</ol>
+<pre><code>seek(offset, from)有2个参数
+    • offset:偏移量
+    • from:方向
+        ○ 0:表示文件开头
+        ○ 1:表示当前位置
+        ○ 2:表示文件末尾
+</code></pre>
+
+<ol>
+<li>文件的相关操作</li>
+</ol>
+<pre><code>    Import os
+    rename(需要修改的文件名, 新的文件名) os模块中的rename()可以完成对文件的重命名操作
+    remove(待删除的文件名) os模块中的remove()可以完成对文件的删除操作
+</code></pre>
+
+<ol>
+<li>文件夹的相关操作</li>
+</ol>
+<pre><code>    import os
+    os.mkdir(&quot;xxx&quot;)         创建文件夹
+    os.getcwd()             获取当前目录
+    os.chdir(&quot;../&quot;)         改变默认目录
+    os.listdir(&quot;./&quot;)        获取目录列表
+    os.rmdir(&quot;xxx&quot;)         删除文件夹
+</code></pre>
+
+<pre><code class="python">file = open(&quot;testFile&quot;, &quot;r+&quot;)
+if file != None:
+    print(file.read())
+file.close()
+</code></pre>
+
+<pre><code class="python">file = open(&quot;testFile&quot;, &quot;r+&quot;)
+    if file != None:
+    file.write(&quot;text&quot;)
+#这里写入文件后，指针会指向文件的末尾，导致无法直接读取
+#限于目前能力有限，使用关闭文件再打开的方式重置指针，读取写入的内容 
+file.close()
+</code></pre>
+
+<pre><code class="python">file = open(&quot;testFile&quot;, &quot;r+&quot;)
+print(file.read())
+# Readlines 就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，
+# 并且返回的是一个列表，其中每一行的数据为一个元素
+# Readline  读一行
+oldFile = open(&quot;testFile&quot;, &quot;r&quot;)
+fcp = open(&quot;testFileCP&quot;, &quot;w&quot;)
+n = 1
+while True:
+    fileCon = oldFile.read(1024 * n)
+    if len(fileCon) == 0:
+        break
+    fcp.write(fileCon)
+    oldFile.close()
+fcp.close()
+</code></pre>
+
+<pre><code class="python">f = open(&quot;testFile&quot;, &quot;r&quot;)
+    fcon = f.seek(2, 0)
+    print(f.read())
+    print(f.tell())
+    f.close()
+
+import os
+#os.rename(&quot;TestF&quot;,&quot;testFile&quot;)
+os.remove(&quot;testFile&quot;)
+</code></pre>
+
+<h2 id="_11">面向对象</h2>
+<h3 id="_12">类</h3>
+<ol>
+<li>定义类   </li>
+<li>self.属性 </li>
+<li>当前类的对象</li>
+<li>属性</li>
+<li>使用方法，隐藏属性</li>
+<li>私有属性 <code>__name</code>，<code>__类名__</code>.属性名</li>
+<li>类属性</li>
+<li>实例属性  </li>
+<li>魔法属性</li>
+</ol>
+<pre><code>    a. __doc__
+        #输出：类的描述信息
+
+    b. __module__ 和 __class__
+        __module__表示当前操作的对象在那个模块
+        __class__ 表示当前操作的对象的类是什么
+
+    c. __init__
+        初始化方法，通过类创建对象时，自动触发执行
+
+    b. __del__
+        当对象在内存中被释放时，自动触发执行。
+        注：此方法一般无须定义，因为 Python 是一门高级语言，
+            程序员在使用时无需关心内存的分配和释放，
+            因为此工作都是交给 Python 解释器来执行，
+            所以 __del__ 的调用是由解释器在进行垃圾回收时自动触发执行的。
+
+    d. __call__ 
+        对象后面加括号，触发执行。
+        注： __init__ 方法的执行是由创建对象触发的，即：对象 = 类名()
+        而对于 __call__ 方法的执行是由对象后加括号触发的，即：对象() 或者 类()
+
+    e. __dict__  
+        类或对象中的所有属性
+        类的实例属性属于对象；类中的类属性和方法等属于类，即：
+        获取类的属性，即：类属性、方法、
+            print(Province.__dict__)
+        输出：
+            {'__dict__': &lt;attribute '__dict__' of 'Province' objects&gt;, 
+            '__module__': '__main__', 
+            'country': 'China', '__doc__': None, 
+            '__weakref__': &lt;attribute '__weakref__' of 'Province' objects&gt;,
+                'func': &lt;function Province.func at 0x101897950&gt;,
+                '__init__': &lt;function Province.__init__ at 0x1018978c8&gt;}
+
+    f. __str__  
+        如果一个类中定义了`__str__`方法，那么在打印 对象 时，默认输出该方法的返回值。
+
+    g. __getitem__， __setitem__，__delitem__ 
+        用于索引操作，如字典。以上分别表示获取、设置、删除数据
+
+    h. __getslice__， _setslice__， __delslice__
+        该三个方法用于分片操作，如：列表
+</code></pre>
+
+<ol>
+<li>方法</li>
+</ol>
+<pre><code>    a. 私有方法 __functionName( ), 函数内部 self.__functionName() 调用
+    b. __del__方法 当对象被释放的时候，触发该方法。
+        1) 如果在程序结束时，有些对象还存在，
+            则python解释器会自动调用他们的__del__方法完成清理工作
+        2) 引用计数 
+            import sys
+            sys.getrefcount()
+    c. 静态方法
+    d. __new__ 方法  
+        #调用父类的new方法创建对象
+        object.__new__(cls)
+    e. 创建一个对象，3件事情
+        1) 调用 __new__ 方法创建对象，然后找到一个变量来接收 __new__ 的返回值，
+            这个返回值表示创建出来的对象的引用。
+        2) __init__（刚刚创建出来的对象的应用）
+        3) 返回对象的引用
+</code></pre>
+
+<pre><code class="python">class ClassName:
+    pass
+#属性
+#方法
+def funcname(self, parameter_list):
+    pass
+
+#定义一个类
+class ClassName:
+    pass
+#属性
+#初始化对象 -类似构造函数
+def __init__(self, a, b):
+    #初始化属性
+    self.a = a
+    self.b = b
+
+#输出对象的描述信息,在需要打印对象时
+def __str__(self):
+    return &quot;%s -- %s&quot;%(self.a, self.b)
+
+#方法
+def funcname(self, parameter_list):
+    print(&quot;%s - %s&quot;, %(self.a, self.b))
+#创建一个对象
+objectC = ClassName(a, b)
+#调用对象的方法
+objectC.funcname()
+
+class Family:
+    def __init__(self, area, info, addr):
+        self.area = area
+        self.info = info
+        self.addr = addr
+        self.leftArea = area
+        self.containItem = []
+
+    def __str__(self):
+        msg = &quot;面积:%d M^2,可用面积:%d M^2,名称：%s,地址是%s,分别有&quot;
+            %(self.area, self.leftArea ,self.info, self.addr)
+        homeNameitem = &quot;:&quot;
+        for item in self.containItem:
+            homeNameitem += item.homeName + ','
+            homeNameitem += &quot;等&quot;
+            msg += homeNameitem
+        return msg
+
+    def add_item(self, item):
+        self.leftArea -= item.homeArea
+        self.containItem.append(item)
+
+    class Home:
+    def __init__(self, homeName, homeArea):
+        self.homeName = homeName
+        self.homeArea = homeArea
+
+    def __str__(self):
+        return &quot;名字：%s, 面积：%d M^2&quot;%(self.homeName, self.homeArea)
+
+family = Family(1000000, &quot;中南海&quot;, &quot;西长安街174号中南海新华门&quot;)
+ziGuangGe = Home(&quot;紫光阁&quot;, 1000)
+print(ziGuangGe)
+qinZhengDian = Home(&quot;勤政殿&quot;, 8000)
+print(qinZhengDian)
+family.add_item(ziGuangGe)
+family.add_item(qinZhengDian)
+print(family)
+
+</code></pre>
+
+<h3 id="_13">继承</h3>
+<ol>
+<li>
+<p>单继承</p>
+</li>
+<li>
+<p>私有方法，私有属性</p>
+</li>
+<li>私有方法不会被继承</li>
+<li>私有属性不会被继承 _类名__属性名</li>
+<li>如果调用的时继承的父类中的共有方法，可以在这个共有方法红访问父类中的私有属性和私有方法</li>
+<li>如果子类中实现一个共有方法，那么这个方法是不能够调用继承的父类中的私有方法和私有属性的</li>
+<li>重写  父类方法同名覆盖</li>
+<li>
+<p>子类调用父类方法</p>
+</li>
+<li>
+<p>多继承
+多继承遍历树</p>
+</li>
+</ol>
+<pre><code class="python"># 单继承
+class ClassF:
+    pass
+class ClassA(ClassF):
+    pass
+
+# 重写
+class ClassF:
+    def funcName(self):
+        pass
+#子类，继承
+class ClassA(ClassF):
+    pass
+#子类重写
+class ClassB(ClassF):
+#重写父类的方法
+    def funcName(self):
+        pass
+
+# 多继承
+#父类
+class ClassF:
+    def funcName(self):
+        pass
+#子类，继承
+class ClassA(ClassF):
+    pass
+#子类重写
+class ClassB(ClassF):
+    #重写父类的方法
+    def funcName(self):
+        pass
+#子类调用父类的方法
+#方法一
+ClassF.funcName(self)
+    #方法二
+    super().bark()
+
+
+class CatStore(object):
+    def __init__(self):
+        self.factory = Factory()
+
+    def order(self, car_type):
+        return self.factory.select_car_by_type(car_type)
+
+    class Factory(object)
+        def select_car_by_type(car_type):
+            if car_type == 's':
+                return Suonata()
+            elif car_type == 'm':
+                return Mingtu()
+
+
+# 多继承遍历树
+#父类   
+class ClassBase(object):
+    pass
+
+#子类，继承
+class ClassA(ClassBase):
+    pass
+
+#子类重写 
+class ClassB(ClassBase):
+    pass
+
+# 多继承
+class ClassAB(ClassA, ClassB):
+    pass
+
+print(ClassAB.__mro__)
+# =&gt; (&lt;class '__main__.ClassAB'&gt;,
+# &lt;class '__main__.ClassA'&gt;,
+# &lt;class '__main__.ClassB'&gt;,
+# &lt;class '__main__.ClassBase'&gt;,
+# &lt;class 'object'&gt;)
+# C3算法
+</code></pre>
+
+<h3 id="_14">多态</h3>
+<p>单一函数表现多种状态</p>
+<pre><code class="python">#-*- coding:utf-8 -*-
+#Test word
+class C1(object):
+    def pr(self):
+        print(&quot;C1&quot;)
+
+class C2(C1):
+    def pr(self):
+        print(&quot;C2&quot;)
+
+def intr(temp): 
+    temp.pr()
+    c1 = C1()
+    c2 = C2()
+    intr(c1)
+    intr(c2)
+</code></pre>
+
+<h3 id="_15">类对象，实例对象</h3>
+<ol>
+<li>类对象<blockquote>
+<ul>
+<li>类属性：类属性所属于类对象，并且多个实例对象之间   类名.属性名</li>
+<li>类方法：可以通过类的名字调用类的方法，还可以通过这个类创建出来的对象，去调用这个类的方法。</li>
+</ul>
+</blockquote>
+</li>
+<li>实例对象<blockquote>
+<ul>
+<li>实例属性：和具体的某个实例对象有关系，并且一个实例对象和另一个实例对象是不共享属性的</li>
+<li>实例方法：对象内部方法</li>
+</ul>
+</blockquote>
+</li>
+<li>静态方法</li>
+<li>Staticmethod</li>
+<li>Property</li>
+</ol>
+<pre><code>    经典类中的属性只有一种访问方式，其对应被 @property 修饰的方法
+    新式类中的属性有三种访问方式，并分别对应了三个被 
+        @property 
+        @方法名.setter
+        @方法名.deleter
+    修饰的方法
+    由于新式类中具有三种访问方式，我们可以根据它们几个属性的访问特点，
+        分别将三个方法定义为对同一个属性：获取、修改、删除
+
+    property 方法中有个四个参数
+        第一个参数是方法名，调用 `对象.属性` 时自动触发执行方法 
+        第二个参数是方法名，调用 `对象.属性 ＝ XXX` 时自动触发执行方法
+        第三个参数是方法名，调用 `del 对象.属性` 时自动触发执行方法
+        第四个参数是字符串，调用 `对象.属性.__doc__`,此参数是该属性的描述信息
+
+    由于类属性方式创建`property`属性具有3种访问方式，
+        我们可以根据它们几个属性的访问特点，分别将三个方法定义为对同一个属性：获取、修改、删除
+</code></pre>
+
+<ol>
+<li>方法包括：实例方法、静态方法和类方法，三种方法在内存中都归属于类，区别在于调用方式不同。</li>
+<li>实例方法：由对象调用
+    至少一个 self 参数； 
+    执行实例方法时，自动将调用该方法的对象赋值给 self ;</li>
+<li>类方法：由类调用
+    至少一个 cls 参数；
+    执行类方法时，自动将调用该方法的类赋值给 cls ;</li>
+<li>
+<p>静态方法：由类调用；无默认参数；</p>
+</li>
+<li>
+<p>解耦</p>
+</li>
+<li>简单工厂设计模式</li>
+<li>工厂方法模式</li>
+<li>单例</li>
+</ol>
+<pre><code class="python"># 静态方法
+class Game(object):
+    #类属性
+    num = 0
+    #实例方法
+    def __init__(self):
+    #实例属性
+    self.name = &quot;AAA&quot;
+
+    #类方法
+    @classmethod
+    def add_num(cls):
+    cls.num = 1
+
+    #静态方法
+    @staticmethod
+    def pri():
+    print(&quot;-------------------&quot;)
+
+Game.pri()
+game = Game()
+Game.add_num()
+print(Game.num)
+print(game.num)
+game.pri()
+
+
+# 简单工厂模式
+class Car(object):
+    def move(self):
+        print(&quot; ==&gt; &quot;)
+
+    def music(self):
+        print(&quot; ==Music== &quot;)
+
+    def stop(self):
+        print(&quot; =X=&gt; &quot;)
+
+class Suonata(Car):
+    pass
+
+class Mingtu(Car):
+    pass
+
+car_store = CatStore()
+car = car_store.order('s')
+
+# Property
+class Foo(object):
+    @property
+    def prop(self):
+        pass
+fo = Foo()
+ret = fo.prop
+
+#单例,单初始化
+class DanLiTest(object):
+    __instance = None
+    __initFlag = False
+    def __new__(cls, a):
+        if cls.__instance == None:
+            cls = object.__new__(cls)
+        return cls.__instance
+
+    def __init__(self, a):
+        if Dag.__initFlag == False:
+            self.a = a
+        DanLiTest.__init__ = True; 
+
+a = DanLiTest(&quot;aaa&quot;)
+print(id(a))
+b = DanLiTest(&quot;bbb&quot;)
+print(id(b))
+</code></pre>
+
+<h3 id="_16">异常</h3>
+<ol>
+<li>
+<p>异常捕获</p>
+</li>
+<li>
+<p>异常传递
+    若异常在该函数中没有被捕获，则向上一级函数传递该异常，直到被捕获。</p>
+</li>
+<li>
+<p>抛出自定义异常</p>
+</li>
+<li>
+<p>异常处理中重新抛出该异常
+    # 在异常处理阶段，某种条件不满足，导致异常被无法处理
+    # 则可以重新抛出该异常。
+    Raise</p>
+</li>
+</ol>
+<pre><code class="python">
+#可能出现的异常代码
+try:
+    pass
+#针对某元组类型的异常捕获
+except (expression1,expression2)
+    pass
+#除元组内的异常类型，捕获其他类型的异常
+#并将异常类型存储于identifier
+except Exception as identifier:
+    pass
+#没有异常的情况执行
+else:
+    pass
+#不管有没有异常情况，都会执行
+finally:
+    pass
+
+#自定义异常
+class DefException(Exception):
+    pass
+#手动抛出该异常
+raise DefException()
+</code></pre>
+
+<h3 id="_17">模块</h3>
+<ol>
+<li>模块导入, 导入模块的方式</li>
+<li>如果一个文件中有__all__变量，那么也就意味着这个变量中的元素，</li>
+<li>会被from xxx import *时导入</li>
+<li>
+<p>而没有存在在列表["xxx"]中元素不会被导入
+    <code>__all__ = ["defxxx1", "defxxx2"]</code></p>
+</li>
+<li>
+<p>模块别名
+    #模块别名</p>
+</li>
+<li>
+<p>模块测试</p>
+</li>
+</ol>
+<pre><code class="python"># 1
+import impxxx
+    impxxx.defxxx()
+
+from impxxx import defxxx1, defxxx2
+    defxxx1()
+
+from impxxx import *
+    defxxx()
+
+# 2
+import impxxx as ipmxxxx
+
+# 3
+if __name__ == &quot;__impxxx__&quot;:
+    defxxx()
+</code></pre>
+
+<h3 id="python_2">python格式</h3>
+<pre><code class="python">import impxxx
+    def main():
+        pass
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h3 id="_18">包</h3>
+<ol>
+<li>
+<p>在包文件夹下，创建 <code>__init__.py</code> 文件
+    <code>__all__ = ["impxxx"]</code></p>
+</li>
+<li>
+<p>包内模块</p>
+</li>
+<li>包内导入相应的模块</li>
+</ol>
+<pre><code class="python">    __all__ = [&quot;impxxx&quot;]
+    # 导入包后，再导入模块，这样就可以直接使用
+    # 包名.模块名.类名/方法名
+    # 的方式使用，不需要再额外导入包内模块
+    # python2
+        import impxxx
+    # python3
+        from .import impxxx
+</code></pre>
+
+<ol>
+<li>创建，打包，分享，安装</li>
+</ol>
+<pre><code>    setup.py
+    from distutils.core import setup
+    # 名字 版本 描述信息 作者 tree 包名.模块名
+    setup(name=&quot;Yvan&quot;, version=&quot;1.0&quot;,
+        description=&quot;Yvan's module&quot;,
+        author=&quot;dongGe&quot;,
+        py_modules=['Msg.msgipmxxx1','Msg.msgipmxxx2'])
+
+    python3 setup.py build
+    =&gt;
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/Msg
+    copying Msg/__init__.py -&gt; build/lib/Msg
+    copying Msg/msgipmxxx1.py -&gt; build/lib/Msg
+    copying Msg/msgipmxxx2.py -&gt; build/lib/Msg
+
+    python3 setup.py sdist
+    =&gt;
+    running sdist
+    running check
+    warning: check: missing required meta-data: url
+    warning: check: missing meta-data: if 'author' supplied, 'author_email' must be supplied too
+    warning: sdist: manifest template 'MANIFEST.in' does not exist (using default file list)
+    warning: sdist: standard file not found: should have one of README, README.txt
+    writing manifest file 'MANIFEST'
+    creating Yvan-1.0
+    creating Yvan-1.0/Msg
+    making hard links in Yvan-1.0...
+    hard linking setup.py -&gt; Yvan-1.0
+    hard linking Msg/__init__.py -&gt; Yvan-1.0/Msg
+    hard linking Msg/msgipmxxx1.py -&gt; Yvan-1.0/Msg
+    hard linking Msg/msgipmxxx2.py -&gt; Yvan-1.0/Msg
+    creating dist
+    Creating tar archive
+    removing 'Yvan-1.0' (and everything under it)
+
+    ├── dist
+    │ └── Yvan-1.0.tar.gz
+
+    tar -zxvf Yvan-1.0.tar.gz
+    python3 setup.py install
+</code></pre>
+
+<h3 id="_19">程序参数</h3>
+<pre><code class="python">import sys
+    def main():
+    print(sys.argv)
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h3 id="_20">列表生成式</h3>
+<pre><code class="python">#(10, 78) =&gt; 10 - 77
+range(10, 78)
+#(10), 18, 2) =&gt; [10, 12, 14, 16]
+range(10, 18, 2)
+# range风险 
+# python2 生成数较大时，会占用大量内存，过大量内存系统或将不予分配
+# python3中延迟生成，当需要相关数据时，临时生成
+# =&gt; [1 - 17]
+a = [i for i in range(1, 18)]
+# =&gt; [0, 2, 4, 6, 8]
+b = [i for i in range(10) if i % 2 == 0]
+# =&gt; [0, 0, 1, 1, 2, 2]
+c = [i for i in range(3) for j in range(2)]
+# =&gt; [(0, 0), (0, 1), (1, 0), (1, 1), (2, 0), (2, 1)]
+d = [(i, j) for i in range(3) for j in range(2)]
+# =&gt; [(0, 0, 0), (0, 0, 1), ...]
+e = [(i, j, k) for i in range(3) for j in range(3) for k in range(3)]
+</code></pre>
+
+<h3 id="_21">作用域</h3>
+<h3 id="setlisttuple">set、list、tuple</h3>
+<ul>
+<li>set集合 没有重复项</li>
+</ul>
+<h3 id="gil">GIL (全局解释器锁)</h3>
+<p>GIL（全局解释器锁）
+GIL面试题如下
+描述Python GIL的概念， 以及它对python多线程的影响？
+编写一个多线程抓取网页的程序，并阐明多线程抓取程序是否可比单线程性能有提升，并解释原因。
+<code>Guido的声明：http://www.artima.com/forums/flat.jsp?forum=106&amp;thread=214235</code></p>
+<pre><code>    he language doesn't require the GIL
+        -- it's only the CPython virtual machine that has historically been unable to shed it.
+    参考答案:
+        Python语言和GIL没有半毛钱关系。仅仅是由于历史原因在Cpython虚拟机(解释器)，难以移除GIL。
+        GIL：全局解释器锁。每个线程在执行的过程都需要先获取GIL，保证同一时刻只有一个线程可以执行代码。
+        线程释放GIL锁的情况： 在IO操作等可能会引起阻塞的system call之前,可以暂时释放GIL,
+        但在执行完毕后,必须重新获取GIL Python 3.x使用计时器（执行时间达到阈值后，
+        当前线程释放GIL）或Python 2.x，tickets计数达到100
+        Python使用多进程是可以利用多核的CPU资源的。
+        多线程爬取比单线程性能有提升，因为遇到IO阻塞会自动释放GIL锁
+</code></pre>
+
+<h3 id="_22">胶水粘合</h3>
+<ol>
+<li>C语言胶水粘合示例</li>
+</ol>
+<pre><code class="python">    import threading
+    import ctypes
+
+    def main():
+        lib = ctypes.cdll.LoadLibrary(&quot;./xxx.so&quot;)
+        t = threading.Thread(target = lib.xxx)
+        t.start()
+        while True:
+            pass
+
+    if __name__ == &quot;__main__&quot;:
+        main()
+</code></pre>
+
+<h3 id="_23">深拷贝，浅拷贝</h3>
+<ol>
+<li>深浅拷贝实例</li>
+</ol>
+<pre><code class="python">import copy
+    def main():
+    a = [11, 22]
+    b = a
+    b.append(33)
+
+# 浅拷贝
+#copy.copy()
+# 深拷贝函数
+c = copy.deepcopy(a)
+c.append(44)
+print(a)
+print(b)
+print(c)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+root@DESKTOP-P2IBM15:/mnt/c/Users/Night/Documents/python# python3 testPy.py
+[11, 22, 33]
+[11, 22, 33]
+[11, 22, 33, 44]
+</code></pre>
+
+<h3 id="_24">私有化</h3>
+<ol>
+<li>xx: 公有变量</li>
+<li>_x: 单前置下划线,私有化属性或方法，<code>from somemodule import *</code> 禁止导入,类对象和子类可以访问</li>
+<li>__xx：双前置下划线,避免与子类中的属性命名冲突，无法在外部直接访问(名字重整所以访问不到)</li>
+<li><strong>xx</strong>: 双前后下划线,用户名字空间的魔法对象或属性。例如:<strong>init</strong> , __ 不要自己发明这样的名字</li>
+<li>xx_:单后置下划线,用于避免与Python关键词的冲突</li>
+</ol>
+<h3 id="import">Import 导入模块</h3>
+<pre><code>1. Import 搜索路径
+    • 从上面列出的目录里依次查找要导入的模块文件
+    • '' 表示当前路径
+    • 列表中的路径的先后顺序代表了python解释器在搜索模块时的先后顺序
+        import sys
+        sys.path
+
+        ['(当前路径)', 
+        '/usr/lib/python36.zip', 
+        '/usr/lib/python3.6', 
+        '/usr/lib/python3.6/lib-dynload', 
+        '/usr/local/lib/python3.6/dist-packages', 
+        '/usr/lib/python3/dist-packages']
+2. 重新导入模块
+    a. 模块被导入后，import module不能重新导入模块，重新导入需用reload
+        from imp import reload
+        reload(xx)
+</code></pre>
+<h3 id="_25">封装，继承，多态</h3>
+<pre><code>a. __class__
+    i. 对象
+b. __dict__
+    i. 属性列表
+</code></pre>
+<h3 id="mro">多继承以及MRO顺序</h3>
+<ol>
+<li>super().<strong>init__相对于类名.__init</strong>，在单继承上用法基本无差  </li>
+<li>但在多继承上有区别，super方法能保证每个父类的方法只会执行一次，<br />
+    而使用类名的方法会导致方法被执行多次，具体看前面的输出结果  </li>
+<li>多继承时，使用super方法，对父类的传参数，<br />
+    应该是由于python中super的算法导致的原因，必须把参数全部传递，否则会报错  </li>
+<li>单继承时，使用super方法，则不能全部传递，<br />
+    只能传父类方法所需的参数，否则会报错  </li>
+<li>多继承时，相对于使用类名.__init__方法，要把每个父类全部写一遍, 而使用super方法，<br />
+    只需写一句话便执行了全部父类的方法，这也是为何多继承需要全部传参的一个原因  </li>
+</ol>
+<h3 id="with">With 上下文管理</h3>
+<ol>
+<li>任何实现了 <strong>enter</strong>() 和 <strong>exit</strong>() 方法的对象都可称之为上下文管理器，<br />
+    上下文管理器对象可以使用 with 关键字。显然，文件（file）对象也实现了上下文管理器。  </li>
+<li>Python 还提供了一个 contextmanager 的装饰器，更进一步简化了上下文管理器的实现方式。<br />
+    通过 yield 将函数分割成两部分，yield 之前的语句在 <strong>enter</strong> 方法中执行， 
+        yield 之后的语句在 <strong>exit</strong> 方法中执行。紧跟在 yield 后面的值是函数的返回值。  </li>
+</ol>
+<pre><code class="python">from contextlib import contextmanager
+
+@contextmanager
+</code></pre>
+
+<h3 id="_26">闭包</h3>
+<ol>
+<li>思考： 函数，匿名函数，闭包，对象 当做参数时， 有什么区别  </li>
+<li>匿名函数能够完成基本的简单功能，传递是这个函数的引用 只有功能  </li>
+<li>普通函数能够完成较为复杂的功能，传递是这个函数的引用 只有功能  </li>
+<li>闭包能够将较为复杂的功能，传递时这个闭包中的函数以及数据，因此传递时功能 + 数据  </li>
+<li>对象能够完成最为复杂的功能，传递时很多数据 + 很多功能，因此传递是功能 + 数据  </li>
+<li>修改关键字
+    <code>Nonlocal</code></li>
+</ol>
+<h3 id="_27">装饰器</h3>
+<ol>
+<li>
+<p>@装饰器名 
+    函数()</p>
+</li>
+<li>
+<p>参数装饰器</p>
+</li>
+</ol>
+<pre><code class="python"># 通用装饰器
+def secoratorFunc(func):
+    def sec_func(*args, **wkargs):
+    print(&quot;-- --&quot;)
+    return func(*args, **wkargs)
+return sec_func
+
+@ secoratorFunc
+def test(a, *args, **kwarge):
+    print(&quot;-- --&quot;, a, args, kwarge)
+    return a
+
+print(test(1, 2, b = 3))
+
+&quot;&quot;&quot;
+-- --
+-- -- 1 (2,) {'b': 3}
+1
+&quot;&quot;&quot;
+</code></pre>
+
+<h3 id="_28">元类</h3>
+<ol>
+<li>
+<p>Globals </p>
+</li>
+<li>
+<p>Type()
+    type(类名, 由父类名称组成的元组（针对继承的情况，可以为空），包含属性的字典（名称和值))</p>
+</li>
+</ol>
+<pre><code class="python">&gt;&gt;&gt; globals
+&lt;built-in function globals&gt;
+&gt;&gt;&gt; globals()
+{'__name__': '__main__', 
+'__doc__': None, 
+'__package__': None, 
+'__loader__': &lt;class '_frozen_importlib.BuiltinImporter'&gt;, 
+'__spec__': None, '__annotations__': {},
+'__builtins__': &lt;module 'builtins' (built-in)&gt;}
+
+&gt;&gt;&gt; help(type)
+</code></pre>
+
+<h2 id="socket">Socket</h2>
+<h3 id="socket_1">创建socket</h3>
+<p>在 Python 中 使用socket 模块的函数 socket 就可以完成：</p>
+<pre><code class="python">    import socket
+
+    socket.socket(AddressFamily, Type)
+</code></pre>
+
+<p>函数说明：
+- 函数 socket.socket 创建一个 socket，该函数带有两个参数：
+- Address Family：可以选择 AF_INET（用于 Internet 进程间通信） 或者 AF_UNIX（用于同一台机器进程间通信）,实际工作中常用AF_INET
+- Type：套接字类型，可以是 SOCK_STREAM（流式套接字，主要用于 TCP 协议）或者 SOCK_DGRAM（数据报套接字，主要用于 UDP 协议)</p>
+<h3 id="tcp">Tcp</h3>
+<pre><code class="python">#创建一个tcp socket（tcp套接字）
+import socket
+# 创建tcp的套接字
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# ...这里是使用套接字的功能（省略）...
+# 不用的时候，关闭套接字
+s.close()
+</code></pre>
+
+<h4 id="tcp_1">TCP客户端</h4>
+<pre><code class="python">import socket
+    def main():
+    tcpSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_ip = &quot;127.0.0.1&quot;
+    server_port = 7788
+    server_addr = (server_ip, server_port)
+    tcpSocket.connect(server_addr)
+    sendData = &quot;sss&quot;
+    tcpSocket.send(sendData.encode(&quot;utf-8&quot;))
+    tcpSocket.close()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h4 id="tcp_2">TCP服务器</h4>
+<pre><code class="python">import socket
+def main():
+    tcpServerSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    tcpServerSocket.bind((&quot;&quot;, 7890))
+    tcpServerSocket.listen(128)
+    while True:
+        client_socket, client_addr = tcpServerSocket.accept()
+            while True:
+                recvData = client_socket.recv(1024)
+                if recvData:
+                    repMsg = input(&quot;[%s] =&gt; %s\nReply =&gt;&quot; %(client_addr, recvData.encode(&quot;utf-8&quot;)))
+                    if repMsg != &quot;[#end]&quot;:
+                        client_socket.send(repMsg.encode(&quot;utf-8&quot;))
+                    else:
+                        break
+                else:
+                    break
+        # 关闭accept返回的套接字，意味着 不会在为这个客户端服务
+        client_socket.close()
+    # 关闭监听套接字，会导致不能再次等待新客户端的到来。
+    tcpServerSocket.close()
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<p>说明：
+- tcp服务器一般情况下都需要绑定，否则客户端找不到这个服务器
+- tcp客户端一般不绑定，因为是主动链接服务器，所以只要确定好服务器的ip、port等信息就好，本地客户端可以随机
+- tcp服务器中通过listen可以将socket创建出来的主动套接字变为被动的，这是做tcp服务器时必须要做的
+- 当客户端需要链接服务器时，就需要使用connect进行链接，udp是不需要链接的而是直接发送，但是tcp必须先链接，只有链接成功才能通信
+- 当一个tcp客户端连接服务器时，服务器端会有1个新的套接字，这个套接字用来标记这个客户端，单独为这个客户端服务
+- listen后的套接字是被动套接字，用来接收新的客户端的链接请求的，而accept返回的新套接字是标记这个新客户端的
+- 关闭listen后的套接字意味着被动套接字关闭了，会导致新的客户端不能够链接服务器，但是之前已经链接成功的客户端正常通信。
+- 关闭accept返回的套接字意味着这个客户端已经服务完毕
+- 当客户端的套接字调用close后，服务器端会recv解堵塞，并且返回的长度为0，因此服务器可以通过返回数据的长度来区别客户端是否已经下线</p>
+<h3 id="tcp_3">TCP文件下载</h3>
+<h4 id="tcp_4">TCP文件下载客户端</h4>
+<pre><code class="python">import io;
+import sys;
+import socket;
+
+def TdownFile():
+    tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    dest_ip = input(&quot;Enter ip =&gt; &quot;)
+    dest_port = int(input(&quot;Enter port =&gt; &quot;))
+
+    tcp_socket.connect((dest_ip, dest_port))
+
+    downloadFileName = input(&quot;File Name =&gt; &quot;)
+
+    tcp_socket.send(downloadFileName.encode(&quot;utf-8&quot;))
+    recv_data = tcp_socket.recv(1024 * 1024)
+
+    if recv_data:
+        with open(&quot;[copy]&quot; + downloadFileName, &quot;wb&quot;) as f:
+            f.write(recv_data)
+    else:
+        print(&quot;File Name Error or File Not Fount!&quot;)
+
+    tcp_socket.close()
+
+def main():
+    TdownFile()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h4 id="tcp_5">TCP文件下载服务端</h4>
+<pre><code class="python">import socket
+def sendFile2Client(client_socket, client_addr):
+    fileName = client_socket.recv(1024).decode(&quot;utf-8&quot;)
+    print(&quot;Addr -&gt; [%s] \nDownload File Name -&gt; %s&quot; %(str(client_addr), str(fileName)))
+    fileContent = None
+    try:
+        f = open(fileName, &quot;rb&quot;)
+        fileContent = f.read()
+        f.close()
+    except Exception as ret:
+    print(&quot;Open File Error! [%s]&quot; %(fileName))
+    return False
+
+    if fileContent:
+    client_socket.send(fileContent)
+    return True
+
+def main():
+    tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    tcp_server_socket.bind((&quot;&quot;, 7890))
+    tcp_server_socket.listen(128)
+
+    while True:
+        client_socket, client_addr = tcp_server_socket.accept()
+        if sendFile2Client(client_socket, client_addr):
+        print(&quot;OK!&quot;)
+        else:
+        print(&quot;Error!&quot;)
+        client_socket.close()
+        tcp_server_socket.close()
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h4 id="tcp_6">TCP文件下载重点总结</h4>
+<ul>
+<li>tcp服务器一般情况下都需要绑定，否则客户端找不到这个服务器</li>
+<li>tcp客户端一般不绑定，因为是主动链接服务器，所以只要确定好服务器的ip、port等信息就好，本地客户端可以随机</li>
+<li>tcp服务器中通过listen可以将socket创建出来的主动套接字变为被动的，这是做tcp服务器时必须要做的</li>
+<li>当客户端需要链接服务器时，就需要使用connect进行链接，udp是不需要链接的而是直接发送，但是tcp必须先链接，只有链接成功才能通信</li>
+<li>当一个tcp客户端连接服务器时，服务器端会有1个新的套接字，这个套接字用来标记这个客户端，单独为这个客户端服务</li>
+<li>listen后的套接字是被动套接字，用来接收新的客户端的链接请求的，而accept返回的新套接字是标记这个新客户端的</li>
+<li>关闭listen后的套接字意味着被动套接字关闭了，会导致新的客户端不能够链接服务器，但是之前已经链接成功的客户端正常通信。</li>
+<li>关闭accept返回的套接字意味着这个客户端已经服务完毕</li>
+<li>当客户端的套接字调用close后，服务器端会recv解堵塞，并且返回的长度为0，因此服务器可以通过返回数据的长度来区别客户端是否已经下线</li>
+</ul>
+<h3 id="udp">Udp</h3>
+<p>基本范式</p>
+<pre><code class="python">#创建一个udp socket（udp套接字）
+import socket
+# 创建udp的套接字
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# ...这里是使用套接字的功能（省略）...
+# 不用的时候，关闭套接字
+s.close()
+</code></pre>
+
+<h4 id="_29">发送数据</h4>
+<pre><code class="python">    #-*- coding:utf-8 -*-
+    #Test word
+    import socket
+    import sys
+    def main():
+        ip = str(sys.argv[1])
+        port = int(sys.argv[2])
+        udpSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        msg = input(&quot;Enter -&gt;&quot;)
+        udpSocket.sendto(msg.encode(&quot;utf-8&quot;), (ip, port))
+        udpSocket.close()
+    if __name__ == &quot;__main__&quot;:
+        main()
+</code></pre>
+
+<h4 id="_30">接受数据</h4>
+<pre><code class="python">import socket
+def main():
+    udpSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    localaddr = (&quot;&quot;, 7788)
+    udpSocket.bind(localaddr)
+    recvData = udpSocket.recvfrom(1024)
+    recvMsg = recvData[0]
+    recvAddr = recvData[1]
+    print(&quot;[%s] =&gt; %s&quot;%(recvAddr[0], recvMsg.decode(&quot;utf-8&quot;)))
+    udpSocket.close()
+    input(&quot;key&quot;)
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h4 id="_31">设置套接字为非阻塞</h4>
+<p><code>tcpServerSocket.setblocking(False)</code></p>
+<h2 id="_32">多任务</h2>
+<h3 id="_33">多线程</h3>
+<ul>
+<li>Thread 当调用Tread的时候，不会创建线程，只有当创建的实例对象的start方法时，才会创建线程及使该线程开始运行</li>
+</ul>
+<pre><code class="python">import threading
+
+def th1():
+    for i in range(5):
+        print(&quot;--- t1 --- %d ---&quot; %i)
+
+def th2():
+    for i in range(5):
+        print(&quot;--- t2 --- %d ---&quot; %i)
+
+def main():
+    t1 = threading.Thread(target = th1)
+    t2 = threading.Thread(target = th2)
+    t1.start()
+    t2.start()
+    print(threading.enumerate())
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<ul>
+<li>通过继承Thread类完成线程的创建</li>
+</ul>
+<pre><code class="python">import threading
+class TestThread(threading.Thread):
+    def run(self):
+        for i in range(5):
+            print(&quot;-- %s --&quot; %(i))
+            print(threading.enumerate())
+
+def main():
+    t = TestThread()
+    t.start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<ul>
+<li>多线程共享全局变量</li>
+</ul>
+<pre><code class="python">import threading
+import time
+
+g_n = 100
+def ts1():
+    global g_n
+    g_n += 1
+    print(&quot; --- in test1 g_n = %d ---&quot; %g_n)
+def ts2():
+    print(&quot; --- in test2 g_n = %d ---&quot; %g_n)
+def main():
+    t1 = threading.Thread(target=ts1)
+    t2 = threading.Thread(target=ts2)
+    t1.start()
+    #time.sleep(1)
+    t2.start()
+    print(&quot; --- in main Thread g_n = %d --- &quot; %g_n)
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<ul>
+<li>Thread参数</li>
+</ul>
+<pre><code class="python">import threading
+import time
+
+g_n = 100
+def ts1(temp):
+    temp.append(33)
+    print(&quot; --- in test1 = %s ---&quot; %str(temp))
+
+def ts2(temp):
+    print(&quot; --- in test2 = %s ---&quot; %str(temp))
+    g_ns = [11, 22]
+
+def main():
+    #target= 指定该线程将要运行的函数
+    #arge= 线程参数传递，以元祖形式传递
+    t1 = threading.Thread(target=ts1, args=(g_ns,))
+    t2 = threading.Thread(target=ts2, args=(g_ns,))
+    t1.start()
+    #time.sleep(1)
+    t2.start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<ul>
+<li>互斥锁</li>
+</ul>
+<pre><code class="python">import threading
+import time
+
+g_n = 0
+mutex = threading.Lock()
+
+def ts1(temp):
+    global g_n
+    mutex.acquire()
+    for i in range(temp):
+        g_n += 1
+    mutex.release()
+    print(&quot; --- in test1 = %s ---&quot; %str(g_n))
+
+def ts2(temp):
+    global g_n
+    mutex.acquire()
+    for i in range(temp):
+        g_n += 1
+    mutex.release()
+    print(&quot; --- in test2 = %s ---&quot; %str(g_n))
+
+def main():
+    t1 = threading.Thread(target=ts1, args=(10000000,))
+    t2 = threading.Thread(target=ts2, args=(10000000,))
+    t1.start()
+    #time.sleep(1)
+    t2.start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<ul>
+<li>
+<p>死锁</p>
+</li>
+<li>
+<p>多任务upd收发聊天器</p>
+</li>
+</ul>
+<pre><code class="python">import threading
+import time
+import socket
+
+mutex = threading.Lock()
+def recv_msg(udp_socket):
+    while True:
+        recv_data = udp_socket.recvfrom(1024)
+        data, addr = recv_data
+        print(&quot;[%s] =&gt; %s&quot; %(addr, data.decode(&quot;utf-8&quot;)))
+
+def send_msg(udp_socket, dest_ip, dest_port):
+    while True:
+        #mutex.acquire()
+        send_data = input(&quot;ENTER DATA =&gt; &quot;)
+        udp_socket.sendto(send_data.encode(&quot;utf-8&quot;), (dest_ip, dest_port))
+        #mutex.release()
+
+def main():
+    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    udp_socket.bind((&quot;&quot;, 7890))
+    dest_ip = input(&quot;ENTER IP &quot;)
+    dest_port = int(input(&quot;ENTER PORT &quot;))
+    t_recv = threading.Thread(target=recv_msg, args=(udp_socket,))
+    t_send = threading.Thread(target=send_msg, args=(udp_socket, dest_ip, dest_port))
+    t_recv.start()
+    t_send.start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h3 id="_34">多进程</h3>
+<pre><code class="python">import threading
+import time
+import multiprocessing
+
+def ts1():
+    for i in range(5):
+        print(&quot;--- 1 ---&quot;)
+
+def ts2():
+    for i in range(5):
+        print(&quot;--- 2 ---&quot;)
+
+def main():
+    pr1 = multiprocessing.Process(target=ts1)
+    pr2 = multiprocessing.Process(target=ts2)
+    pr1.start()
+    pr2.start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h3 id="queue">进程间通信（Queue）</h3>
+<pre><code class="python">import threading
+import time
+import multiprocessing
+
+def ts1(pr_queue):
+    data = [11, 22, 33, 44]
+    for temp in data:
+        pr_queue.put(temp)
+        print(&quot;Download OK!&quot;)
+
+def ts2(pr_queue):
+    waitting_analysis_data = list()
+    while True:
+        waitting_analysis_data.append(pr_queue.get())
+            if pr_queue.empty():
+                break
+                print(waitting_analysis_data)
+
+def main():
+    # 1. 创建一个队列
+    pr_queue = multiprocessing.Queue()
+    # 2. 创建多个进程，将队列的引用传递给进程 
+    pr1 = multiprocessing.Process(target=ts1, args=(pr_queue,))
+    pr2 = multiprocessing.Process(target=ts2, args=(pr_queue,))
+    pr1.start()
+    pr2.start()
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h4 id="pool">进程池 Pool</h4>
+<pre><code class="python">import threading
+import time
+import multiprocessing
+import os
+import random
+
+def ts1(msg):
+    t_start = time.time()
+    print(&quot; --- %s --- %d&quot; %(msg, os.getpid()))
+    time.sleep(random.random())
+    t_end = time.time()
+    print(&quot; --- %s --- time =&gt; %s&quot; %(msg, t_end - t_start))
+
+def main():
+    po = multiprocessing.Pool(5)
+    for item in range(0, 10):
+        po.apply_async(ts1, (item,))
+        #关闭进程池，关闭后进程池对象不再接收新的请求
+    po.close()
+        #等待进程池对象中所有子进程执行完成，必须放在close语句
+    po.join()
+if __name__ == &quot;__main__&quot;:
+    main()
+
+</code></pre>
+
+<h4 id="copy">多进程文件夹Copy</h4>
+<pre><code class="python">import multiprocessing
+import os
+import random
+import threading
+import time
+
+def copy_file(pr_queue, file_name, old_folder_name, new_folder_name):
+    old_f = open(old_folder_name + &quot;/&quot; + file_name, &quot;rb&quot;)
+    content = old_f.read()
+    old_f.close()
+    new_f = open(new_folder_name + &quot;/&quot; + file_name, &quot;wb&quot;)
+    new_f.write(content)
+    new_f.close
+    pr_queue.put(file_name)
+
+def main():
+    old_folder_name = input(&quot;Enter File Folder Name of Copy &quot;)
+    try:
+        new_folder_name = old_folder_name + &quot;[Copy]&quot;
+        os.mkdir(new_folder_name)
+    except:
+        file_names = os.listdir(old_folder_name)
+        print(file_names)
+        pr = multiprocessing.Pool(5)
+        pr_queue = multiprocessing.Manager().Queue()
+
+    for file_name in file_names:
+        pr.apply_async(copy_file, args=(pr_queue, file_name, old_folder_name, new_folder_name))
+        pr.close()
+        all_file_num = len(file_names)
+        copy_ok_num = 0
+        #pr.join()
+
+    while copy_ok_num &lt; all_file_num:
+        file_name = pr_queue.get()
+        copy_ok_num += 1
+        print(&quot;\r Copy: %.2f%% \n&quot; %(copy_ok_num / all_file_num * 100), end = &quot;&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h3 id="_35">多协程</h3>
+<ul>
+<li>迭代器</li>
+</ul>
+<pre><code class="python">import multiprocessing
+import os
+import random
+import threading
+import time
+from collections import Iterable
+from collections import Iterator
+
+class Classmate(object):
+    def __init__(self):
+        self.names = list()
+        self.current_num = 0
+    def add(self, name):
+        self.names.append(name)
+        # 如果希望使一个类成为可以迭代的对象，即可以使用for，
+        # 那么必须实现__iter__方法
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current_num &lt; len(self.names):
+            ret = self.names[self.current_num]
+            self.current_num += 1
+            return ret
+        else:
+            raise StopIteration
+
+    def main():
+        classmate = Classmate()
+        classmate.add(&quot;laowang&quot;)
+        classmate.add(&quot;wanger&quot;)
+        classmate.add(&quot;zhangsan&quot;)
+        #判断某个数据是否可以被迭代或是迭代数据类型(Iterable)
+        #d = isinstance(classmate, Iterable)
+        #classmate_iterator = iter(classmate)
+        #判断某个数据或对象是否是迭代器
+        #ior = isinstance(classmate_iterator, Iterator)
+        #next(classmate_iterator)
+        for name in classmate:
+            print(name)
+
+    if __name__ == &quot;__main__&quot;:
+        main()
+</code></pre>
+
+<h4 id="_36">生成器</h4>
+<ul>
+<li>把一个列表生成式的 [ ] 改成 ( )
+yield</li>
+</ul>
+<pre><code class="python">def create_num(all_num):
+    a, b = 0, 1
+    current_num = 0
+    while current_num &lt; all_num:
+        # 若函数中存在 yield 语句，则该函数就成为一个生成器的模板
+        yield a
+        a, b = b, a + b
+        current_num += 1
+        # 如果在调用一个函数时，发现这个函数中有yield, 那么不再是调用函数，而是创建一个生成器对象
+        cn = create_num(10)
+
+for num in cn:
+    print(num)
+</code></pre>
+
+<pre><code class="python">def create_num(all_num):
+    a, b = 0, 1
+    current_num = 0
+    while current_num &lt; all_num:
+    yield a
+    a, b = b, a + b
+    current_num += 1
+    return &quot;ret&quot;
+    cn = create_num(10)
+    while True:
+        try:
+            ret_n = next(cn)
+            print(ret_n)
+        except Exception as ret:
+            print(ret.value)
+        break
+</code></pre>
+
+<p>Send()</p>
+<pre><code class="python">def create_num(all_num):
+    a, b = 0, 1
+    current_num = 0
+    while current_num &lt; all_num:
+        ret = yield a
+        a, b = b, a + b
+        current_num += 1
+        return &quot;ret&quot;
+        cn = create_num(10)
+        ret_n = next(cn)
+        # send()类似next(),且可以返回给yield
+        ret_n = cn.send(&quot;ret&quot;)
+        print(ret_n)
+</code></pre>
+
+<h4 id="yield">协程 yield</h4>
+<pre><code class="python">import time
+
+def task_1():
+    while True:
+    print(&quot; --- 1 ---&quot;)
+    time.sleep(0.1)
+    yield
+
+def task_2():
+    while True:
+    print(&quot; --- 2 ---&quot;)
+    time.sleep(0.1)
+    yield
+
+def main():
+    t1 = task_1()
+    t2 = task_2()
+    while True:
+    next(t1)
+    next(t2)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h4 id="greenlet">协程greenlet</h4>
+<p>使用如下命令安装greenlet模块:
+<code>sudo pip3 install greenlet</code></p>
+<pre><code>from greenlet import greenlet
+import time
+
+def test1():
+    while True:
+    print (&quot;---A--&quot;)
+    gr2.switch()
+    time.sleep(0.5)
+
+def test2():
+    while True:
+        print (&quot;---B--&quot;)
+        gr1.switch()
+        time.sleep(0.5)
+
+    gr1 = greenlet(test1)
+    gr2 = greenlet(test2)
+    #切换到gr1中运行
+    gr1.switch()
+</code></pre>
+
+<h4 id="gevent">协程gevent</h4>
+<pre><code class="python">import gevent
+    def f(n):
+
+for i in range(n):
+    print(gevent.getcurrent(), i)
+    gevent.sleep(0.5)
+
+g1 = gevent.spawn(f, 5)
+g2 = gevent.spawn(f, 5)
+g3 = gevent.spawn(f, 5)
+g1.join()
+g2.join()
+g3.join()
+</code></pre>
+
+<h4 id="gevent_1">Gevent 补丁</h4>
+<pre><code class="python">from gevent import monkey
+import gevent
+import random
+import time
+
+# 有耗时操作时需要
+monkey.patch_all() 
+# 将程序中用到的耗时操作的代码，换为gevent中自己实现的模块
+
+def coroutine_work(coroutine_name):
+    for i in range(10):
+        print(coroutine_name, i)
+        time.sleep(random.random())
+        gevent.joinall([
+        gevent.spawn(coroutine_work, &quot;work1&quot;),
+        gevent.spawn(coroutine_work, &quot;work2&quot;)
+        ])
+</code></pre>
+
+<h4 id="_37">并发下载器</h4>
+<pre><code class="python">import urllib.request
+import gevent
+from gevent import monkey
+
+monkey.patch_all()
+
+def down_img(url):
+    req = urllib.request.urlopen(url)
+    with open(&quot;2.jpg&quot;, &quot;wb&quot;) as f:
+        f.write(req.read())
+
+def main():
+    gevent.joinall([
+    gevent.spawn(down_img, &quot;http://x.x.x?x.jpg&quot;),
+    ])
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h2 id="python_3">Python 垃圾回收</h2>
+<p>引用计数器为主,标记清除和分代回收为辅+缓存机制</p>
+<h3 id="_38">引用计数器</h3>
+<h4 id="refchain">环状双向链表 refchain</h4>
+<ul>
+<li>在python程序中创建的任何对象都会放在refchain链表中</li>
+<li>在C源码中体现每个对象固有的值: PyObject结构体<blockquote>
+<p>有多个元素组成的对象: PyObject + ob_size = PyVarObject</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="c">#define PyObject_HEAD PyObject ob_base;
+#define PyObject_VAR_HEAD PyVarObject ob_base;
+
+// 宏定义,包含 上一个,下一个,用于构造双向链表用.(放到refchain链表中时,用到)
+# define _PyObject_HEAD_EXTRA
+    struct _object *_ob_next;
+    struct _object *_ob_prev;
+
+typedef struct _object{
+    _PyObject_HEAD_EXTRA;  // 用于构造双向链表
+    Py_ssize_t ob_refcnt;  // 引用计数器
+    struct _typeobject *ob_type;  // 数据类型
+} PyObject;
+
+typedef struct {
+    PyObject ob_base;  // pyObject对象
+    Py_ssize ob_size;  // Number of items in variable part, 即: 元素个数
+} PyVarObject;
+
+</code></pre>
+
+<h4 id="float">float类型</h4>
+<pre><code class="c">typedef struct {
+    PyObject_HEAD
+    double ob_fval;
+} PyFloatObject;
+</code></pre>
+
+<h4 id="int">int类型</h4>
+<pre><code class="c">struct _longobject {
+    PyObject_VAR_HEAD
+    digit ob_digit[1];
+}
+// long(arbitrary precision) integer object interface
+typedef struct _longobject PyLongObject; // Revealed in longintrepr.h
+</code></pre>
+
+<h4 id="list">list 类型</h4>
+<pre><code class="c">typedef struct {
+    PyObject_VAR_HEAD
+    PyObject **ob_item;
+    Py_ssize_t allocated;
+} PyListObject;
+</code></pre>
+
+<h4 id="tuple">tuple 类型</h4>
+<pre><code class="c">typedef struct {
+    Pyobject_VAR_HEAD
+    PyObject *ob_item[1];
+} PyTupleObject;
+
+</code></pre>
+
+<h4 id="dict">dict 类型</h4>
+<pre><code class="c">typedef struct {
+    PyObject_HEAD
+    Py_ssize_t ma_used;
+    PyDictKeyObject *ma_keys;
+    PyObject **ma_values;
+} PyDicetObject;
+</code></pre>
+
+<h4 id="_39">机制</h4>
+<ul>
+<li>当python程序运行时,会根据数据类型的不同找到其对应的结构体,根据结构体中的字段来进行创建相关的数据,然后将对象添加到refchain双向链表中.</li>
+<li>在C源码中有两个关键的结构体<code>PyObject</code>, <code>PyVarObject</code><blockquote>
+<ul>
+<li><code>PyObject</code>存放公共对象值.</li>
+<li><code>PyVarObject</code>存放对象值为多个的类型.</li>
+</ul>
+</blockquote>
+</li>
+<li>每个对象中有 ob_refcnt 就是引用计数器,默认值为1,当有其他变量引用对象时,引用计数器就会发生变化.<blockquote>
+<ul>
+<li>引用 <code>a = 99; b = a</code> </li>
+<li>删除引用 <code>del b</code>,此时对象引用计数器-1</li>
+<li><code>def a</code>, 引用计数器再-1,当此引用计数器为0时,进行垃圾回收.</li>
+<li>回收: 1 对象从refchain链表中移除. 2 将对象销毁,内存归还.</li>
+</ul>
+</blockquote>
+</li>
+<li>引用计数器的问题:循环引用 -&gt; 标记清除</li>
+</ul>
+<h3 id="_40">标记清除</h3>
+<ul>
+<li>标记清除的目的:为了解决引用计数器循环引用的不足.</li>
+<li>标记清除的实现:在python底层,再去维护一个链表.链表中放置可能存在循环引用的对象(list, tuple, dict, set)</li>
+<li>在Python内部,某一时刻下触发,扫描标记清除列表中的每个元素,检查是否存在循环引用,如果有,则双方的引用计数器-1;如果时0则垃圾回收.</li>
+<li>标记清除存在的问题:<blockquote>
+<ul>
+<li>什么时刻开始扫描</li>
+<li>存在循环引用的链表扫描代价大,每次扫描耗时久.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="_41">分代回收</h3>
+<ul>
+<li>将可能存在循环引用的对象维护为3个链表:<blockquote>
+<ul>
+<li>0代: 0代链表中对象个数达到700个扫描一次.</li>
+<li>1代: 当0代链表扫描10次,则1代扫描一次.</li>
+<li>2代: 当1代链表扫描10次,则2代扫描一次.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="_42">缓存机制</h3>
+<ul>
+<li>在上述流程中提出缓存机制.</li>
+</ul>
+<h4 id="int_1">池(int)</h4>
+<ul>
+<li>为了避免重复创建和销毁一些常见对象,维护池.<blockquote>
+<ul>
+<li>启动Python解释器时,Python内部会创建<code>-5, -4 ...... 257</code>值</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="free_listfloat-list-tuple-dict">free_list(float, list, tuple, dict)</h4>
+<ul>
+<li>当一个对象的引用计数器为0时,在解释器内部不会直接回收,而是将对象添加到free_list链表中,充当缓存,当以后再去创建对象时,不再重新开辟内存,而是直接使用free_list内的对象.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../python_wsgi/" class="btn btn-neutral float-right" title="Python WSGI">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../calendar/" class="btn btn-neutral" title="日历"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../calendar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../python_wsgi/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
