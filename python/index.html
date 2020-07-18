@@ -54,16 +54,9 @@
                     <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">技术分享</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <p class="caption"><span class="caption-text">分享</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">个人学习笔记</span></p>
@@ -194,9 +187,13 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#json">JSON</a>
+    </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web/">Python Web</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../awe_python/">Python库</a>
                 </li>
     </ul>
                     </li>
@@ -204,7 +201,9 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
                 </li>
-                <li class="toctree-l2"><a class="" href="../mysql.dm">Mysql</a>
+                <li class="toctree-l2"><a class="reference internal" href="../mysql/">Mysql</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../redis/">Redis</a>
                 </li>
     </ul>
                     </li>
@@ -228,7 +227,21 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
     <ul>
-                <li class="toctree-l2"><a class="" href="Java:'java.md'">None</a>
+                <li class="toctree-l2"><a class="reference internal" href="../java/">Java</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">WebCrawler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web_crawler/">Python Web Crawler</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Container</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../docker/">Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Kubernetes/">K8S</a>
                 </li>
     </ul>
                     </li>
@@ -2244,6 +2257,51 @@ typedef struct _longobject PyLongObject; // Revealed in longintrepr.h
 <ul>
 <li>当一个对象的引用计数器为0时,在解释器内部不会直接回收,而是将对象添加到free_list链表中,充当缓存,当以后再去创建对象时,不再重新开辟内存,而是直接使用free_list内的对象.</li>
 </ul>
+<h2 id="json">JSON</h2>
+<p><code>JSON</code>(<code>JavaScript</code>对象表示法),由<code>RFC 7159</code>(which obsoletes RFC 4627)和<code>ECMA-404</code>是一种受<code>JavaScript</code>对象文字语法启发的轻量级数据交换格式(尽管它不是JavaScript 1的严格子集).<br />
+<code>json</code>向标准库<code>marshal</code>和<code>pickle</code>模块的用户公开一个熟悉的API.<br />
+1. marshal—内部Python对象序列.
+2. pickle- Python对象序列化.</p>
+<p>编码基本的Python对象层次结构:</p>
+<pre><code class="python">&gt;&gt;&gt; import json
+&gt;&gt;&gt; json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])
+'[&quot;foo&quot;, {&quot;bar&quot;: [&quot;baz&quot;, null, 1.0, 2]}]'
+
+&gt;&gt;&gt; print(json.dumps(&quot;\&quot;foo\bar&quot;))
+&quot;\&quot;foo\bar&quot;
+
+&gt;&gt;&gt; print(json.dumps('\u1234'))
+&quot;\u1234&quot;
+
+&gt;&gt;&gt; print(json.dumps('\\'))
+&quot;\\&quot;
+
+&gt;&gt;&gt; print(json.dumps({&quot;c&quot;: 0, &quot;b&quot;: 0, &quot;a&quot;: 0}, sort_keys=True))
+{&quot;a&quot;: 0, &quot;b&quot;: 0, &quot;c&quot;: 0}
+
+&gt;&gt;&gt; from io import StringIO
+&gt;&gt;&gt; io = StringIO()
+&gt;&gt;&gt; json.dump(['streaming API'], io)
+&gt;&gt;&gt; io.getvalue()
+'[&quot;streaming API&quot;]'
+
+</code></pre>
+
+<p>紧凑编码:</p>
+<pre><code class="python">&gt;&gt;&gt;
+&gt;&gt;&gt; import json
+&gt;&gt;&gt; json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))
+'[1,2,3,{&quot;4&quot;:5,&quot;6&quot;:7}]'
+</code></pre>
+
+<p>漂亮的印刷:</p>
+<pre><code class="python">&gt;&gt;&gt; import json
+&gt;&gt;&gt; print(json.dumps({'4': 5, '6': 7}, sort_keys=True, indent=4))
+{
+    &quot;4&quot;: 5,
+    &quot;6&quot;: 7
+}
+</code></pre>
               
             </div>
           </div>
@@ -2251,10 +2309,10 @@ typedef struct _longobject PyLongObject; // Revealed in longintrepr.h
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../python_wsgi/" class="btn btn-neutral float-right" title="Python WSGI">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../python_web/" class="btn btn-neutral float-right" title="Python Web">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../calendar/" class="btn btn-neutral" title="日历"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../book/" class="btn btn-neutral" title="图书分享"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -2280,10 +2338,10 @@ typedef struct _longobject PyLongObject; // Revealed in longintrepr.h
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../calendar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../book/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../python_wsgi/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../python_web/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

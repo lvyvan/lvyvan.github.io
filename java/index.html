@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Java设计模式 - Yvan Blog</title>
+  <title>Java - Yvan Blog</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Java\u8bbe\u8ba1\u6a21\u5f0f";
+    var mkdocs_page_name = "Java";
     var mkdocs_page_input_path = "java.md";
     var mkdocs_page_url = null;
   </script>
@@ -54,25 +54,20 @@
                     <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">技术分享</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../technology/">Technology</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">个人分享</span></p>
+                <p class="caption"><span class="caption-text">分享</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../calendar/">日历</a>
-                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">个人学习笔记</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../python/">Python</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../python_wsgi/">Python WSGI</a>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web/">Python Web</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../awe_python/">Python库</a>
                 </li>
     </ul>
                     </li>
@@ -80,7 +75,9 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
                 </li>
-                <li class="toctree-l2"><a class="" href="../mysql.dm">Mysql</a>
+                <li class="toctree-l2"><a class="reference internal" href="../mysql/">Mysql</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../redis/">Redis</a>
                 </li>
     </ul>
                     </li>
@@ -102,9 +99,29 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Java</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Java</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_1">设计模式</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">设计模式七大原则</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">WebCrawler</a>
     <ul>
-                <li class="toctree-l2"><a class="" href="Java:'java.md'">None</a>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web_crawler/">Python Web Crawler</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Container</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../docker/">Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Kubernetes/">K8S</a>
                 </li>
     </ul>
                     </li>
@@ -140,8 +157,16 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Java &raquo;</li>
+        
+      
+        
+          <li>个人学习笔记 &raquo;</li>
+        
+      
     
-    <li>Java设计模式</li>
+    <li>Java</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -193,6 +218,15 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../python_web_crawler/" class="btn btn-neutral float-right" title="Python Web Crawler">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../javascrip/" class="btn btn-neutral" title="JavaScrip"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -215,6 +249,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../javascrip/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../python_web_crawler/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

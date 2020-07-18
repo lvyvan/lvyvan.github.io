@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Docker - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docker";
+    var mkdocs_page_input_path = "docker.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人学习笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python/">Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web/">Python Web</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../awe_python/">Python库</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mysql/">Mysql</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../redis/">Redis</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git/">Git</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">C#</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../cshirp/">C#</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScrip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javascrip/">JavaScrip</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../java/">Java</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">WebCrawler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web_crawler/">Python Web Crawler</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Container</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Docker</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Kubernetes/">K8S</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人阅读笔记</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../marxism_leninism/">марксизм-ленинизм</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../temp/">Temp</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Container &raquo;</li>
+        
+      
+        
+          <li>个人学习笔记 &raquo;</li>
+        
+      
+    
+    <li>Docker</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">查看镜像列表</h1>
+<p>PS C:\Users\Night&gt; docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[镜像名]           [版本]                [镜像唯一标识]        [创建时间]          [大小]
+hello-world         latest              fce289e99eb9        12 months ago       1.84kB</p>
+<h1 id="image-id">查看镜像列表,并显示完整的 IMAGE ID 值</h1>
+<p>PS C:\Users\Night&gt; docker image ls --no-trunc
+REPOSITORY          TAG                 IMAGE ID                                                                  CREATED             SIZE
+hello-world         latest              sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e   12 months ago       1.84kB</p>
+<h1 id="_2">查看某一镜像完整信息</h1>
+<p>PS C:\Users\Night&gt; docker image inspect hello-world
+[
+    {
+        "Id": "sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e",
+        "RepoTags": [
+            "hello-world:latest"
+        ],
+        "RepoDigests": [
+            "hello-world@sha256:9572f7cdcee8591948c2963463447a53466950b3fc15a247fcad1917ca215a2f"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2019-01-01T01:29:27.650294696Z",
+        "Container": "8e2caa5a514bb6d8b4f2a2553e9067498d261a0fd83a96aeaaf303943dff6ff9",
+        "ContainerConfig": {
+            "Hostname": "8e2caa5a514b",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/hello\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:a6d1aaad8ca65655449a26146699fe9d61240071f6992975be7e720f1cd42440",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "18.06.1-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/hello"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:a6d1aaad8ca65655449a26146699fe9d61240071f6992975be7e720f1cd42440",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1840,
+        "VirtualSize": 1840,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/597bff23bf1cc190ab4a40de4cdc64432022c78f4c1dd3918b62871a0bc23587/merged",
+                "UpperDir": "/var/lib/docker/overlay2/597bff23bf1cc190ab4a40de4cdc64432022c78f4c1dd3918b62871a0bc23587/diff",
+                "WorkDir": "/var/lib/docker/overlay2/597bff23bf1cc190ab4a40de4cdc64432022c78f4c1dd3918b62871a0bc23587/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]</p>
+<h1 id="_3">某一命令帮助查询</h1>
+<p>PS C:\Users\Night&gt; docker image inspect --help</p>
+<p>Usage:  docker image inspect [OPTIONS] IMAGE [IMAGE...]</p>
+<p>Display detailed information on one or more images</p>
+<p>Options:
+  -f, --format string   Format the output using the given Go template</p>
+<h1 id="id">只查看当前所有的镜像ID</h1>
+<p>PS C:\Users\Night&gt; docker image ls -q
+fce289e99eb9</p>
+<h1 id="_4">镜像的导入和导出</h1>
+<h1 id="_5">导出</h1>
+<p>PS C:\Users\Night\docker&gt; docker save -o ubun.save ccc6e87d482b </p>
+<h1 id="image-id-image">根据 IMAGE ID 删除 IMAGE</h1>
+<p>PS C:\Users\Night\docker&gt; docker image rm fce289e99eb9
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:9572f7cdcee8591948c2963463447a53466950b3fc15a247fcad1917ca215a2f
+Deleted: sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e
+Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3</p>
+<h1 id="_6">导入</h1>
+<p>PS C:\Users\Night\docker&gt; docker image load -i .\ubun.tar
+43c67172d1d1: Loading layer  65.57MB/65.57MB
+21ec61b65b20: Loading layer  991.2kB/991.2kB
+1d0dfb259f6a: Loading layer  15.87kB/15.87kB
+f55aa0bd26b8: Loading layer  3.072kB/3.072kB
+Loaded image: ubuntu:latest</p>
+<p>PS C:\Users\Night&gt; docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+5c939e3a4d10: Pull complete
+c63719cdbe7a: Pull complete
+19a861ea6baf: Pull complete
+651c9d2d6c4f: Pull complete
+Digest: sha256:8d31dad0c58f552e890d68bbfb735588b6b820a46e459672d96e585871acc110
+Status: Downloaded newer image for ubuntu:latest</p>
+<h1 id="-">--------------------------------------</h1>
+<h1 id="docker-run-image-command-arg">docker run IMAGE [COMMAND] [ARG]</h1>
+<h1 id="run">run 在新容器中执行命令</h1>
+<p>PS C:\Users\Night\docker&gt; docker run ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+5c939e3a4d10: Pull complete
+c63719cdbe7a: Pull complete
+19a861ea6baf: Pull complete
+651c9d2d6c4f: Pull complete
+Digest: sha256:8d31dad0c58f552e890d68bbfb735588b6b820a46e459672d96e585871acc110
+Status: Downloaded newer image for ubuntu:latest</p>
+<h1 id="docker-run-it-image-binbash">docker run -it IMAGE /bin/bash</h1>
+<h1 id="-i-interactivetruefalse-false-">-i -interactive=true|false 默认是false -&gt; 为容器始终打开标准输入</h1>
+<h1 id="-t-ttytruefalse-false-tty">-t -tty=true|false 默认是false -&gt; 为容器分配一个伪tty终端</h1>
+<p>PS C:\Users\Night\docker&gt; docker run -it ubuntu bash 
+root@48480ae802bc:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@48480ae802bc:/# exit
+exit</p>
+<h1 id="_7">查看容器</h1>
+<h1 id="docker-ps-a-l">docker ps [-a] [-l]</h1>
+<p>PS C:\Users\Night\docker&gt; docker ps
+CONTAINER ID    由docker守护进程分配容器唯一ID  <br />
+IMAGE           镜像
+COMMAND       <br />
+CREATED           <br />
+STATUS            <br />
+PORTS         <br />
+NAMES           由docker守护进程分配的Name</p>
+<h1 id="docker-ps">当 docker ps</h1>
+<p>PS C:\Users\Night\docker&gt; docker ps --help
+Usage:  docker ps [OPTIONS]
+List containers
+Options:
+  -a, --all             Show all containers (default shows just running)
+                        显示所有容器（默认显示为正在运行）
+  -f, --filter filter   Filter output based on conditions provided
+                        根据提供的条件过滤输出
+      --format string   Pretty-print containers using a Go template
+                        使用Go模板的漂亮打印容器
+  -n, --last int        Show n last created containers (includes allstates) (default -1)
+                        显示n个上次创建的容器（包括所有状态）（默认值-1）
+  -l, --latest          Show the latest created container (includes all states)
+                        显示最新创建的容器（包括所有状态）
+      --no-trunc        Don't truncate output
+                        不截断输出
+  -q, --quiet           Only display numeric IDs
+                        仅显示ID标识
+  -s, --size            Display total file sizes
+                        显示文件总大小</p>
+<p>PS C:\Users\Night\docker&gt; docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+48480ae802bc        ubuntu              "bash"              10 minutes ago      Exited (0) 9 minutes ago                        flamboyant_visvesvaraya  <br />
+db9454e79da3        ubuntu              "bash"              14 minutes ago      Exited (0) 14 minutes ago                       wonderful_perlman
+PS C:\Users\Night\docker&gt; docker ps -al 
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+76b9a4daf21c        ubuntu              "bash"              4 minutes ago       Exited (0) 52 seconds ago                       vibrant_dewdney</p>
+<h1 id="inspect">inspect 会返回容器的详细配置信息</h1>
+<h1 id="docker-inspect-container-id-name">docker inspect [CONTAINER ID | NAME]</h1>
+<p>PS C:\Users\Night\docker&gt; docker inspect 48480ae802bc
+[
+    {
+    ...
+    }
+]</p>
+<h1 id="_8">自定义容器名</h1>
+<h1 id="docker-run-nameself_name-it-image-binbash">docker run --name=self_Name -it IMAGE /bin/bash</h1>
+<p>PS C:\Users\Night\docker&gt; docker run --name=ubuntu_conta -it ubuntu bash
+root@312e57b09c88:/# exit
+exit
+PS C:\Users\Night\docker&gt; docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+312e57b09c88        ubuntu              "bash"              21 seconds ago      Exited (0) 9 seconds ago                        ubuntu_conta
+48480ae802bc        ubuntu              "bash"              20 minutes ago      Exited (0) 19 minutes ago                       flamboyant_visvesvaraya  <br />
+db9454e79da3        ubuntu              "bash"              23 minutes ago      Exited (0) 23 minutes ago                       wonderful_perlman</p>
+<h1 id="_9">重新启动停止的容器</h1>
+<h1 id="docker-start-i-container-id-name">docker start [-i] [CONTAINER ID | NAME]</h1>
+<h1 id="-i">-i 以交互方式打开</h1>
+<p>PS C:\Users\Night\docker&gt; docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+312e57b09c88        ubuntu              "bash"              2 minutes ago       Up 6 seconds                            ubuntu_conta
+PS C:\Users\Night\docker&gt; docker start 312e57b09c88 -i
+root@312e57b09c88:/#</p>
+<h1 id="_10">删除停止的容器</h1>
+<h1 id="docker-rm-name-container-id">docker rm [NAME | CONTAINER ID]</h1>
+<p>PS C:\Users\Night\docker&gt; docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+PS C:\Users\Night\docker&gt; docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+312e57b09c88        ubuntu              "bash"              8 minutes ago       Exited (2) 3 minutes ago                        ubuntu_conta
+48480ae802bc        ubuntu              "bash"              28 minutes ago      Exited (0) 27 minutes ago                       flamboyant_visvesvaraya  <br />
+db9454e79da3        ubuntu              "bash"              31 minutes ago      Exited (0) 31 minutes ago                       wonderful_perlman
+PS C:\Users\Night\docker&gt; docker rm 312e5
+312e5
+PS C:\Users\Night\docker&gt; docker ps -a <br />
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+48480ae802bc        ubuntu              "bash"              28 minutes ago      Exited (0) 27 minutes ago                       flamboyant_visvesvaraya  <br />
+db9454e79da3        ubuntu              "bash"              32 minutes ago      Exited (0) 32 minutes ago    </p>
+<h1 id="_11">守护式容器</h1>
+<h1 id="1">1. 能够长期运行</h1>
+<h1 id="2">2. 没有交互式会话</h1>
+<h1 id="3">3. 适合运行应用程序和服务</h1>
+<h1 id="_12">以守护式运行容器</h1>
+<h1 id="ctrlp-ctrlq">Ctrl+p Ctrl+q</h1>
+<h1 id="vscode-vscode-vscode">在 vscode 中无法使用该方法, vscode 将会优先 vscode 自身的快捷键</h1>
+<p>PS C:\Users\Night\docker&gt; docker run -it ubuntu bash
+keyboard shortcuts -&gt; Ctrl+p Ctrl+q
+PS C:\Users\Night\docker&gt; docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+59db504927f4        ubuntu              "bash"              9 seconds ago       Up 7 seconds                            hardcore_mayer</p>
+<h1 id="_13">附加到运行中的容器</h1>
+<p>PS C:\Users\Night\docker&gt; docker attach 76b9a4daf21c
+root@76b9a4daf21c:</p>
+<h1 id="_14">启动守护式容器</h1>
+<h1 id="docker-run-d-image-command-arg">docker run -d IMAGE [COMMAND] [ARG]</h1>
+<h1 id="1-d">1. -d 以后台的形式启动该进程,但要注意的是:当该命令运行结束后,容器会自动停止</h1>
+<p>PS C:\Users\Night\docker&gt; docker run --name ubun_dc2 -d ubuntu /bin/sh -c "echo 1"
+7aeda0992754f93a301c2eed9fa271324eec0d63c8641fb53fca55d89e04676f</p>
+<h1 id="_15">查看容器日志</h1>
+<h1 id="docker-logs-f-t-tail-container">docker logs [-f] [-t] [--tail] CONTAINER</h1>
+<h1 id="1-f-followstruefalse-false">1. -f --follows=true|false 默认为false        持续跟踪日志的变化,并返回结果</h1>
+<h1 id="2-t-timestampstruefalse-false">2. -t --timestamps=true|false 默认为false     在返回的结果上,加上时间戳</h1>
+<h1 id="3-tailall">3. --tail="all"                               返回结尾处[ ]条日志,默认返回所有</h1>
+<p>PS C:\Users\Night\docker&gt; docker logs -ft
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+Usage:  docker logs [OPTIONS] CONTAINER
+Fetch the logs of a container</p>
+<h1 id="-_1">-&gt;</h1>
+<p>PS C:\Users\Night\docker&gt; docker logs -tf a1</p>
+<h1 id="_16">查看容器内进程</h1>
+<h1 id="docker-top-name-container">docker top [NAME | CONTAINER]</h1>
+<p>PS C:\Users\Night\docker&gt; docker top a1
+PID                 USER                TIME                COMMAND
+2086                root                0:00                bash</p>
+<h1 id="_17">在运行中的容器内启动新进程</h1>
+<h1 id="docker-exec-d-i-t-container-command-arg">docker exec [-d] [-i] [-t] CONTAINER [COMMAND] [ARG]</h1>
+<h1 id="docker-run">参数参考 docker run</h1>
+<p>PS C:\Users\Night\docker&gt; docker exec -i -t a1 bash
+root@a1b54485f41c:/# ps
+  PID TTY          TIME CMD
+   10 pts/1    00:00:00 bash
+   20 pts/1    00:00:00 ps</p>
+<h1 id="_18">停止守护式容器</h1>
+<h1 id="docker-stop-container-stop">docker stop CONTAINER     将stop命令传送给容器,并等待容器自动停止</h1>
+<h1 id="docker-kill-container">docker kill CONTAINER     终止容器</h1>
+<p>PS C:\Users\Night\docker&gt; docker stop a1
+a1
+PS C:\Users\Night\docker&gt; docker kill 7aed </p>
+<h1 id="-demo-">&lt;-------- Demo 在容器中部署静态网站 -----------&gt;</h1>
+<h1 id="_19">设置容器的端口映射</h1>
+<h1 id="run-p-p">run [-P] [-p]</h1>
+<h1 id="1-p-publish-alltruefalse-false">1. [-P] --publish-all=true|false 默认为false</h1>
+<h1 id="_20">将为容器所有暴露的端口进行映射</h1>
+<h1 id="docker-run-p-i-t-ubuntu-binbash">docker run -P -i -t ubuntu /bin/bash</h1>
+<h1 id="2-p-publish">2. [-p]  --publish=[]</h1>
+<h1 id="_21">将为指定的端口进行映射</h1>
+<h1 id="containerport">containerPort</h1>
+<h1 id="docker-run-p-80-it-ubuntu-binbash">docker run -p 80 -it ubuntu /bin/bash</h1>
+<h1 id="hostpostcontainerport">hostPost:containerPort</h1>
+<h1 id="docker-run-p-808080-it-ubuntu-binbash">docker run -p 8080:80 -it ubuntu /bin/bash</h1>
+<h1 id="ipcontainerport">ip::containerPort</h1>
+<h1 id="docker-run-p-000080-it-ubuntu-bash">docker run -p 0.0.0.0:80 -it ubuntu bash</h1>
+<h1 id="iphostportcontainerport">ip:hostPort:containerPort</h1>
+<h1 id="docker-run-p-0000808080-it-ubuntu-bash">docker run -p 0.0.0.0:8080:80 -it ubuntu bash</h1>
+<h1 id="nginx">Nginx 部署</h1>
+<h1 id="1-80">1. 创建映射80端口的交互式容器</h1>
+<h1 id="2-nginx">2. 安装Nginx</h1>
+<h1 id="3-vim">3. 安装文本编辑器vim</h1>
+<h1 id="4">4. 创建静态页面</h1>
+<h1 id="5-nginx">5. 修改Nginx配置文件</h1>
+<h1 id="6-nigin">6. 运行Nigin</h1>
+<h1 id="7">7. 验证网站访问</h1>
+<p>PS C:\Users\Night&gt; docker port web
+80/tcp -&gt; 0.0.0.0:32768</p>
+<p>PS C:\Users\Night&gt; docker inspect web
+[
+    {
+        "NetworkSettings": {
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "32768"
+                    }
+                ]
+            },
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "112dd58b32526fba91c544c1b4086bc33d84971fcc08a4f80663efc43f609bc7",                        "EndpointID": "2437fd1d6c67cfc6a863d51a4bf511f7dc67e12423497140bffa6a60f2902506",                       "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]</p>
+<h1 id="docker-images">docker images 镜像</h1>
+<p>PS C:\Users\Night&gt; docker images --help
+Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
+List images
+Options:
+  -a, --all             Show all images (default hides intermediate images)
+                        显示所有图像（默认情况下隐藏中间图像）
+      --digests         Show digests
+                        显示摘要
+  -f, --filter filter   Filter output based on conditions provided
+                        根据提供的条件过滤输出
+      --format string   Pretty-print images using a Go template
+                        使用Go模板打印漂亮的图像
+      --no-trunc        Don't truncate output
+                        不截断输出
+  -q, --quiet           Only show numeric IDs
+                        仅显示ID标识</p>
+<p>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[存储库]             [标签]              [镜像ID]             [创建时间]          [大小]
+ubuntu              latest              ccc6e87d482b        7 days ago          64.2MB</p>
+<h1 id="_22">查看镜像信息</h1>
+<p>PS C:\Users\Night&gt; docker inspect --help
+Usage:  docker inspect [OPTIONS] NAME|ID [NAME|ID...]
+Return low-level information on Docker objects
+返回Docker对象的低级信息</p>
+<p>Options:
+  -f, --format string   Format the output using the given Go template
+                        使用给定的Go模板格式化输出
+  -s, --size            Display total file sizes if the type is container
+                        如果类型为container，则显示总文件大小
+      --type string     Return JSON for specified type
+                        返回指定类型的JSON</p>
+<h1 id="_23">删除镜像</h1>
+<p>PS C:\Users\Night&gt; docker rmi --help
+Usage:  docker rmi [OPTIONS] IMAGE [IMAGE...]
+Remove one or more images
+Options:
+  -f, --force      Force removal of the image
+                    强制删除图像
+      --no-prune   Do not delete untagged parents
+                    不要删除未标记的父级
+PS C:\Users\Night&gt; docker rmi ccct</p>
+<h1 id="_24">删除所有镜像</h1>
+<p>PS C:\Users\Night&gt; docker rmi $(docker images -q)</p>
+<h1 id="_25">查找镜像</h1>
+<h1 id="docker-hub">Docker Hub</h1>
+<pre><code>https://registry.hub.docker.com/
+</code></pre>
+<p>PS C:\Users\Night&gt; docker search --help
+Usage:  docker search [OPTIONS] TERM
+Search the Docker Hub for images
+Options:
+  -f, --filter filter   Filter output based on conditions provided
+                        根据提供的条件过滤输出
+      --format string   Pretty-print search using a Go template
+      --limit int       Max number of search results (default 25)
+                        最大搜索结果数（默认为25）
+      --no-trunc        Don't truncate output
+                        不截断输出</p>
+<h1 id="_26">拉去镜像</h1>
+<p>PS C:\Users\Night&gt; docker pull --help
+Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+Pull an image or a repository from a registry
+Options:
+  -a, --all-tags                Download all tagged images in the repository
+                                下载存储库中的所有标记图像
+      --disable-content-trust   Skip image verification (default true)
+                                跳过图像验证（默认为true）
+      --platform string         Set platform if server is multi-platform capable
+                                如果服务器支持多平台，则设置平台
+  -q, --quiet                   Suppress verbose output
+                                禁止详细输出</p>
+<h1 id="_27">推送镜像</h1>
+<h1 id="_28">常用命令</h1>
+<p><code>docker run -v /home/yvan/Docker/redis-6.0.5/redis.conf:/usr/local/etc/redis/redis.conf -d -p 6379:6379 --name redis_6379 redis redis-server /usr/local/etc/redis/redis.conf</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Kubernetes/" class="btn btn-neutral float-right" title="K8S">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../python_web_crawler/" class="btn btn-neutral" title="Python Web Crawler"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../python_web_crawler/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Kubernetes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

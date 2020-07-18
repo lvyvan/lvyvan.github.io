@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python Web Crawler - Yvan Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python Web Crawler";
+    var mkdocs_page_input_path = "python_web_crawler.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Yvan Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">个人信息</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">前言</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../resume/">个人简历</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">分享</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../book/">图书分享</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人学习笔记</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../python/">Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python_web/">Python Web</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../awe_python/">Python库</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sql and NoSql</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mysql/">Mysql</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../redis/">Redis</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git/">Git</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">C#</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../cshirp/">C#</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScrip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javascrip/">JavaScrip</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Java</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../java/">Java</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">WebCrawler</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python Web Crawler</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#requests">Requests</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#request">request 基本实例代码</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">提出请求</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#params">网址上传递参数 params</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">响应内容</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">二进制响应内容</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#json">JSON响应内容</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">原始响应内容</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#headers">自定义 Headers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#post">更复杂的POST请求</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#post-a-multipart-encoded-file">POST a Multipart-Encoded File</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">响应状态码</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#response-headers">Response Headers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cookie">Cookie</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#redirection-and-history">Redirection and History</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#timeouts">Timeouts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#errors-and-exceptions">Errors and Exceptions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#session-objects">Session Objects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#request-and-response-objects">Request and Response Objects(请求和响应对象)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">准备请求</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ssl">SSL证书验证</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">客户端证书</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ca">CA证书</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">正文内容工作流程</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">保持活动</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">流上传</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">块编码请求</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#post_1">POST多个多部分编码的文件</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">事件挂钩</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">自定义身份验证</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">流请求</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_15">代理</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#socks">SOCKS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_16">合规性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_17">编码</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#http">HTTP动词</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_18">自定义谓词</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_19">链接头</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_20">传输适配器</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ssl_1">示例：特定的SSL版本</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_21">阻止还是不阻止？</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_22">标题排序</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_23">超时</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_24">基本身份验证</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Container</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../docker/">Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Kubernetes/">K8S</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">个人阅读笔记</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../marxism_leninism/">марксизм-ленинизм</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../temp/">Temp</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">关于</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Yvan Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>WebCrawler &raquo;</li>
+        
+      
+        
+          <li>个人学习笔记 &raquo;</li>
+        
+      
+    
+    <li>Python Web Crawler</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="webcrawler-of-python">WebCrawler of Python</h1>
+<p>一点说明: 我个人习惯在阅读非了解性文档时候,直接将内容复制,然后进行阅读,对内容根据个人理解进行一点修改,删去或增加一些内容,但是很多文档个人也是第一次阅读,所以阅读时,不会进行较大的修改,在之后的查阅过程在再进行修改.</p>
+<h2 id="requests">Requests</h2>
+<p>本内容以文档为主,相关资料为辅助.<br />
+python3.8.2<br />
+2.2.3  </p>
+<h3 id="request">request 基本实例代码</h3>
+<pre><code class="python">In [1]: import requests                                                                                    
+
+In [2]: r = requests.get(&quot;https://www.bilibili.com/&quot;)                                                      
+
+In [3]: r                                                                                                  
+Out[3]: &lt;Response [200]&gt;
+
+In [4]: r.text
+Out[4]: ......
+
+In [5]: r.encoding                                                                                         
+Out[5]: 'utf-8'
+
+In [6]: r.content
+Out[6]: b'......'
+
+In [7]: r.content.decode()
+Out[7]: '......'
+
+In [8]: r.status_code                                                                                     
+Out[8]: 200
+
+In [9]: assert r.status_code==200  
+
+In [10]: r.headers                                                                                         
+Out[10]: {......}
+
+In [11]: r.request.url                                                                                     
+Out[11]: 'https://www.bilibili.com/?rt=V%2FymTlOu4ow%2Fy4xxNWPUZzYx2jWOCMcyjpEe9v1CTSQ%3D'
+
+In [12]: r.request.headers                                                                                 
+Out[12]: {'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'main_confirmation=zFb/SZdkDCcXM70hVI065Mw+buJ9laS6mRjYMAdrzGs='}
+
+In [13]: headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'} 
+
+In [14]: r = requests.get(&quot;https://www.baidu.com/&quot;, headers=headers)
+
+In [15]: r.text
+Out[15]: '......'
+
+# 一个简单的GET请求
+headers = {
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36&quot;,
+}
+p = &quot;&quot;
+params = {
+    &quot;ie&quot;: &quot;UTF-8&quot;,
+    &quot;wd&quot;: p,
+}
+url = &quot;https://www.baidu.com/s&quot;
+
+r = requests.get(&quot;https://www.huya.com/&quot;, headers=headers, params=params)
+</code></pre>
+
+<h3 id="_1">提出请求</h3>
+<p>导入模块 <code>import requests</code><br />
+GET 请求 <code>r = requests.get('https://api.github.com/events')</code><br />
+POST 请求 <code>r = requests.post('https://httpbin.org/post', data = {'key':'value'})</code><br />
+PUT 请求 <code>r = requests.put('https://httpbin.org/put', data = {'key':'value'})</code><br />
+DELETE 请求 <code>r = requests.delete('https://httpbin.org/delete')</code><br />
+HEAD 请求 <code>r = requests.head('https://httpbin.org/get')</code><br />
+OPTIONS 请求 <code>r = requests.options('https://httpbin.org/get')</code>  </p>
+<h3 id="params">网址上传递参数 params</h3>
+<ol>
+<li>单值参数  </li>
+</ol>
+<pre><code class="python">payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.get('https://httpbin.org/get', params=payload)
+print(r.url)
+</code></pre>
+
+<ol>
+<li>多值参数  </li>
+</ol>
+<pre><code class="python">payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
+r = requests.get('https://httpbin.org/get', params=payload)
+print(r.url)
+https://httpbin.org/get?key1=value1&amp;key2=value2&amp;key2=value3
+</code></pre>
+
+<h3 id="_2">响应内容</h3>
+<p>请求将自动解码来自服务器的内容。大多数Unicode字符集都是无缝解码的.<br />
+发出请求时,请求会根据HTTP标头对响应的编码进行有根据的猜测.访问时,将使用Requests猜测的文本编码<code>r.text</code>.  </p>
+<pre><code class="python">r = requests.get('https://api.github.com/events')
+r.text 
+'......'
+</code></pre>
+
+<p>使用<code>r.encoding</code>属性找出请求正在使用的编码，并对其进行更改:<br />
+In <code>r.encoding</code> Out<code>'utf-8'</code><br />
+In <code>r.encoding = 'ISO-8859-1'</code><br />
+使用自定义编码.创建编码并在<code>codecs</code>模块中注册了编码,则只需使用编解码器名称作为的值,<code>r.encoding</code>将处理解码.  </p>
+<h3 id="_3">二进制响应内容</h3>
+<p>对于非文本请求，可以以字节形式访问响应主体:  </p>
+<pre><code class="python">r.content
+b'[{&quot;repository&quot;:{&quot;open_issues&quot;:0,&quot;url&quot;:&quot;https://github.com/...
+</code></pre>
+
+<p>编码<code>gzip</code>和<code>deflate</code>自动进行解码<br />
+要根据请求返回的二进制数据创建图像，可以使用以下代码：  </p>
+<pre><code class="python">from PIL import Image
+from io import BytesIO
+
+i = Image.open(BytesIO(r.content))
+</code></pre>
+
+<h3 id="json">JSON响应内容</h3>
+<p>处理JSON数据，则还有一个内置的JSON解码器:</p>
+<pre><code class="python">import requests
+
+r = requests.get('https://api.github.com/events')
+r.json()
+[{'repository': {'open_issues': 0, 'url': 'https://github.com/...
+</code></pre>
+
+<p>如果JSON解码失败,<code>r.json()</code>则会引发异常.<code>ValueError: No JSON object could be decoded</code><br />
+成功返回<code>r.json()</code>并不能表明响应成功.某些服务器可能在失败的响应中返回JSON对象(例如HTTP 500的错误详细信息).<br />
+此类JSON将被解码并返回.若要检查请求是否成功,请使用<code>r.raise_for_status()</code>或检查所需<code>r.status_code</code>的内容.  </p>
+<h3 id="_4">原始响应内容</h3>
+<p>从服务器获取原始套接字响应,则可以访问<code>r.raw</code>.<br />
+若要执行此操作,请确保stream=True在初始请求中进行了设置.完成后,可以执行以下操作:  </p>
+<pre><code class="python">r = requests.get('https://api.github.com/events', stream=True)
+
+r.raw
+# Out: &lt;urllib3.response.HTTPResponse object at 0x101194810&gt;
+
+r.raw.read(10)
+# Out: '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'
+
+# 流式下载时,以下检索内容的首选和推荐方法,使用以下模式来保存流式传输到文件中的内容：
+# chunk_size 调整chunk的大小.
+with open(filename, 'wb') as fd:
+    for chunk in r.iter_content(chunk_size=128):
+        fd.write(chunk)
+</code></pre>
+
+<p>使用<code>Response.iter_content</code>将处理很多直接使用<code>Response.raw</code>要处理的内容.<br />
+<code>Response.iter_content</code>将自动解码<code>gzip</code>和<code>deflate</code>传输编码.<br />
+<code>Response.raw</code>是原始的字节流-不会转换响应内容.需要访问返回的字节,请使用<code>Response.raw</code>.  </p>
+<h3 id="headers">自定义 Headers</h3>
+<p>添加HTTP头的请求,只是在传递<code>dict</code>的<code>headers</code>参数.  </p>
+<pre><code class="python">url = 'https://api.github.com/some/endpoint'
+headers = {'user-agent': 'my-app/0.0.1'}
+
+r = requests.get(url, headers=headers)
+</code></pre>
+
+<p>注意:自定义标头的优先级低于更具体的信息源：<br />
+- Authorization headers set with <code>headers=</code> will be overridden if credentials are specified in <code>.netrc</code>, which in turn will be overridden by the <code>auth= parameter</code>.<br />
+- 如果主机重定向，则将删除授权标头.<br />
+- URL中提供的代理凭证将覆盖<code>Proxy-Authorization</code>标头.<br />
+- 当可以确定内容的长度时,<code>Content-Length</code>标头将被覆盖.<br />
+“request”不会根据指定的自定义标头更改其行为.标头只是传递到最终请求中.<br />
+所有标头值都必须是<code>string</code>，<code>bytestring</code>或<code>unicode</code>.如果允许,建议避免传递<code>unicode</code>标头值.  </p>
+<h3 id="post">更复杂的POST请求</h3>
+<p>发送一些表单编码的数据,像HTML表单一样.为此,只需将字典传递给data参数即可.<br />
+提出请求后,数据字典将自动进行表单编码:  </p>
+<pre><code class="python">payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.post(&quot;https://httpbin.org/post&quot;, data=payload)
+print(r.text)
+# {
+#   ...
+#   &quot;form&quot;: {
+#     &quot;key2&quot;: &quot;value2&quot;,
+#     &quot;key1&quot;: &quot;value1&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>该data参数还可以为每个键具有多个值。这可以通过创建data元组列表或将列表作为值的字典来完成。当表单具有使用同一键的多个元素时，这特别有用:  </p>
+<pre><code class="python">payload_tuples = [('key1', 'value1'), ('key1', 'value2')]
+r1 = requests.post('https://httpbin.org/post', data=payload_tuples)
+payload_dict = {'key1': ['value1', 'value2']}
+r2 = requests.post('https://httpbin.org/post', data=payload_dict)
+# print(r1.text)
+# {
+#   ...
+#   &quot;form&quot;: {
+#     &quot;key1&quot;: [
+#       &quot;value1&quot;,
+#       &quot;value2&quot;
+#     ]
+#   },
+#   ...
+# }
+# r1.text == r2.text
+# True
+</code></pre>
+
+<p>可能想发送未经格式编码的数据.若输入string而不是dict,则该数据将直接发布.<br />
+例如.<code>GitHub API v3</code>接受JSON编码的<code>POST/PATCH</code>数据:  </p>
+<pre><code>import json
+
+url = 'https://api.github.com/some/endpoint'
+payload = {'some': 'data'}
+r = requests.post(url, data=json.dumps(payload))
+</code></pre>
+
+<p>除了dict自己编码外，您还可以使用json参数(在2.4.2版中添加)直接传递它,它将被自动编码:  </p>
+<pre><code class="python">url = 'https://api.github.com/some/endpoint'
+payload = {'some': 'data'}
+
+r = requests.post(url, json=payload)
+</code></pre>
+
+<p>注意,the <code>json</code> parameter is ignored(被忽略) if either <code>data</code> or <code>files</code> is passed.<br />
+在请求中使用<code>json</code>参数会将标头中的<code>Content-Type</code>更改为<code>application/json</code>.  </p>
+<h3 id="post-a-multipart-encoded-file">POST a Multipart-Encoded File</h3>
+<p>通过<code>request</code>，upload Multipart-encoded files.  </p>
+<pre><code class="python">url = 'https://httpbin.org/post'
+files = {'file': open('report.xls', 'rb')}
+
+r = requests.post(url, files=files)
+r.text
+# {
+#   ...
+#   &quot;files&quot;: {
+#     &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>Set the <code>filename</code>,<code>content_type</code> and <code>headers</code> explicitly:  </p>
+<pre><code class="python">url = 'https://httpbin.org/post'
+files = {'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})}
+
+r = requests.post(url, files=files)
+r.text
+# {
+#   ...
+#   &quot;files&quot;: {
+#     &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>如果需要，可以发送字符串作为文件接收:  </p>
+<pre><code class="python">url = 'https://httpbin.org/post'
+files = {'file': ('report.csv', 'some,data,to,send\nanother,row,to,send\n')}
+
+r = requests.post(url, files=files)
+r.text
+# {
+#   ...
+#   &quot;files&quot;: {
+#     &quot;file&quot;: &quot;some,data,to,send\\nanother,row,to,send\\n&quot;
+#   },
+#   ...
+# }
+</code></pre>
+
+<p>要发布一个非常大的文件作为<code>multipart/form-data</code>请求,则可能需要流式传输该请求.<br />
+默认情况下，requests不支持此功能，但是有一个单独的软件包可以<code>requests-toolbelt</code>.<br />
+阅读工具带的<a href="https://toolbelt.readthedocs.io/en/latest/">文档</a>，以获取有关如何使用它的更多详细信息.<br />
+要在一个请求中发送多个文件，请参阅<a href="https://requests.readthedocs.io/en/latest/user/advanced/#advanced">高级</a>部分.<br />
+警告:强烈建议以二进制模式打开文件.这是因为请求可能会尝试Content-Length为您提供标头.<br />
+如果这样做,此值将设置为文件中的字节数.如果以文本模式打开文件，则可能会发生错误.  </p>
+<h3 id="_5">响应状态码</h3>
+<p>检查响应状态代码:  </p>
+<pre><code class="python">r = requests.get('https://httpbin.org/get')
+r.status_code
+# 200
+</code></pre>
+
+<p>请求还带有内置的状态码查找对象,以方便参考:  </p>
+<pre><code class="python">r.status_code == requests.codes.ok
+# True
+</code></pre>
+
+<p>提出了错误的请求(4XX客户端错误或5XX服务器错误响应),使用以下命令提出该请求<code>Response.raise_for_status()</code>:</p>
+<pre><code class="python">bad_r = requests.get('https://httpbin.org/status/404')
+bad_r.status_code
+# 404
+
+bad_r.raise_for_status()
+Traceback (most recent call last):
+  File &quot;requests/models.py&quot;, line 832, in raise_for_status
+    raise http_error
+requests.exceptions.HTTPError: 404 Client Error
+</code></pre>
+
+<p>since our <code>status_code</code> for <code>r</code> was <code>200</code>, when we call <code>raise_for_status()</code> we get:</p>
+<pre><code class="python">r.raise_for_status()
+None
+</code></pre>
+
+<h3 id="response-headers">Response Headers</h3>
+<p>使用<code>Python dictionary</code>查看<code>Server's</code>的<code>Response Headers</code>:  </p>
+<pre><code class="python">r.headers
+{
+    'content-encoding': 'gzip',
+    'transfer-encoding': 'chunked',
+    'connection': 'close',
+    'server': 'nginx/1.0.4',
+    'x-runtime': '148ms',
+    'etag': '&quot;e1ca502697e5c9317743dc078f67693f&quot;',
+    'content-type': 'application/json'
+}
+</code></pre>
+
+<p>字典是特殊的:它仅用于<code>HTTP</code>标头.<br />
+根据<code>RFC 7230</code>,<code>HTTP</code>标头名称不区分大小写  </p>
+<p>使用所需的任何大写字母访问标头：</p>
+<pre><code class="python">r.headers['Content-Type']
+'application/json'
+
+r.headers.get('content-type')
+'application/json'
+</code></pre>
+
+<p>服务器可以多次发送具有不同值的相同标头,但是<code>requsets</code>将它们组合在一起,以便可以按照<code>RFC 7230</code>在单个映射中的字典中表示它们:
+- 接收者可以将多个具有相同字段名的头字段组合成一对<code>field-name:field-value</code>,而无需更改消息的语义,方法是按顺序将每个后续字段值附加到组合字段值,并用逗号分隔.</p>
+<h3 id="cookie">Cookie</h3>
+<p>快速访问相应中包含的Cookie:</p>
+<pre><code class="python">url = 'http://example.com/some/cookie/setting/url'
+r = requests.get(url)
+
+r.cookies['example_cookie_name']
+# 'example_cookie_value'
+</code></pre>
+
+<p>将<code>cookie</code>发送到服务器,可以使用以下<code>cookies</code>参数:</p>
+<pre><code class="python">url = 'https://httpbin.org/cookies'
+cookies = dict(cookies_are='working')
+
+r = requests.get(url, cookies=cookies)
+r.text
+'{&quot;cookies&quot;: {&quot;cookies_are&quot;: &quot;working&quot;}}'
+</code></pre>
+
+<p><code>Cookies</code>在<code>RequestsCookieJar</code>中返回,它的行为类似于<code>dict</code>,但也提供了一个更完整的接口,适合在多个域或路径上使用.
+<code>Cookie jar</code>也可以传递给请求:</p>
+<pre><code class="python">jar = requests.cookies.RequestsCookieJar()
+jar.set('tasty_cookie', 'yum', domain='httpbin.org', path='/cookies')
+jar.set('gross_cookie', 'blech', domain='httpbin.org', path='/elsewhere')
+url = 'https://httpbin.org/cookies'
+r = requests.get(url, cookies=jar)
+r.text
+'{&quot;cookies&quot;: {&quot;tasty_cookie&quot;: &quot;yum&quot;}}'
+</code></pre>
+
+<h3 id="redirection-and-history">Redirection and History</h3>
+<p>默认情况下，请求将对<code>HEAD</code>以外的所有动词执行位置重定向.<br />
+使用<code>historyResponse</code>对象的属性来跟踪重定向.<br />
+该<code>Response.history</code>列表包含<code>Response</code>为完成请求而创建的<code>object</code>.<br />
+该列表按从最早到最新的响应排序.<br />
+例如，GitHub将所有HTTP请求重定向到HTTPS:   </p>
+<pre><code class="python">r = requests.get('http://github.com/')
+r.url
+# Out 'https://github.com/'
+
+r.status_code
+# Out 200
+
+r.history
+# Out [&lt;Response [301]&gt;]
+
+# 使用的是GET,OPTIONS,POST,PUT,PATCH或DELETE,则可以使用以下'allow_redirects参数禁用重定向处理: 
+r = requests.get('http://github.com/', allow_redirects=False)
+
+r.status_code
+# Out 301
+
+r.history
+[]
+
+# 如果使用的是`HEAD`,则可以启用重定向:  
+r = requests.head('http://github.com/', allow_redirects=True)
+
+r.url
+# Out 'https://github.com/'
+
+r.history
+# Out [&lt;Response [301]&gt;]
+</code></pre>
+
+<h3 id="timeouts">Timeouts</h3>
+<p>使用参数告诉<code>requests</code>在指定的秒数后停止等待响应<code>timeout</code>.几乎所有生产代码都应在几乎所有请求中使用此参数.否则,可能会导致程序无限期挂起:  </p>
+<pre><code class="python">requests.get('https://github.com/', timeout=0.001)
+# Out [ 
+# Traceback (most recent call last):
+#   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt; 
+# requests.exceptions.Timeout: HTTPConnectionPool(host='github.com', port=80): Request timed out. (timeout=0.001)
+# ]
+</code></pre>
+
+<p>timeout不是整个响应下载的时间限制;相反,如果服务器timeout几秒钟未发出响应(更确切地说，如果几秒钟内未在基础套接字上接收到任何字节),则会引发异常<code>timeout</code>.如果未明确指定超时,则请求不会超时.  </p>
+<h3 id="errors-and-exceptions">Errors and Exceptions</h3>
+<p>如果出现网络问题(例如<code>DNS</code>故障，连接被拒绝等)，请求将引发<code>ConnectionError</code>异常.<br />
+<code>Response.raise_for_status()</code> will raise an <code>HTTPError</code> if the <code>HTTP</code> request returned an unsuccessful status code.<br />
+如果请求超时,<code>Timeout</code>则会引发异常.<br />
+如果请求超过配置的最大重定向数,<code>TooManyRedirects</code>则会引发异常.<br />
+请求显式引发的所有异常都继承自<code>requests.exceptions.RequestException</code>.  </p>
+<h3 id="session-objects">Session Objects</h3>
+<p>通过<code>Session</code>对象,请求中保留某些参数.
+来自<code>Session</code>实例的所有请求中保留<code>cookie</code>,并将使用<code>urllib3</code>的连接池.<br />
+若向同一主机发出多个请求,则基础<code>TCP</code>连接将被重用,这可能使得性能显着提高(请参阅<code>HTTP</code>持久连接).<br />
+<code>Session</code>对象具有<code>Requests API</code>的所有方法.  </p>
+<p>请求中保留一些cookie</p>
+<pre><code class="python">s = requests.Session()
+s.get('https://httpbin.org/cookies/set/sessioncookie/123456789')
+r = s.get('https://httpbin.org/cookies')
+
+print(r.text)
+# '{&quot;cookies&quot;: {&quot;sessioncookie&quot;: &quot;123456789&quot;}}'
+# ----------
+
+# 会话也可以用于向请求方法提供默认数据.这是通过向Session对象的属性提供数据来完成的:
+s = requests.Session()
+s.auth = ('user', 'pass')
+s.headers.update({'x-test': 'true'})
+
+# both 'x-test' and 'x-test2' are sent
+s.get('https://httpbin.org/headers', headers={'x-test2': 'true'})
+
+# 传递给请求方法的所有词典都将与设置的会话级值合并.方法级别的参数将覆盖会话参数.
+# 但是请注意,即使使用会话,方法级参数也不会在请求中保留.本示例将仅发送带有第一个请求的# # cookie,而不发送第二个请求:
+
+# ---------
+s = requests.Session()
+r = s.get('https://httpbin.org/cookies', cookies={'from-my': 'browser'})
+print(r.text)
+# '{&quot;cookies&quot;: {&quot;from-my&quot;: &quot;browser&quot;}}'
+
+r = s.get('https://httpbin.org/cookies')
+print(r.text)
+# '{&quot;cookies&quot;: {}}'
+# 如果要手动向会话添加'Cookie',请使用'Cookie'实用程序功能进行操作'Session.cookies'.
+
+# 会话也可以用作上下文管理器：
+with requests.Session() as s:
+    s.get('https://httpbin.org/cookies/set/sessioncookie/123456789')
+# 这将确保在with退出该块后立即关闭会话，即使发生未处理的异常也是如此.
+</code></pre>
+
+<p>从Dict参数中删除一个值<br />
+有时您会希望从dict参数中省略会话级密钥.为此,只需在方法级参数中将该键的值设置为<code>None</code>.
+可以直接使用会话中包含的所有值,请参阅会话<code>API文档</code>以了解更多信息.</p>
+<h3 id="request-and-response-objects">Request and Response Objects(请求和响应对象)</h3>
+<p><code>requests.get()</code>做两件事:<br />
+1. 构造一个<code>Request</code>对象,该对象将被发送到服务器以请求或查询某些资源.<br />
+2. <code>Response</code>一旦请求从服务器返回响应,就会生成一个对象.该<code>Response</code>对象包含服务器返回的所有信息,还包含<code>Request</code>最初创建的对象.  </p>
+<p>这是一个简单的请求,可以从<code>Wikipedia</code>的服务器上获取一些非常重要的信息:  </p>
+<pre><code class="python">r = requests.get('https://en.wikipedia.org/wiki/Monty_Python')
+
+# 如果要访问服务器发回的标头(响应头),请执行以下操作:
+r.headers
+{'content-length': '56170', ...}
+
+# 若要获取发送给服务器的标头(请求头),则只需访问请求,然后访问请求的标头:  
+r.request.headers
+{'Accept-Encoding': 'identity, deflate, compress, gzip',
+'Accept': '*/*', 'User-Agent': 'python-requests/1.2.0'}
+</code></pre>
+
+<h3 id="_6">准备请求</h3>
+<p>每当<code>Response</code>从<code>API</code>调用或<code>Session</code>调用收到对象时,该<code>request</code>属性实际上<code>PreparedRequest</code>就是所使用的属性.<br />
+在某些情况下,希望在发送请求之前对正文或标题(或其他任何东西)做一些额外的工作.方法如下: </p>
+<pre><code class="python">from requests import Request, Session
+
+s = Session()
+
+req = Request('POST', url, data=data, headers=headers)
+prepped = req.prepare()
+
+# do something with prepped.body
+prepped.body = 'No, I want exactly this as the body.'
+
+# do something with prepped.headers
+del prepped.headers['Content-Type']
+resp = s.send(prepped, stream=stream, verify=verify, proxies=proxies, cert=cert, timeout=timeout)
+print(resp.status_code)
+</code></pre>
+
+<p>由于没有对<code>Request</code>对象执行任何特殊操作,因此请立即对其进行准备并修改该<code>PreparedRequest</code>对象.将其与发送给<code>requests.*</code>或<code>Session.*</code>的其他参数一起发送.<br />
+以上代码将失去拥有<code>Requests Session</code>对象的某些优点.特别是<code>Session</code>,<code>cookie</code>之类的<code>-level</code>状态不会应用于请求.为了得到一个 <code>PreparedRequest</code>与应用这种状态下,更换调用<code>Request.prepare()</code>一起调用<code>Session.prepare_request()</code>，就像这样:  </p>
+<pre><code class="python">from requests import Request, Session
+
+s = Session()
+req = Request('GET',  url, data=data, headers=headers)
+prepped = s.prepare_request(req)
+
+# do something with prepped.body
+prepped.body = 'Seriously, send exactly these bytes.'
+
+# do something with prepped.headers
+prepped.headers['Keep-Dead'] = 'parrot'
+
+resp = s.send(prepped,
+    stream=stream,
+    verify=verify,
+    proxies=proxies,
+    cert=cert,
+    timeout=timeout
+)
+
+print(resp.status_code)
+</code></pre>
+
+<p>使用准备好的请求流时,不考虑环境.如果使用环境变量来更改请求的行为,则可能会导致问题.例如:<code>REQUESTS_CA_BUNDLE</code>将不会考虑指定的签名<code>SSL</code>证书.可以通过将环境设置显式合并到会话中来解决此问题：<code>SSL:CERTIFICATE_VERIFY_FAILED</code></p>
+<pre><code class="python">from requests import Request, Session
+
+s = Session()
+req = Request('GET', url)
+
+prepped = s.prepare_request(req)
+
+# Merge environment settings into session
+settings = s.merge_environment_settings(prepped.url, {}, None, None, None)
+resp = s.send(prepped, **settings)
+
+print(resp.status_code)
+</code></pre>
+
+<h3 id="ssl">SSL证书验证</h3>
+<p>请求验证<code>HTTPS</code>请求的<code>SSL</code>证书,就像<code>Web</code>浏览器一样.默认情况下,启用<code>SSL</code>验证,如果无法验证证书,则请求将抛出<code>SSLError</code>:  </p>
+<pre><code class="python">&gt;&gt;&gt; requests.get('https://requestb.in')
+requests.exceptions.SSLError: hostname 'requestb.in' doesn't match either of '*.herokuapp.com', 'herokuapp.com'
+
+# 此域上没有SSL设置,因此抛出异常.
+&gt;&gt;&gt; requests.get('https://github.com')
+&lt;Response [200]&gt;
+
+# 可以`verify`使用受信任的`CA`证书将路径传递到`CA_BUNDLE`文件或目录:  
+requests.get('https://github.com', verify='/path/to/certfile')
+
+# 或持久性:
+s = requests.Session()
+s.verify = '/path/to/certfile'
+</code></pre>
+
+<p>注意
+- 如果<code>verify</code>将设置为目录的路径,则必须已使用<code>OpenSSL</code>随附的<code>c_rehash</code>实用程序处理了该目录.
+- 也可以通过<code>REQUESTS_CA_BUNDLE</code>环境变量指定此受信任<code>CA</code>的列表.<br />
+- 如果设置<code>verify</code>为<code>False</code>,则请求也可以忽略验证<code>SSL</code>证书:</p>
+<p>In <code>requests.get('https://kennethreitz.org', verify=False)  
+Out</code><Response [200]>`  </p>
+<p>默认情况下，verify设置为True.该选项verify仅适用于主机证书.                                      </p>
+<h3 id="_7">客户端证书</h3>
+<p>可以指定本地证书用作客户端证书,单个文件(包含私钥和证书)或用作两个文件路径的元组:<br />
+In <code>requests.get('https://kennethreitz.org', cert=('/path/client.cert', '/path/client.key'))</code>
+Out <code>&lt;Response [200]&gt;</code></p>
+<p>或持久性:<br />
+<code>s = requests.Session()</code><br />
+<code>s.cert = '/path/client.cert'</code>  </p>
+<p>如果您指定了错误的路径或无效的证书，则会收到SSLError：<br />
+In <code>requests.get('https://kennethreitz.org', cert='/wrong_path/client.pem')</code><br />
+Out <code>SSLError: [Errno 336265225] _ssl.c:347: error:140B0009:SSL routines:SSL_CTX_use_PrivateKey_file:PEM lib</code><br />
+警告<br />
+您本地证书的私钥必须未加密.当前,请求不支持使用加密密钥.</p>
+<h3 id="ca">CA证书</h3>
+<p>请求使用软件包<code>certifi</code>中的证书.这允许用户在不更改请求版本的情况下更新其可信证书. <br />
+在版本2.16之前，<code>Requests</code>捆绑了一组它信任的根<code>CA</code>，这些根<code>CA</code>来自<code>Mozilla</code>信任库.对于每个请求版本,证书仅更新一次.如果<code>certifi</code>未安装，则在使用明显较旧的"请求"版本时会导致证书包极其过时.<br />
+为了安全起见，我们建议您经常升级证书!  </p>
+<h3 id="_8">正文内容工作流程</h3>
+<p>默认情况下,发出请求时,将立即下载响应的正文.可以覆盖此行为,并推迟下载响应正文,直到<code>Response.content</code>使用<code>stream</code>参数访问属性为止：  </p>
+<pre><code class="python">tarball_url = 'https://github.com/psf/requests/tarball/master'
+r = requests.get(tarball_url, stream=True)
+</code></pre>
+
+<p>此时,仅下载了响应头.并且连接保持打开状态,因此使我们可以使内容检索成为条件:  </p>
+<pre><code class="python">if int(r.headers['content-length']) &lt; TOO_LONG:
+  content = r.content
+  ...
+</code></pre>
+
+<p>可以使用<code>Response.iter_content()</code>和<code>Response.iter_lines()</code>方法进一步控制工作流程.另外,可以从底层的<code>urllib3.HTTPResponse</code>中读取未解码的主体<code>Response.raw</code>.  </p>
+<p>如果在发出请求时设置<code>stream=True</code>,则除非您消耗了所有数据或调用,否则请求无法将连接释放回池中<code>Response.close</code>.这可能导致连接效率低下.如果在使用时发现自己部分读取了请求正文（或根本不读取它们）<code>stream=True</code>，则应在<code>with</code>语句中发出请求以确保始终关闭该请求：</p>
+<pre><code class="python">with requests.get('https://httpbin.org/get', stream=True) as r:
+    # Do things with the response here.
+</code></pre>
+
+<h3 id="_9">保持活动</h3>
+<p>好消息-感谢<code>urllib3</code>,保持活动状态在会话中是100％自动的.在会话中发出的任何请求都将自动重用适当的连接!<br />
+请注意,只有在读取了所有主体数据后,连接才会释放回池以供重用.确保设置<code>stream=False</code>或读取对象的<code>content</code>属性<code>Response</code>.  </p>
+<h3 id="_10">流上传</h3>
+<p>请求支持流式上传,可以发送大型流或文件而无需将其读入内存.要流式传输和上传,只需为的身体提供一个类似于文件的对象:</p>
+<pre><code class="python">with open('massive-body', 'rb') as f:
+    requests.post('http://some.url/streamed', data=f)
+</code></pre>
+
+<p>警告:强烈建议您以二进制模式打开文件.这是因为请求可能会尝试<code>Content-Length</code>为您提供标头,并且如果这样做,此值将设置为文件中的字节数.如果以文本模式打开文件,则可能会发生错误</p>
+<h3 id="_11">块编码请求</h3>
+<p>请求还支持传出和传入请求的块传输编码.要发送块编码的请求,只需为您的<code>body</code>提供一个生成器(或任何没有长度的迭代器):</p>
+<pre><code class="python">def gen():
+    yield 'hi'
+    yield 'there'
+
+requests.post('http://some.url/chunked', data=gen())
+</code></pre>
+
+<p>对于分块的编码响应,最好使用进行数据迭代<code>Response.iter_content()</code>.在理想情况下,将对<code>stream=True</code>请求进行设置,在这种情况下,可以通过<code>iter_content</code>使用<code>chunk_size</code>参数调用逐块进行迭代<code>None</code>.如果要设置块的最大大小,则可以将<code>chunk_size</code>参数设置为任何整数.</p>
+<h3 id="post_1">POST多个多部分编码的文件</h3>
+<p>可以在一个请求中发送多个文件.例如,假设要将图像文件上传到具有多个文件字段"images"的<code>HTML</code>表单中:  </p>
+<pre><code class="html">&lt;input type=&quot;file&quot; name=&quot;images&quot; multiple=&quot;true&quot; required=&quot;true&quot;/&gt;
+</code></pre>
+
+<p>为此,只需将文件设置为的元组列表:<code>(form_field_name, file_info)</code></p>
+<pre><code class="python">&gt;&gt;&gt; url = 'https://httpbin.org/post'
+&gt;&gt;&gt; multiple_files = [
+...     ('images', ('foo.png', open('foo.png', 'rb'), 'image/png')),
+...     ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+&gt;&gt;&gt; r = requests.post(url, files=multiple_files)
+&gt;&gt;&gt; r.text
+{
+  ...
+  'files': {'images': 'data:image/png;base64,iVBORw ....'}
+  'Content-Type': 'multipart/form-data; boundary=3131623adb2043caaeb5538cc7aa0b3a',
+  ...
+}
+</code></pre>
+
+<p>警告:强烈建议以二进制模式打开文件.这是因为请求可能会尝试<code>Content-Length</code>为您提供标头,并且如果这样做,此值将设置为文件中的字节数.如果以文本模式打开文件,则可能会发生错误.</p>
+<h3 id="_12">事件挂钩</h3>
+<p>请求具有一个挂钩系统,可用于处理请求过程的各个部分或发出信号事件处理.  </p>
+<p>可用的挂钩:<br />
+<code>response:</code> 从请求生成的响应.<br />
+可以通过将字典传递给request参数来为每个请求分配一个hook函数:<code>{hook_name: callback_function}hooks</code></p>
+<pre><code class="python">hooks={'response': print_url}
+</code></pre>
+
+<p>那<code>callback_function</code>将接收数据块作为其第一个参数.</p>
+<pre><code class="python">def print_url(r, *args, **kwargs):
+    print(r.url)
+</code></pre>
+
+<p>如果在执行回调时发生错误,则会给出警告.
+如果回调函数返回一个值,则假定它将替换传入的数据.如果该函数不返回任何值,则不会影响其他任何值.</p>
+<pre><code class="python">def record_hook(r, *args, **kwargs):
+    r.hook_called = True
+    return r
+</code></pre>
+
+<p>在运行时打印一些请求方法参数:</p>
+<pre><code class="python">&gt;&gt;&gt; requests.get('https://httpbin.org/', hooks={'response': print_url})
+https://httpbin.org/
+&lt;Response [200]&gt;
+</code></pre>
+
+<p>可以将多个钩子添加到单个请求.让我们一次调用两个钩子:  </p>
+<pre><code class="python">&gt;&gt;&gt; r = requests.get('https://httpbin.org/', hooks={'response': [print_url, record_hook]})
+&gt;&gt;&gt; r.hook_called
+True
+</code></pre>
+
+<p>您还可以将钩子添加到<code>Session</code>实例.然后,对会话的每个请求都会调用您添加的任何钩子.例如:  </p>
+<pre><code class="python">&gt;&gt;&gt; s = requests.Session()
+&gt;&gt;&gt; s.hooks['response'].append(print_url)
+&gt;&gt;&gt; s.get('https://httpbin.org/')
+ https://httpbin.org/
+ &lt;Response [200]&gt;
+</code></pre>
+
+<p>一个<code>Session</code>可以有多个钩子,将按它们添加的顺序进行调用.</p>
+<h3 id="_13">自定义身份验证</h3>
+<p>请求允许您使用指定自己的身份验证机制.<br />
+作为<code>auth</code>参数传递给请求方法的任何可调用对象将有机会在调度请求之前对其进行修改.<br />
+身份验证实现是的子类<code>AuthBase</code>,并且易于定义.请提供两种常见的认证方案实现的<code>requests.auth:HTTPBasicAuth</code>和 <code>HTTPDigestAuth</code>.<br />
+假设我们有一个仅在<code>X-Pizza</code>标头设置为密码值时才响应的Web服务.</p>
+<pre><code>from requests.auth import AuthBase
+
+class PizzaAuth(AuthBase):
+    &quot;&quot;&quot;Attaches HTTP Pizza Authentication to the given Request object.&quot;&quot;&quot;
+    def __init__(self, username):
+        # setup any auth-related data here
+        self.username = username
+
+    def __call__(self, r):
+        # modify and return the request
+        r.headers['X-Pizza'] = self.username
+        return r
+</code></pre>
+
+<p>然后,可以使<code>Pizza Auth</code>发出请求:</p>
+<pre><code class="python">&gt;&gt;&gt; requests.get('http://pizzabin.org/admin', auth=PizzaAuth('kenneth'))
+&lt;Response [200]&gt;
+</code></pre>
+
+<h3 id="_14">流请求</h3>
+<p>只需设置<code>stream=True</code>并使用以下命令迭代响应<code>iter_lines</code>,<code>Response.iter_lines()</code>就可以轻松地迭代诸如<code>Twitter Streaming API</code>之类的流<code>API</code>.  s</p>
+<pre><code class="python">import json
+import requests
+
+r = requests.get('https://httpbin.org/stream/20', stream=True)
+
+for line in r.iter_lines():
+
+    # filter out keep-alive new lines
+    if line:
+        decoded_line = line.decode('utf-8')
+        print(json.loads(decoded_line))
+</code></pre>
+
+<p>当使用带有或的<code>encode_unicode = True</code>时,如果服务器不提供备用编码,则需要提供备用编码:<code>Response.iter_lines() Response.iter_content()</code>  </p>
+<pre><code class="python">r = requests.get('https://httpbin.org/stream/20', stream=True)
+
+if r.encoding is None:
+    r.encoding = 'utf-8'
+
+for line in r.iter_lines(decode_unicode=True):
+    if line:
+        print(json.loads(line))
+</code></pre>
+
+<p>警告:<code>iter_lines</code>不是可重入的安全.多次调用此方法会导致某些接收到的数据丢失.如果需要从多个位置调用它,请改用结果迭代器对象: </p>
+<pre><code class="python">lines = r.iter_lines()
+# Save the first line for later or just skip it
+
+first_line = next(lines)
+
+for line in lines:
+    print(line)
+</code></pre>
+
+<h3 id="_15">代理</h3>
+<p>如果需要使用代理,则可以使用<code>proxies</code>任何请求方法的参数来配置单个请求:</p>
+<pre><code class="python">import requests
+
+proxies = {
+  'http': 'http://10.10.1.10:3128',
+  'https': 'http://10.10.1.10:1080',
+}
+
+requests.get('http://example.org', proxies=proxies)
+</code></pre>
+
+<p>您还可以通过设置环境变量<code>HTTP_PROXY</code>和配置代理<code>HTTPS_PROXY</code>.  </p>
+<pre><code>$ export HTTP_PROXY=&quot;http://10.10.1.10:3128&quot;
+$ export HTTPS_PROXY=&quot;http://10.10.1.10:1080&quot;
+
+$ python
+&gt;&gt;&gt; import requests
+&gt;&gt;&gt; requests.get('http://example.org')
+</code></pre>
+
+<p>要将<code>HTTP Basic Auth</code>与代理一起使用，请使用<code>http://user:password@host/syntax</code><br />
+<code>proxies = {'http': 'http://user:pass@10.10.1.10:3128/'}</code>  </p>
+<p>要为特定的方案和主机提供代理,请使用<code>scheme：//hostname形</code>式作为密钥.这将匹配对给定方案和确切主机名的任何请求.<br />
+<code>proxies = {'http://10.20.1.128': 'http://10.10.1.10:5323'}</code><br />
+请注意,代理<code>URL</code>必须包含该方案.  </p>
+<h3 id="socks">SOCKS</h3>
+<p>2.10.0版中的新功能.<br />
+除了基本的<code>HTTP</code>代理外,请求还支持使用<code>SOCKS</code>协议的代理.这是一项可选功能,要求在使用之前安装其他第三方库.<br />
+可以从以下位置获取此功能的依赖项<code>pip</code>:<br />
+<code>$ pip install requests[socks]</code><br />
+一旦安装了这些依赖项,使用<code>SOCKS</code>代理就和使用<code>HTTP</code>代理一样简单:</p>
+<pre><code class="python">proxies = {
+    'http': 'socks5://user:pass@host:port',
+    'https': 'socks5://user:pass@host:port'
+}
+</code></pre>
+
+<p>使用该方案<code>socks5</code>会使<code>DNS</code>解析发生在客户端上,而不是在代理服务器上.这与<code>curl</code>一致，<code>curl</code>使用该方案来决定是在客户端还是在代理上进行<code>DNS</code>解析.如果要解析代理服务器上的域,请<code>socks5h</code>用作方案.</p>
+<h3 id="_16">合规性</h3>
+<p><code>requests</code>旨在与所有相关规范和RFC保持一致,在这种情况下,遵从性不会给用户带来麻烦.对规范的这种关注会导致某些行为,对于那些不熟悉相关规范的人来说,这似乎是不寻常的.</p>
+<h3 id="_17">编码</h3>
+<p>收到响应时,请求会猜测访问<code>Response.text</code>属性时用于解码响应的编码.请求将首先检查<code>HTTP</code>标头中的编码,如果不存在,将使用<code>chardet</code>尝试猜测编码.<br />
+唯一的一次请求不会做到这一点,如果没有明确的字符集是存在于<code>HTTP</code>头,并在<code>Content-Type</code>头中包含<code>text</code>.在这种情况下,<code>RFC 2616</code>指定默认字符集必须为<code>ISO-8859-1</code>.在这种情况下,请求遵循规范.如果需要其他编码,则可以手动设置<code>Response.encoding</code>属性,或使用<code>raw Response.content</code>.</p>
+<h3 id="http">HTTP动词</h3>
+<p>请求提供对几乎所有<code>HTTP</code>动词的访问:<code>GET</code>，<code>OPTIONS</code>，<code>HEAD</code>，<code>POST</code>，<code>PUT</code>，<code>PATCH</code>和<code>DELETE</code>.下面提供了使用<code>GitHub API</code>在<code>Requests</code>中使用这些动词的详细示例.  </p>
+<p>将从最常用的动词<code>GET</code>开始.<code>HTTP GET</code>是幂等方法,可从给定<code>URL</code>返回资源.因此,是尝试从<code>Web</code>位置检索数据时应使用的动词.一个示例用法是尝试从<code>GitHub</code>获取有关特定提交的信息.假设要提交<code>a050faf</code>请求.将得到这样的结果:</p>
+<pre><code class="python">&gt;&gt;&gt; import requests
+&gt;&gt;&gt; r = requests.get('https://api.github.com/repos/psf/requests/git/commits/a050faf084662f3a352dd1a941f2c7c9f886d4ad')
+
+# 应该确认`GitHub`正确响应.如果有,想确定它是什么类型的内容则可以这样做:
+&gt;&gt;&gt; if r.status_code == requests.codes.ok:
+...     print(r.headers['content-type'])
+...
+application/json; charset=utf-8
+
+# GitHub返回JSON.可以使用r.json方法将其解析为Python对象.
+
+&gt;&gt;&gt; commit_data = r.json()
+
+&gt;&gt;&gt; print(commit_data.keys())
+# ['committer', 'author', 'url', 'tree', 'sha', 'parents', 'message']
+
+&gt;&gt;&gt; print(commit_data['committer'])
+# {'date': '2012-05-10T11:10:50-07:00', 'email': 'me@kennethreitz.com', 'name': 'Kenneth Reitz'}
+
+&gt;&gt;&gt; print(commit_data['message'])
+# makin' history
+
+# 研究一下GitHub API.可以看一下文档,若改用Requests可能会更有趣.利用Requests OPTIONS动词来查看使用的url支持哪些HTTP方法.  
+
+&gt;&gt;&gt; verbs = requests.options(r.url)
+&gt;&gt;&gt; verbs.status_code
+500
+
+# 无济于事！事实证明,像许多API提供程序一样,GitHub实际上并未实现OPTIONS方法.只能使用无聊的文档.如果GitHub正确实现了OPTIONS,则它们应在标头中返回允许的方法.例如:  
+&gt;&gt;&gt; verbs = requests.options('http://a-good-website.com/api/cats')
+&gt;&gt;&gt; print(verbs.headers['allow'])
+# GET,HEAD,POST,OPTIONS
+
+# 转到文档，看到允许提交的唯一其他方法是POST,创建了一个新的提交.在使用请求存储库时,可能应该避免对其进行后期处理. 
+# GitHub的Issues功能:添加此文档是为了响应&quot;问题＃482&quot;.鉴于此问题已经存在,将以它为例.获取它开始.  
+&gt;&gt;&gt; r = requests.get('https://api.github.com/repos/psf/requests/issues/482')
+&gt;&gt;&gt; r.status_code
+200
+
+&gt;&gt;&gt; issue = json.loads(r.text)
+
+&gt;&gt;&gt; print(issue['title'])
+Feature any http verb in docs
+
+&gt;&gt;&gt; print(issue['comments'])
+#3 很酷,我们有三个评论.让我们看看其中的最后一个.
+
+&gt;&gt;&gt; r = requests.get(r.url + '/comments')
+&gt;&gt;&gt; r.status_code
+#200
+
+&gt;&gt;&gt; comments = r.json()
+
+&gt;&gt;&gt; print(comments[0].keys())
+# ['body', 'url', 'created_at', 'updated_at', 'user', 'id']
+
+&gt;&gt;&gt; print(comments[2]['body'])
+# Probably in the &quot;advanced&quot; section
+
+&gt;&gt;&gt; print(comments[2]['user']['login'])
+# kennethreitz
+# 根据`GitHub API`文档，执行此操作的方法是POST到线程。我们开始做吧。
+
+&gt;&gt;&gt; body = json.dumps({u&quot;body&quot;: u&quot;Sounds great! I'll get right on it!&quot;})
+&gt;&gt;&gt; url = u&quot;https://api.github.com/repos/psf/requests/issues/482/comments&quot;
+
+&gt;&gt;&gt; r = requests.post(url=url, data=body)
+&gt;&gt;&gt; r.status_code
+# 404
+# 可能需要进行身份验证.通过请求,可以轻松使用多种形式的身份验证,包括非常常见的基本身份验证.
+
+&gt;&gt;&gt; from requests.auth import HTTPBasicAuth
+&gt;&gt;&gt; auth = HTTPBasicAuth('fake@example.com', 'not_a_real_password')
+
+&gt;&gt;&gt; r = requests.post(url=url, data=body, auth=auth)
+&gt;&gt;&gt; r.status_code
+# 201
+
+&gt;&gt;&gt; content = r.json()
+&gt;&gt;&gt; print(content['body'])
+# Sounds great! I'll get right on it.
+# GitHub允许使用另一个`HTTP`动词`PATCH`来编辑此注释.
+
+&gt;&gt;&gt; print(content[u&quot;id&quot;])
+# 5804413
+
+&gt;&gt;&gt; body = json.dumps({u&quot;body&quot;: u&quot;Sounds great! I'll get right on it once I feed my cat.&quot;})
+&gt;&gt;&gt; url = u&quot;https://api.github.com/repos/psf/requests/issues/comments/5804413&quot;
+
+&gt;&gt;&gt; r = requests.patch(url=url, data=body, auth=auth)
+&gt;&gt;&gt; r.status_code
+# 200
+# `GitHub`允许使用令人难以置信的恰当的`DELETE`方法删除评论.
+
+&gt;&gt;&gt; r = requests.delete(url=url, auth=auth)
+&gt;&gt;&gt; r.status_code
+204
+&gt;&gt;&gt; r.headers['status']
+'204 No Content'
+`GitHub`在标头中发送该信息,因此，将下载一个`HEAD`请求以获取标头,而不是下载整个页面.
+
+&gt;&gt;&gt; r = requests.head(url=url, auth=auth)
+&gt;&gt;&gt; print(r.headers)
+...
+'x-ratelimit-remaining': '4995'
+'x-ratelimit-limit': '5000'
+...
+是时候编写一种以各种令人兴奋的方式滥用`GitHub API`的`Python`程序，更多时候需要4995次.
+</code></pre>
+
+<h3 id="_18">自定义谓词</h3>
+<p>可能会不时地使用服务器,无论出于何种原因，该服务器都允许使用甚至要求使用上面未介绍的HTTP动词.一个示例是某些<code>WEBDAV</code>服务器使用的<code>MKCOL</code>方法.利用内置<code>.request</code>方法.例如:  </p>
+<pre><code class="python">&gt;&gt;&gt; r = requests.request('MKCOL', url, data=data)
+&gt;&gt;&gt; r.status_code
+# 200 # Assuming your call was correct
+</code></pre>
+
+<p>利用这一点，可以使用服务器允许的任何方法动词.  </p>
+<h3 id="_19">链接头</h3>
+<p>许多<code>HTTP API</code>具有链接标头.它们使<code>API</code>更加自我描述和发现.<br />
+<code>GitHub</code>将它们用于其<code>API</code>中的分页,例如:</p>
+<pre><code class="python">&gt;&gt;&gt; url = 'https://api.github.com/users/kennethreitz/repos?page=1&amp;per_page=10'
+&gt;&gt;&gt; r = requests.head(url=url)
+&gt;&gt;&gt; r.headers['link']
+# '&lt;https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10&gt;; rel=&quot;next&quot;, &lt;https://api.github.com/users/kennethreitz/repos?page=6&amp;per_page=10&gt;; rel=&quot;last&quot;'
+</code></pre>
+
+<p>请求将自动解析这些链接头并使其易于使用:</p>
+<pre><code class="python">&gt;&gt;&gt; r.links[&quot;next&quot;]
+{'url': 'https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10', 'rel': 'next'}
+
+&gt;&gt;&gt; r.links[&quot;last&quot;]
+{'url': 'https://api.github.com/users/kennethreitz/repos?page=7&amp;per_page=10', 'rel': 'last'}
+</code></pre>
+
+<h3 id="_20">传输适配器</h3>
+<p>从v1.0.0版本开始,请求已移至模块化内部设计.这样做的部分原因是实现了传输适配器,该适配器最初在此处进行了描述.传输适配器提供一种机制来定义<code>HTTP</code>服务的交互方法.特别是,它们允许每个服务应用的配置.<br />
+要求随附一个运输适配器,即<code>HTTPAdapter</code>.该适配器使用功能强大的<code>urllib3</code>库提供与<code>HTTP</code>和<code>HTTPS</code>的默认请求交互.每当<code>Session</code>初始化请求时,<code>Session</code>对于<code>HTTP</code>来说,其中之一便被附加到对象上,对于<code>HTTPS</code>来说,其中之一便被附加到对象上.<br />
+请求使用户可以创建和使用自己的提供特定功能的传输适配器.创建传输适配器后,就可以将传输适配器安装到<code>Session</code>对象上,并指示它应该应用于哪些<code>Web</code>服务.</p>
+<pre><code class="python">&gt;&gt;&gt; s = requests.Session()
+&gt;&gt;&gt; s.mount('https://github.com/', MyAdapter())
+</code></pre>
+
+<p><code>mount</code>调用将传输适配器的特定实例注册到前缀.挂载后,使用该会话发出且其<code>URL</code>以给定前缀开头的任何<code>HTTP</code>请求都将使用给定的传输适配器.<br />
+实现传输适配器的许多细节不在本文档的讨论范围之内,看下一个简单SSL用例的下一个示例.除此之外，还可以查看的子类<code>BaseAdapter</code>.</p>
+<h3 id="ssl_1">示例：特定的SSL版本</h3>
+<p><code>Requests</code>团队已做出特定选择,以使用基础库<code>(urllib3)</code>中默认的SSL版本.但是有时可能会发现自己需要连接到使用与默认版本不兼容的版本的服务端点.<br />
+为此,可以通过使用大多数现有的<code>HTTPAdapter</code>实现,并添加参数<code>ssl_version</code>并将其传递到<code>urllib3</code>来使用传输适配器.将制作一个传输适配器,以指示库使用<code>SSLv3</code>:  </p>
+<pre><code class="python">import ssl
+from urllib3.poolmanager import PoolManager
+
+from requests.adapters import HTTPAdapter
+
+
+class Ssl3HttpAdapter(HTTPAdapter):
+    &quot;&quot;&quot;&quot;Transport adapter&quot; that allows us to use SSLv3.&quot;&quot;&quot;
+
+    def init_poolmanager(self, connections, maxsize, block=False):
+        self.poolmanager = PoolManager(
+            num_pools=connections, maxsize=maxsize,
+            block=block, ssl_version=ssl.PROTOCOL_SSLv3)
+</code></pre>
+
+<h3 id="_21">阻止还是不阻止？</h3>
+<p>使用默认的传输适配器后,请求不会提供任何类型的非阻塞IO.该<code>Response.content</code>属性将阻塞,直到下载完整个响应.如果需要更多的粒度,则库的功能(see Streaming Requests)允许一次检索较小数量的响应.但是,这些调用仍将阻止.<br />
+如果担心阻塞IO的使用,那么有很多项目将<code>Requests</code>与<code>Python</code>的异步框架之一结合在一起.一些很好的例子是<code>request-threads</code>，<code>grequests</code>，<code>requests-futures</code>和<code>requests-async</code>.</p>
+<h3 id="_22">标题排序</h3>
+<p>在特殊情况下，可能需要按顺序提供标题.如果将传递<code>OrderedDict</code>给<code>headers</code>关键字参数,则会为标头提供顺序.但是,将优先使用<code>Requests</code>使用的默认标头的顺序,这意味着,如果覆盖<code>headers</code>关键字参数中的默认标头,则与该关键字参数中的其他标头相比,它们可能会出现乱序.<br />
+如果这有问题,则用户应考虑<code>Session</code>通过设置<code>Session</code>为<code>custom</code>来设置对象的默认标头<code>OrderedDict</code>.该顺序将始终是首选.  </p>
+<h3 id="_23">超时</h3>
+<p>如果服务器没有及时响应,则对外部服务器的大多数请求都应附加超时.默认情况下,除非明确设置超时值,否则请求不会超时.<br />
+该连接超时秒请求数将等待您的客户端建立到远程计算机(corresponding to the connect())在插座上的呼叫.将连接超时设置为略大于3的倍数是一个好习惯,这是默认的<code>TCP</code>数据包重传窗口.<br />
+客户端连接到服务器并发送<code>HTTP</code>请求后,读取超时就是客户端将等待服务器发送响应的秒数.(具体来说,这是客户端在服务器发送的字节之间等待的秒数.在99.9％的情况下，这是服务器发送第一个字节之前的时间).  </p>
+<pre><code class="python"># 如果为超时指定单个值,则如下所示:
+r = requests.get('https://github.com', timeout=5)
+
+# 超时值将同时应用于connect和read,如果要单独设置值，请指定一个元组：
+r = requests.get('https://github.com', timeout=(3.05, 27))
+
+# 如果远程服务器非常慢，则可以通过将None传递为超时值，然后获取一杯咖啡，来告诉Requests永远等待响应.
+r = requests.get('https://github.com', timeout=None)
+# https://kennethreitz.org/tattoos
+</code></pre>
+
+<h3 id="_24">基本身份验证</h3>
+<p>许多需要身份验证的<code>Web</code>服务都接受<code>HTTP</code>基本身份验证.这是最简单的一种,<code>Requests</code>直接支持它.
+使用HTTP基本身份验证进行请求非常简单:  </p>
+<pre><code class="python">&gt;&gt;&gt; from requests.auth import HTTPBasicAuth
+&gt;&gt;&gt; requests.get('https://api.github.com/user', auth=HTTPBasicAuth('user', 'pass'))
+&lt;Response [200]&gt;
+</code></pre>
+
+<p>实际上,HTTP基本身份验证非常普遍,因此请求提供了使用它的便捷方式:</p>
+<pre><code class="python">&gt;&gt;&gt; requests.get('https://api.github.com/user', auth=('user', 'pass'))
+&lt;Response [200]&gt;
+</code></pre>
+
+<p>像这样在元组中提供凭据与HTTPBasicAuth上面的示例完全相同.</p>
+<h1 id="netrc">netrc认证</h1>
+<p>If no authentication method is given with the auth argument, Requests will attempt to get the authentication credentials for the URL’s hostname from the user’s netrc file. The netrc file overrides raw HTTP authentication headers set with headers=.</p>
+<p>If credentials for the hostname are found, the request is sent with HTTP Basic Auth.</p>
+<h3 id="_25">摘要式身份验证</h3>
+<p><code>HTTP</code>身份验证的另一种非常流行的形式是摘要身份验证,并且请求也支持开箱即用:</p>
+<pre><code class="python">&gt;&gt;&gt; from requests.auth import HTTPDigestAuth
+&gt;&gt;&gt; url = 'https://httpbin.org/digest-auth/auth/user/pass'
+&gt;&gt;&gt; requests.get(url, auth=HTTPDigestAuth('user', 'pass'))
+&lt;Response [200]&gt;
+</code></pre>
+
+<h3 id="oauth-1">OAuth 1 身份验证</h3>
+<p>OAuth是几种Web API的常见身份验证形式.该<code>requests-oauthlib</code>库允许"请求"用户轻松进行<code>OAuth 1</code>身份验证的请求:</p>
+<pre><code class="python">&gt;&gt;&gt; import requests
+&gt;&gt;&gt; from requests_oauthlib import OAuth1
+
+&gt;&gt;&gt; url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
+&gt;&gt;&gt; auth = OAuth1('YOUR_APP_KEY', 'YOUR_APP_SECRET',
+...               'USER_OAUTH_TOKEN', 'USER_OAUTH_TOKEN_SECRET')
+
+&gt;&gt;&gt; requests.get(url, auth=auth)
+&lt;Response [200]&gt;
+</code></pre>
+
+<p>有关<code>OAuth</code>流程如何工作的更多信息，请访问<a href="https://oauth.net/">OAuth官方网站</a>.有关<code>requests-oauthlib</code>的示例和文档，请参见<code>GitHub</code>上的(requests_oauthlib)[https://github.com/requests/requests-oauthlib]存储库</p>
+<h3 id="oauth-2openid-connect">OAuth 2和OpenID Connect身份验证</h3>
+<p>该<code>requests-oauthlib</code>库还处理<code>OAuth 2</code>,这是支持<code>OpenID Connect</code>的身份验证机制.有关各种<code>OAuth 2</code>凭证管理流的详细信息,请参阅(request-oauthlib OAuth2)[https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html]文档.</p>
+<h3 id="_26">其他认证</h3>
+<p>请求旨在允许轻松快速地插入其他形式的身份验证.开源社区的成员经常编写身份验证处理程序以获取更复杂或更不常用的身份验证形式.一些最好的东西汇集在<code>Requests</code>组织之下,包括:
+1. (Kerberos)[https://github.com/requests/requests-kerberos]
+2. (NTLM)[https://github.com/requests/requests-ntlm]</p>
+<p>如果要使用这些身份验证中的任何一种,请直接转到其<code>GitHub</code>页面并按照说明进行操作.</p>
+<h3 id="_27">新的身份验证形式</h3>
+<p>如果找不到所需身份验证形式的良好实现，则可以自己实现.通过<code>request</code>可以轻松添加自己的身份验证形式.
+为此，请子类化<code>AuthBase</code>并实现该<code>__call__()</code>方法:</p>
+<pre><code class="python">&gt;&gt;&gt; import requests
+&gt;&gt;&gt; class MyAuth(requests.auth.AuthBase):
+...     def __call__(self, r):
+...         # Implement my authentication
+...         return r
+...
+&gt;&gt;&gt; url = 'https://httpbin.org/get'
+&gt;&gt;&gt; requests.get(url, auth=MyAuth())
+&lt;Response [200]&gt;
+</code></pre>
+
+<p>When an authentication handler is attached to a request, it is called during request setup. The <strong>call</strong> method must therefore do whatever is required to make the authentication work. Some forms of authentication will additionally add hooks to provide further functionality.<br />
+Further examples can be found under the (Requests organization)[https://github.com/requests] and in the auth.py file.  </p>
+<h2 id="json_1">JSON</h2>
+<h3 id="json_2">json字符串</h3>
+<ol>
+<li>json.loads()</li>
+<li>json.dumps()</li>
+</ol>
+<h3 id="json_3">包含json的类文件对象</h3>
+<p>具有<code>read()</code>或者<code>write()</code>方法的对象就是类文件对象<code>f.open("a.txt", "r")</code>
+1. json.load()
+2. json.dump()
+3. json中的字符串都是双引号因起来的,如果不是双引号</p>
+<blockquote>
+<ul>
+<li>eval:能实现简单的字符串和python类型的转化;</li>
+<li>replace: 把单引号替换为双引号;</li>
+</ul>
+</blockquote>
+<h2 id="xpath">XPATH</h2>
+<p><a href="https://www.w3school.com.cn/xpath/index.asp">w3school XPath 教程</a>
+XPath是一门在XML文档中查找信息的语言.XPath可用来在XML文档中对元素和属性进行遍历.<br />
+XPath是W3CXSLT标准的主要元素,并且XQuery和XPointer都构建于XPath表达之上.  </p>
+<p>XPath 参考手册<br />
+<a href="https://www.w3school.com.cn/xpath/xpath_functions.asp">XPath 函数</a></p>
+<p>内容目录<br />
+- XPath 简介: 本章讲解 XPath 的概念.<br />
+- XPath 节点: 本章详细介绍 XPath 中不同类型的节点，以及节点之间的关系.<br />
+- XPath 语法: 本章讲解 XPath 的语法.
+- XPath 轴: 本章讲解 XPath axes（轴）.
+- XPath 运算符: 本章列出了可以用于 XPath 表达式的运算符.
+- XPath 实例: 本章使用 "books.xml" 文档来演示一些 - XPath 实例.
+- XPath 摘要: 本文内容包括在本教程所学知识的一个总结，以及我们向你推荐的下一步应该学习的内容
+- XPath 参考手册
+- XPath 函数
+- XPath 2.0、XQuery 1.0 和 XSLT 2.0 的内置函数.</p>
+<h3 id="xpath_1">XPath 简介</h3>
+<p>XPath 是一门在 XML 文档中查找信息的语言. XPath 用于在 XML 文档中通过元素和属性进行导航.  </p>
+<p>在学习之前应该具备的知识:<br />
+- HTML / XHTML
+- XML / XML 命名空间</p>
+<p>什么是XPath?
+- XPath 使用路径表达式在XML文档中进行导航
+- XPath 包含一个标准函数库
+- XPath 是 XSLT 中的主要元素
+- XPath 是一个 W3C 标准
+- XPath 路径表达式
+- XPath 使用路径表达式来选取 XML 文档中的节点或者节点集.这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似.</p>
+<p>XPath 标准函数<br />
+XPath 含有超过 100 个内建的函数。这些函数用于字符串值、数值、日期和时间比较、节点和 QName 处理、序列处理、逻辑值等等。</p>
+<p>XPath 在 XSLT 中使用<br />
+XPath 是 XSLT 标准中的主要元素. 如果没有 XPath 方面的知识，您就无法创建 XSLT 文档.  </p>
+<p>XQuery 和 XPointer 均构建于 XPath 表达式之上.XQuery 1.0 和 XPath 2.0 共享相同的数据模型，并支持相同的函数和运算符.</p>
+<p>XPath 是 W3C 标准<br />
+XPath 于 1999 年 11 月 16 日 成为 W3C 标准.  </p>
+<p>XPath 被设计为供 XSLT、XPointer 以及其他 XML 解析软件使用.  </p>
+<h2 id="lxml">lxml</h2>
+<ul>
+<li><code>from lxml import etree</code></li>
+<li>利用<code>etree.HTML</code>,将字符串转化为<code>Element</code>对象</li>
+<li><code>Element</code>对象具有<code>xpath</code>的方法:<code>html=etree.HTML(test);html.xpath("")</code></li>
+<li>lxml可以自动修正html代码</li>
+</ul>
+<h2 id="_28">实现爬虫的思路</h2>
+<ol>
+<li>准备url<blockquote>
+<ul>
+<li>准备start_url: 1. url地址规律不明显,总数不确定; 2. 通过代码提取下一页的url; 3. 寻找url地址,部分参数在当前的相应中;</li>
+<li>准备url_list:1. 当页码总数明确; 2. url地址规律明显</li>
+</ul>
+</blockquote>
+</li>
+<li>发送请求,获取相应<blockquote>
+<ul>
+<li>添加随即的User-Agent,反反爬虫.</li>
+<li>添加随即的代理ip,反反爬虫.</li>
+<li>在对方判断出爬虫后,应该添加更多的<code>headers</code>字段,包括<code>cookie</code>.</li>
+<li>cookie的处理可以使用<code>session</code>来解决.</li>
+<li>准备很多能用的<code>cookie</code>,组成<code>cookie</code>池: 1. 如果不登录,准备刚开始能够成功请求对方网站的<code>cookie</code>, 即接收对方网站设置的<code>response</code>的<code>cookie</code>;下一次请求的时候,使用之前的列表中的<code>cookie</code>来请求. 2. 如果登录,准备多个账号,使用程序获取每个账号的<code>cookie</code>,之后请求登录之后才能访问的网站随即的选择<code>cookie</code>.</li>
+</ul>
+</blockquote>
+</li>
+<li>提取数据<blockquote>
+<ul>
+<li>确定数据的位置:1. 如果数据在当前的<code>url</code>中,提取的是列表页的<code>url</code>地址,不用进入详细页.提取的是详细页的数据,则确定url,发送请求,提取数据,返回. 2. 如果数据不在当前的<code>url</code>地址中,在其他的响应中,寻找数据的位置.</li>
+<li>数据的提取, 使用<code>json</code>,<code>xpath</code>,<code>re</code>等技术.</li>
+</ul>
+</blockquote>
+</li>
+<li>保存<blockquote>
+<ul>
+<li>保存在本地<code>text</code>, <code>json</code>,<code>csv</code>.</li>
+<li>保存在数据库<code>mysql</code>, <code>mongodb</code>. </li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p>Temp</p>
+<pre><code class="python">import requests
+import json
+import unicodedata
+
+from pprint import pprint
+from lxml import etree
+from queue import Queue
+
+
+class URL_Json_xpath_Tool():
+
+    @staticmethod
+    def json_dumps_file(ret_json, file_name, encoding=&quot;utf-8&quot;, ensure_ascii=False, indent=4):
+        dumps_json = json.dumps(ret_json, ensure_ascii, indent)
+        with open(file_name, &quot;w&quot;, encoding) as f:
+            f.write(dumps_json)
+
+    @staticmethod
+    def html2json_file(html_str, file_name, encoding=&quot;utf-8&quot;, ensure_ascii=False, indent=4):
+        ret_json = json.loads(html_str)
+        json_dumps_file(ret_json, file_name, encoding, ensure_ascii, indent)
+
+    @staticmethod
+    def xpath_group(o_xpath, g_xpath: str, t_xpath: dict):
+        ret = o_xpath.xpath(g_xpath)
+        print(ret)
+        lst = []
+        for i in ret:
+            item = {}
+            for title in t_xpath:
+                xpath_str = t_xpath.get(title)
+                # 字符转换
+                # unicodedata.normalize('NFKC', s)
+                item[title] = unicodedata.normalize('NFKC', i.xpath(xpath_str)[0]) if len(i.xpath(xpath_str)) else None
+            lst.append(item)
+        return lst
+
+    @staticmethod
+    def get_url_content(url, params=None,headers={
+        &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&quot;,
+        &quot;Accept-Language&quot;:  &quot;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&quot;,
+        &quot;Connection&quot;: &quot;keep-alive&quot;,
+        &quot;User-Agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36&quot;
+    }, proxies=None, timeout=None):
+        response = requests.get(url, params=params, headers=headers, proxies=proxies, timeout=timeout)
+        return response.content
+
+
+class BaiduTieBaSpider():
+    def __init__(self, start_url, params):
+        self.start_url = start_url
+        self.params = params
+
+        self.url_queue = Queue()
+        self.html_queue = Queue()
+
+    def get_tieba_content_lst(self, html_content):
+        html = etree.HTML(html_content)
+        next_page_url = html.xpath(&quot;//a[text()='下一页']/@href&quot;)[0] if len(html.xpath(&quot;//a[text()='下一页']/@href&quot;)) else None
+
+        return next_page_url, URL_Json_xpath_Tool.xpath_group(html, &quot;//div[contains(@class, 'i')]&quot;, {
+            &quot;title&quot;: &quot;./a/text()&quot;,
+            &quot;href&quot;: &quot;./a/@href&quot;,
+            &quot;info&quot;: &quot;./p/text()&quot;,
+        })
+
+    def parse_url(self):
+        while True:
+            url = self.url_queue.get()
+            print(url)
+            content = URL_Json_xpath_Tool.get_url_content(url)
+            self.html_queue.put(content)
+            self.url_queue.task_done()
+
+
+    def get_tiezi_content_lst(self):
+        pass
+        # TODO: 帖子页分析
+
+    def data_arrangement(self, page_lst):
+        for item in page_lst:
+            item[&quot;href&quot;] = self.start_url + item[&quot;href&quot;] if item[&quot;href&quot;] is not None else None
+        return page_lst
+
+    def tezi_pages(self, page_lst):
+        for item in page_lst:
+            if item[&quot;href&quot;] != None:
+                html_content = URL_Json_xpath_Tool.get_url_content(item[&quot;href&quot;])
+                # TODO: 调用get_tiezi_content_lst
+
+    def run(self, tieba_name: str):
+        html_content = URL_Json_xpath_Tool.get_url_content(self.start_url, self.params)
+        next_page_url, page_lst = self.get_tieba_content_lst(html_content)
+        while next_page_url:
+            next_page_url = self.start_url + next_page_url
+            page_lst = self.data_arrangement(page_lst)
+
+            self.tezi_pages(page_lst)
+
+            html_content = URL_Json_xpath_Tool.get_url_content(next_page_url)
+            next_page_url, page_lst = self.get_content_lst(html_content)
+
+
+def main():
+    url = &quot;https://tieba.baidu.com/mo/q---2E8BF5118BCCC88940FD5272EFB6C22A%3AFG%3D1--1-1-0--2--wapp_1593324185447_122/&quot;
+    params={
+        &quot;kw&quot;: &quot;lol&quot;,
+    }
+    bttbs = BaiduTieBaSpider(url, params)
+    pprint(bttbs.run(&quot;lol&quot;))
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h2 id="_29">多线程爬虫</h2>
+<h2 id="selenium-chromedriver">selenium + chromedriver</h2>
+<p><a href="https://www.selenium.dev/documentation/en/">selenium</a>
+TODO 阅读Selenium文档
+1. 加载网页:</p>
+<pre><code class="python">from selenium import webdriver
+driver = webdriver.chrome(&quot;PATH&quot;)
+driver.get(&quot;http://www.baidu.com/&quot;)
+driver.save_screenshot(&quot;The_Great_Wall.png&quot;)
+</code></pre>
+
+<ol>
+<li>定位与操作</li>
+</ol>
+<pre><code class="python">find_element_by_id [返回单个]
+find_elements_by_xpath [返回列表]
+find_elements_by_link_text
+find_elements_by_partial_link_text
+find_elements_by_tag_name
+find_elements_by_class_name
+find_elements_by_css_selector
+by_link_text 和 by_partial_link_text 的区别: 全部文本和包含某个文本
+by_cssselector 的用法: # food span.dairy.aged
+by_xpath 中获取属性和文本需要使用 get_attribute() 和 .text
+
+driver.switch_to.frame('frame') frame, iframe跳转
+
+selenium 第一次请求时,等待页面加载完成,在点击翻页后,直接获取数据,则会报错,因为数据还未加载完成,需要等待
+</code></pre>
+
+<ol>
+<li>查看请求信息</li>
+</ol>
+<pre><code class="python">driver.page_source
+driver.get_cookies()
+driver.current_url
+</code></pre>
+
+<ol>
+<li>退出</li>
+</ol>
+<pre><code class="python">driver.close() # 退出当前页面
+driver.quit() # 退出浏览器
+</code></pre>
+
+<ol>
+<li>Cookies</li>
+</ol>
+<pre><code>{cookie['name']: cookie['value'] for cookie in driver.get_cookie()}
+driver.delete_cookie('CookieName')
+driver.delete_all_cookies()
+</code></pre>
+
+<ol>
+<li>页面等待<blockquote>
+<ul>
+<li>强制等待 <code>time.sleep(10)</code></li>
+<li>显示等待 <code>webDriverWait(Driver, 10).until(EC.presence_of_element_located((By.ID, 'myDunamicElement'))</code></li>
+<li>隐式等待 <code>driver.implicitly_wait(10)</code></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="_30">验证码识别</h2>
+<h2 id="tesseract">Tesseract</h2>
+<p>Tesseract是一个将图像翻译成文字的OCR库(光学文字识别,Optical Character Recognition)<br />
+<code>sudo apt-get install tesseract-ocr</code>
+<code>pip3 install pytesseract</code></p>
+<pre><code class="python">import pytesseract
+from PIL import Image
+
+image = Image.open('test.jpg')
+pytesseract.image_to_string(image)
+</code></pre>
+
+<h2 id="scrapy">Scrapy</h2>
+<h3 id="scrapy_1">Scrapy的基础</h3>
+<h3 id="scrapy_2">Scrapy的工作流程</h3>
+<p><img alt="Data flow" src="https://docs.scrapy.org/en/latest/_images/scrapy_architecture_02.png" />
+Scrapy中的数据流由执行引擎控制，如下所示：</p>
+<ol>
+<li>该引擎获取从最初请求蜘蛛爬虫.</li>
+<li>该引擎安排在请求调度程序和要求下一个请求爬行.</li>
+<li>该计划返回下一请求的引擎.</li>
+<li>该引擎发送请求到下载器,通过下载器中间件(process_request())</li>
+<li>页面下载完成后,<code>Downloader</code>会生成一个带有该页面的<code>Response</code>(响应),并将其发送到<code>Engine</code>,并通过<code>Downloader Middlewares</code>(请参阅参考资料<code>process_response()</code>).</li>
+<li>该引擎接收来自响应下载器并将其发送到所述蜘蛛进行处理,通过蜘蛛中间件(见<code>process_spider_input()</code>).</li>
+<li>该蜘蛛处理响应并返回刮下的项目和新的要求(跟随)的引擎,通过蜘蛛中间件(见<code>process_spider_output()</code>).</li>
+<li>该引擎发送处理的项目,以项目管道,然后把处理的请求的调度,并要求今后可能请求爬行.</li>
+<li>重复该过程(从步骤1开始).直到不再有<code>Scheduler</code>的请求为止.</li>
+</ol>
+<h3 id="scrapy_3">Scrapy的入门使用</h3>
+<ol>
+<li>创建scrapy项目<code>scrapy startproject learnSpider</code></li>
+<li>生成爬虫<code>scrapy genspider example example.com</code></li>
+<li>提取数据,完善spider,使用xpath等方法</li>
+<li>保存数据<code>pipeline</code>中保存数据</li>
+</ol>
+<pre><code class="python">├── learnSpider
+│   ├── __init__.py
+│   ├── items.py                    # project items definition file
+│   ├── middlewares.py              # project middlewares file
+│   ├── pipelines.py                # # project pipelines file
+│   │   ├── __init__.cpython-38.pyc
+│   │   └── settings.cpython-38.pyc
+│   ├── settings.py                 # project settings file
+│   └── spiders                     # 创建的爬虫文件夹
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   └── __init__.cpython-38.pyc
+│       └── qidian.py                   # 创建的爬虫
+└── scrapy.cfg                      # deploy configuration file
+
+scrapy.cfg 
+[settings]
+# 指定指定项目设置的py文件
+default = learnSpider.settings
+
+[deploy] 代码发布
+#url = http://localhost:6800/
+project = learnSpider
+
+spiders -&gt; qidian.py
+import scrapy
+
+class QidianSpider(scrapy.Spider):
+    name = 'qidian'                             # 爬虫名
+    allowed_domains = ['qidian.com']            # 允许爬区的范围
+    start_urls = ['https://www.qidian.com/all'] # 开始的URL
+
+    def parse(self, response):
+        '''
+        将调用该方法来处理为每个请求下载的响应.
+        该方法通常解析响应,将提取的数据存储为dict，
+        并可以查找新的url并从中创建新的请求(Request).
+        使用 scrapy crawl spiderName 运行蜘蛛
+        '''
+
+
+</code></pre>
+
+<h3 id="scrapy_4">Scrapy的深入</h3>
+<h4 id="_31">基本学习</h4>
+<p>使用 Scrapy 提取数据的最佳方法是使用<code>Scrapy shell</code>尝试选择器</p>
+<pre><code>$ scrapy shell 'https://www.qidian.com/all'
+2020-07-10 10:28:45 [scrapy.utils.log] INFO: Scrapy 2.2.0 started (bot: learnSpider)
+2020-07-10 10:28:45 [scrapy.utils.log] INFO: Versions: lxml 4.5.1.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.8.2 (default, Apr 27 2020, 15:53:34) - [GCC 9.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.4.0-40-generic-x86_64-with-glibc2.29
+2020-07-10 10:28:45 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2020-07-10 10:28:45 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'learnSpider',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'learnSpider.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['learnSpider.spiders']}
+2020-07-10 10:28:45 [scrapy.extensions.telnet] INFO: Telnet Password: fec1e77f71ab8364
+2020-07-10 10:28:45 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+2020-07-10 10:28:45 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-07-10 10:28:45 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-07-10 10:28:45 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2020-07-10 10:28:45 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-07-10 10:28:45 [scrapy.core.engine] INFO: Spider opened
+2020-07-10 10:28:45 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://www.qidian.com/robots.txt&gt; (referer: None)
+2020-07-10 10:28:46 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://www.qidian.com/all&gt; (referer: None)
+2020-07-10 10:28:47 [asyncio] DEBUG: Using selector: EpollSelector
+[s] Available Scrapy objects:
+[s]   scrapy     scrapy module (contains scrapy.Request, scrapy.Selector, etc)
+[s]   crawler    &lt;scrapy.crawler.Crawler object at 0x7fd5298c2040&gt;
+[s]   item       {}
+[s]   request    &lt;GET https://www.qidian.com/all&gt;
+[s]   response   &lt;200 https://www.qidian.com/all&gt;
+[s]   settings   &lt;scrapy.settings.Settings object at 0x7fd5298bfc40&gt;
+[s]   spider     &lt;QidianSpider 'qidian' at 0x7fd528c213d0&gt;
+[s] Useful shortcuts:
+[s]   fetch(url[, redirect=True]) Fetch URL and update local objects (by default, redirects are followed)
+[s]   fetch(req)                  Fetch a scrapy.Request and update local objects 
+[s]   shelp()           Shell help (print this help)
+[s]   view(response)    View response in a browser
+2020-07-10 10:28:48 [asyncio] DEBUG: Using selector: EpollSelector
+</code></pre>
+
+<p><code>In [1]: response.css('title')</code>           <br />
+<code>Out[1]: [&lt;Selector xpath='descendant-or-self::title' data='&lt;title&gt;全部作品_起点中文网&lt;/title&gt;'&gt;]</code>   </p>
+<p>运行的结果<code>response.css('title')</code>是一个名为的类似列表的对象<code>SelectorList</code>,该<code>Selector</code>对象表示围绕<code>XML/HTML</code>元素的对象列表,并允许运行进一步的查询以细化选择或提取数据.  </p>
+<p><code>In [2]: response.css('title').getall()</code><br />
+<code>Out[2]: ['&lt;title&gt;全部作品_起点中文网&lt;/title&gt;']</code>  </p>
+<p><code>In [3]: response.css('title::text').getall()</code><br />
+<code>Out[3]: ['全部作品_起点中文网']</code>  </p>
+<p><code>.getall()</code>是一个列表:选择器可能返回多个结果,因此我们将它们全部提取出来.当知道只需要第一个结果时则:<br />
+<code>In [4]: response.css('title::text').get()</code><br />
+<code>Out[4]: '全部作品_起点中文网'</code>  </p>
+<p><code>In [5]: response.css('title::text')[0].get()</code><br />
+<code>Out[5]: '全部作品_起点中文网'</code>  </p>
+<p>除了<code>getall()</code>和<code>get()</code>方法，还可以使用<code>re()</code>方法使用正则表达式进行提取.<br />
+<code>In [6]: response.css('title::text').re(r'起点.*')</code><br />
+<code>Out[6]: ['起点中文网']</code>  </p>
+<p>浏览器的开发人员工具检查HTML并提供一个选择器(<a href="https://docs.scrapy.org/en/latest/topics/developer-tools.html#topics-developer-tools">请参阅使用浏览器的开发人员工具进行抓取</a>)  </p>
+<p>除了CSS之外，Scrapy选择器还支持使用<code>XPath</code>表达式<br />
+<code>In [11]: response.xpath('//title')</code><br />
+<code>Out[11]: [&lt;Selector xpath='//title' data='&lt;title&gt;全部作品_起点中文网&lt;/title&gt;'&gt;]</code><br />
+XPath表达式非常强大,并且是<code>Scrapy Selectors</code>的基础.实际上,CSS选择器是在后台转换为XPath的.<br />
+在此处阅读有关将XPath与<a href="https://docs.scrapy.org/en/latest/topics/selectors.html#topics-selectors">Scrapy Selectors</a>结合使用的更多信息.<br />
+要了解有关XPath的更多信息,建议本教程通过示例<a href="http://zvon.org/comp/r/tut-XPath_1.html">学习XPath</a>，并建议本教程学习"<a href="http://plasmasturm.org/log/xpath101/">如何在XPath中思考</a>".</p>
+<p>Scrapy Spider通常会生成许多字典,其中包含从页面提取的数据.为此，我们使用Python关键字<code>yield</code>在回调.  </p>
+<pre><code class="python">import scrapy
+
+class QuotesSpider(scrapy.Spider):
+    name = &quot;quotes&quot;
+    start_urls = [
+        'http://quotes.toscrape.com/page/1/',
+        'http://quotes.toscrape.com/page/2/',
+    ]
+
+    def parse(self, response):
+        for quote in response.css('div.quote'):
+            yield {
+                'text': quote.css('span.text::text').get(),
+                'author': quote.css('small.author::text').get(),
+                'tags': quote.css('div.tags a.tag::text').getall(),
+            }
+</code></pre>
+
+<p>存储已抓取数据的最简单方法是使用<a href="https://docs.scrapy.org/en/latest/topics/feed-exports.html#topics-feed-exports">Feed</a>输出，并使用以下命令.<br />
+<code>scrapy crawl quotes -o quotes.json</code><br />
+这将生成一个<code>quotes.json</code>文件，其中包含所有以JSON序列化.<br />
+Scrapy会附加到给定文件,而不是覆盖其内容.如果两次运行此命令而没有在第二次之前删除该文件,那么最终将得到一个损坏的JSON文件.
+可以使用其他格式，例如<code>JSON Lines</code><br />
+<code>scrapy crawl quotes -o quotes.jl</code><br />
+如果要对已刮除的物料执行更复杂的操作,则可以编写"<a href="https://docs.scrapy.org/en/latest/topics/item-pipeline.html#topics-item-pipeline">Item Pipeline</a>".  </p>
+<p>Scrapy支持CSS扩展,可选择属性内容<br />
+<code>In [16]: response.css('ul[class="all-img-list cf"] li div.book-img-box a::attr(href)').get()</code><br />
+<code>Out[16]: '//book.qidian.com/info/1018027842'</code>  </p>
+<p>还有一个<code>attrib</code>可用的属性(有关更多信息，请参见<a href="https://docs.scrapy.org/en/latest/topics/selectors.html#selecting-attributes">选择元素属性</a>):<br />
+In [21]: response.css('ul[class="all-img-list cf"] li div.book-img-box a').attrib['href']<br />
+Out[21]: '//book.qidian.com/info/1018027842'  </p>
+<p>将其修改为以递归方式链接到下一页的链接,并从中提取数据  </p>
+<pre><code class="python">yield scrapy.Request(next_url, callback=self.parse, meta={&quot;bid&quot;: bid})
+# scrapy.Request(self, url, callback=None, method='GET', headers=None, body=None,
+        # cookies=None, meta=None, encoding='utf-8', priority=0,
+        # dont_filter=False, errback=None, flags=None, cb_kwargs=None
+        # callback: 指定传入的url交给哪个的解析函数处理
+        # meta: 实现在不同的解析函数中传递数据,meta默认会携带部分信息,比如下载延迟,请求深度等.
+        # dont_filter: 让scrapy的去重不会过滤当前url,scrapy默认有url去重功能,对需要重复请求的url有重要用途
+</code></pre>
+
+<p>在提取数据之后,该<code>parse()</code>方法将查找到下一页的链接,使用该<code>urljoin()</code>方法构建完整的绝对URL(因为链接可以是相对的),并产生对下一页的新请求,并将其自身注册为回调以进行处理提取下一页的数据,并保持对所有页面的抓取. <br />
+在这里看到的是Scrapy的以下链接机制:当您在回调方法中产生请求时,Scrapy将安排该请求的发送并在该请求完成时注册要执行的回调方法.<br />
+使用此功能,可以构建复杂的搜寻器,并根据定义的规则跟踪链接,并根据其访问的页面提取不同类型的数据.  </p>
+<p>创建请求的快捷方式
+作为创建<code>Request</code>对象的快捷方式,可以使用<code>response.follow</code>:  </p>
+<pre><code class="python">next_page = response.css('li.next a::attr(href)').get()
+if next_page is not None:
+    yield response.follow(next_page, callback=self.parse)
+</code></pre>
+
+<p>与<code>scrapy.Request</code>不同,它<code>response.follow</code>直接支持<code>相对URL</code>,无需调用<code>urljoin</code>.注意<code>response.follow</code>只返回一个<code>Request</code>实例;<br />
+也可以将选择器传递给<code>response.follow</code>而不是字符串.该选择器应提取必要的属性:  </p>
+<pre><code class="python">for href in response.css('ul.pager a::attr(href)'):
+    yield response.follow(href, callback=self.parse)
+</code></pre>
+
+<p>对于<code>&lt;a&gt;</code>元素,有一个快捷方式:<code>response.follow</code>自动使用其<code>href</code>属性:  </p>
+<pre><code class="python">for a in response.css('ul.pager a'):
+    yield response.follow(a, callback=self.parse)
+</code></pre>
+
+<p>要从一个可迭代对象创建多个请求,可以改为使用<code>response.follow_all</code>:  </p>
+<pre><code class="python">anchors = response.css('ul.pager a')
+yield from response.follow_all(anchors, callback=self.parse)
+</code></pre>
+
+<p>将其进一步缩短  </p>
+<pre><code class="python">yield from response.follow_all(css='ul.pager a', callback=self.parse)
+</code></pre>
+
+<p>来自官方文档的一个实例:</p>
+<pre><code class="python">import scrapy
+
+
+class AuthorSpider(scrapy.Spider):
+    name = 'author'
+
+    start_urls = ['http://quotes.toscrape.com/']
+
+    def parse(self, response):
+        author_page_links = response.css('.author + a')
+        yield from response.follow_all(author_page_links, self.parse_author)
+
+        pagination_links = response.css('li.next a')
+        yield from response.follow_all(pagination_links, self.parse)
+
+    def parse_author(self, response):
+        def extract_with_css(query):
+            return response.css(query).get(default='').strip()
+
+        yield {
+            'name': extract_with_css('h3.author-title::text'),
+            'birthdate': extract_with_css('.author-born-date::text'),
+            'bio': extract_with_css('.author-description::text'),
+        }
+</code></pre>
+
+<p>这个蜘蛛将从主页开始,将跟随所有指向作者页面的链接,这些链接<code>parse_author</code>为每个页面调用回调,以及分页链接与之前看到的<code>parse</code>回调.将回调传递<code>response.follow_all</code>为位置参数.<br />
+该<code>parse_author</code>回调从<code>CSS</code>查询定义了一个辅助函数来提取和清理数据,并产生了<code>Python</code>字典与作者的数据.<br />
+即使同一位作者的引文很多,也不必担心多次访问同一作者页面.默认情况下,Scrapy过滤掉对已访问URL的重复请求,避免了由于编程错误而导致服务器过多访问的问题.可以通过设置进行配置<code>DUPEFILTER_CLASS</code>.  </p>
+<p>作为利用以下链接机制的另一个蜘蛛示例,请查看<code>CrawlSpider</code>该类中的通用蜘蛛,该蜘蛛实现了一个小的规则引擎,可以使用该规则引擎在其之上编写搜寻器.
+同样，一种常见的模式是使用一个<a href="https://docs.scrapy.org/en/latest/topics/request-response.html#topics-request-response-ref-request-callback-arguments">技巧将更多数据传递给回调</a>,从而使用来自多个页面的数据来构建项目.</p>
+<p>使用蜘蛛参数
+可以<code>-a</code>在运行蜘蛛时通过使用选项为它们提供命令行参数:  </p>
+<pre><code class="python">scrapy crawl quotes -o quotes-humor.json -a tag=humor
+</code></pre>
+
+<p>这些参数将传递给Spider的<code>__init__</code>方法,并在默认情况下成为Spider属性.  </p>
+<p>在此示例中,提供的值<code>tag</code>,可通过访问<code>self.tag</code>参数,并根据参数构建URL:</p>
+<pre><code class="python">import scrapy
+
+
+class QuotesSpider(scrapy.Spider):
+    name = &quot;quotes&quot;
+
+    def start_requests(self):
+        url = 'http://quotes.toscrape.com/'
+        tag = getattr(self, 'tag', None)
+        if tag is not None:
+            url = url + 'tag/' + tag
+        yield scrapy.Request(url, self.parse)
+
+    def parse(self, response):
+        for quote in response.css('div.quote'):
+            yield {
+                'text': quote.css('span.text::text').get(),
+                'author': quote.css('small.author::text').get(),
+            }
+
+        next_page = response.css('li.next a::attr(href)').get()
+        if next_page is not None:
+            yield response.follow(next_page, self.parse)
+</code></pre>
+
+<p>如果将<code>tag=humor</code>参数传递给该蜘蛛,则会注意到它只会访问<code>humor</code>标记中的URL,例如:http://quotes.toscrape.com/tag/humor.<br />
+<a href="https://docs.scrapy.org/en/latest/topics/spiders.html#spiderargs">有关蜘蛛参数的信息</a>  </p>
+<p>日值 logging</p>
+<pre><code class="log">2020-07-14 18:27:10 [scrapy.utils.log] INFO: Scrapy 2.2.0 started (bot: learnSpider)
+2020-07-14 18:27:10 [scrapy.utils.log] INFO: Versions: lxml 4.5.1.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.8.2 (default, Apr 27 2020, 15:53:34) - [GCC 9.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.4.0-40-generic-x86_64-with-glibc2.29
+2020-07-14 18:27:10 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2020-07-14 18:27:10 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'learnSpider',
+ 'LOG_FILE': './log.log',
+ 'NEWSPIDER_MODULE': 'learnSpider.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['learnSpider.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, '
+               'like Gecko) Chrome/83.0.4103.116 Safari/537.36'}
+2020-07-14 18:27:10 [scrapy.extensions.telnet] INFO: Telnet Password: 5f02d059c73d3817
+2020-07-14 18:27:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-07-14 18:27:10 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-07-14 18:27:10 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-07-14 18:27:10 [scrapy.middleware] INFO: Enabled item pipelines:
+['learnSpider.pipelines.LearnspiderPipeline']
+2020-07-14 18:27:10 [scrapy.core.engine] INFO: Spider opened
+2020-07-14 18:27:10 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-07-14 18:27:10 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6027
+
+......
+
+2020-07-14 18:27:22 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-07-14 18:27:22 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 41863,
+ 'downloader/request_count': 86,
+ 'downloader/request_method_count/GET': 86,
+ 'downloader/response_bytes': 2880211,
+ 'downloader/response_count': 86,
+ 'downloader/response_status_count/200': 85,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 12.680994,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 7, 14, 10, 27, 22, 816766),
+ 'item_scraped_count': 80,
+ 'log_count/DEBUG': 213,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 10,
+ 'memusage/max': 55144448,
+ 'memusage/startup': 55144448,
+ 'request_depth_max': 4,
+ 'response_received_count': 86,
+ 'robotstxt/request_count': 2,
+ 'robotstxt/response_count': 2,
+ 'robotstxt/response_status_count/200': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 84,
+ 'scheduler/dequeued/memory': 84,
+ 'scheduler/enqueued': 84,
+ 'scheduler/enqueued/memory': 84,
+ 'start_time': datetime.datetime(2020, 7, 14, 10, 27, 10, 135772)}
+2020-07-14 18:27:22 [scrapy.core.engine] INFO: Spider closed (finished)
+</code></pre>
+
+<p>setting.py</p>
+<pre><code class="s">BOT_NAME = 'learnSpider'                    # 项目名
+
+SPIDER_MODULES = ['learnSpider.spiders']    # 爬虫位置 
+NEWSPIDER_MODULE = 'learnSpider.spiders'    # 新建爬虫位置
+
+LOG_LEVEL = &quot;DEBUG&quot;
+LOG_FILE = &quot;./log.log&quot;
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'# 'learnSpider (+http://www.yourdomain.com)'    # 浏览器标识
+
+# Obey robots.txt rules  # 默认遵守robots协议
+ROBOTSTXT_OBEY = False # True
+
+# Configure maximum concurrent requests performed by Scrapy (default: 16)
+#CONCURRENT_REQUESTS = 32       # 最大并发
+
+# Configure a delay for requests for the same website (default: 0)
+# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
+# See also autothrottle settings and docs
+#DOWNLOAD_DELAY = 3                                     # 下载延迟
+# The download delay setting will honor only one of:
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16                    # 每个域名的最大并发数
+#CONCURRENT_REQUESTS_PER_IP = 16                        # 每个IP的最大并发数
+
+# Disable cookies (enabled by default)
+#COOKIES_ENABLED = False                                # Cookie是否开启
+
+# Disable Telnet Console (enabled by default)
+#TELNETCONSOLE_ENABLED = False                          # 插件是否开启
+
+# Override the default request headers:                 # 默认请求头
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
+
+# Enable or disable spider middlewares                  # 爬虫中间件
+# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'learnSpider.middlewares.LearnspiderSpiderMiddleware': 543,
+#}
+
+# Enable or disable downloader middlewares              # 下载中间件
+# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'learnSpider.middlewares.LearnspiderDownloaderMiddleware': 543,
+#}
+
+# Enable or disable extensions                          #  插件
+# See https://docs.scrapy.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# Configure item pipelines                              # pipelines的位置与权中
+# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+ITEM_PIPELINES = {
+   'learnSpider.pipelines.LearnspiderPipeline': 300,
+}
+
+# Enable and configure the AutoThrottle extension (disabled by default)     # 自动限速
+# See https://docs.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# Enable and configure HTTP caching (disabled by default)   # 自动缓存
+# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+</code></pre>
+
+<h4 id="_32">命令行工具</h4>
+<h4 id="_33">蜘蛛爬虫</h4>
+<h4 id="_34">选择器</h4>
+<h4 id="_35">装载机</h4>
+<h4 id="shell">Shell</h4>
+<h4 id="_36">项目管道</h4>
+<h4 id="_37">数据出口</h4>
+<h4 id="_38">请求与回应</h4>
+<h4 id="_39">链接提取器</h4>
+<h4 id="_40">设定值</h4>
+<h4 id="_41">内置服务</h4>
+<h4 id="_42">解决特定问题</h4>
+<h4 id="scrapy_5">扩展SCRAPY</h4>
+<h3 id="crawlspider">crawlspider的使用</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../docker/" class="btn btn-neutral float-right" title="Docker">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../java/" class="btn btn-neutral" title="Java"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../java/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../docker/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
